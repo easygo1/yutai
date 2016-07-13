@@ -26,7 +26,7 @@ public class IMusicDAOImpl implements IMusicDAO {
 				+ "music_audition_sum_number,music_audition_month_number,music_audition_week_number,"
 				+ "music_audition_day_number,music_download_sum_number,music_download_month_number,"
 				+ "music_download_week_number,music_download_day_number,music_type_photo,music_photo,"
-				+ "music_coins,music_remarks) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);";
+				+ "music_coins,music_upload_time,music_remarks) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);";
 		try {
 			statement = connection.prepareStatement(sql);
 			statement.setString(1, music.getMusic_name());
@@ -45,7 +45,8 @@ public class IMusicDAOImpl implements IMusicDAO {
 			statement.setString(14, music.getMusic_type_photo());
 			statement.setString(15, music.getMusic_photo());
 			statement.setInt(16, music.getMusic_coins());
-			statement.setString(17, music.getMusic_remarks());
+			statement.setString(17, music.getMusic_upload_time());
+			statement.setString(18, music.getMusic_remarks());
 			statement.executeQuery();
 			result = true;
 		} catch (SQLException e) {
@@ -73,7 +74,7 @@ public class IMusicDAOImpl implements IMusicDAO {
 						resultSet.getString(3), resultSet.getString(4), resultSet.getString(5), resultSet.getString(6),
 						resultSet.getInt(7), resultSet.getInt(8), resultSet.getInt(9), resultSet.getInt(10), resultSet.getInt(11),
 						resultSet.getInt(12), resultSet.getInt(13), resultSet.getInt(14), resultSet.getString(15),
-						resultSet.getString(16), resultSet.getInt(17), resultSet.getString(18));
+						resultSet.getString(16), resultSet.getInt(17), resultSet.getString(18),resultSet.getString(19));
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -122,7 +123,7 @@ public class IMusicDAOImpl implements IMusicDAO {
 						resultSet.getString(3), resultSet.getString(4), resultSet.getString(5), resultSet.getString(6),
 						resultSet.getInt(7), resultSet.getInt(8), resultSet.getInt(9), resultSet.getInt(10), resultSet.getInt(11),
 						resultSet.getInt(12), resultSet.getInt(13), resultSet.getInt(14), resultSet.getString(15),
-						resultSet.getString(16), resultSet.getInt(17), resultSet.getString(18));
+						resultSet.getString(16), resultSet.getInt(17), resultSet.getString(18), resultSet.getString(19));
 				musicList.add(music);
 			}
 		} catch (SQLException e) {
@@ -149,7 +150,7 @@ public class IMusicDAOImpl implements IMusicDAO {
 						resultSet.getString(3), resultSet.getString(4), resultSet.getString(5), resultSet.getString(6),
 						resultSet.getInt(7), resultSet.getInt(8), resultSet.getInt(9), resultSet.getInt(10), resultSet.getInt(11),
 						resultSet.getInt(12), resultSet.getInt(13), resultSet.getInt(14), resultSet.getString(15),
-						resultSet.getString(16), resultSet.getInt(17), resultSet.getString(18));
+						resultSet.getString(16), resultSet.getInt(17), resultSet.getString(18), resultSet.getString(19));
 				musicList.add(music);
 			}
 		} catch (SQLException e) {

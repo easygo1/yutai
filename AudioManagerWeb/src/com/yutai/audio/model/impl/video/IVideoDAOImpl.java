@@ -26,7 +26,7 @@ public class IVideoDAOImpl implements IVideoDAO {
 				+ "video_audition_sum_number,video_audition_month_number,video_audition_week_number,"
 				+ "video_audition_day_number,video_download_sum_number,video_download_month_number,"
 				+ "video_download_week_number,video_download_day_number,video_type_photo,video_photo,"
-				+ "video_coins,video_remarks) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);";
+				+ "video_coins,video_upload_time,video_remarks) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);";
 		try {
 			statement = connection.prepareStatement(sql);
 			statement.setString(1, video.getVideo_name());
@@ -44,7 +44,8 @@ public class IVideoDAOImpl implements IVideoDAO {
 			statement.setString(13, video.getVideo_type_photo());
 			statement.setString(14, video.getVideo_photo());
 			statement.setInt(15, video.getVideo_coins());
-			statement.setString(16, video.getVideo_remarks());
+			statement.setString(16, video.getVideo_upload_time());
+			statement.setString(17, video.getVideo_remarks());
 			statement.executeQuery();
 			result = true;
 		} catch (SQLException e) {
@@ -72,7 +73,7 @@ public class IVideoDAOImpl implements IVideoDAO {
 						resultSet.getString(3), resultSet.getString(4), resultSet.getString(5),
 						resultSet.getInt(6), resultSet.getInt(7), resultSet.getInt(8), resultSet.getInt(9), resultSet.getInt(10),
 						resultSet.getInt(11), resultSet.getInt(12), resultSet.getInt(13), resultSet.getString(14),
-						resultSet.getString(15), resultSet.getInt(16), resultSet.getString(17));
+						resultSet.getString(15), resultSet.getInt(16), resultSet.getString(17), resultSet.getString(18));
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -121,7 +122,7 @@ public class IVideoDAOImpl implements IVideoDAO {
 					    resultSet.getString(3), resultSet.getString(4), resultSet.getString(5),
 						resultSet.getInt(6), resultSet.getInt(7), resultSet.getInt(8), resultSet.getInt(9), resultSet.getInt(10),
 						resultSet.getInt(11), resultSet.getInt(12), resultSet.getInt(13), resultSet.getString(14),
-						resultSet.getString(15), resultSet.getInt(16), resultSet.getString(17));
+						resultSet.getString(15), resultSet.getInt(16), resultSet.getString(17), resultSet.getString(18));
 				videoList.add(video);
 			}
 		} catch (SQLException e) {
@@ -148,7 +149,7 @@ public class IVideoDAOImpl implements IVideoDAO {
 					    resultSet.getString(3), resultSet.getString(4), resultSet.getString(5),
 						resultSet.getInt(6), resultSet.getInt(7), resultSet.getInt(8), resultSet.getInt(9), resultSet.getInt(10),
 						resultSet.getInt(11), resultSet.getInt(12), resultSet.getInt(13), resultSet.getString(14),
-						resultSet.getString(15), resultSet.getInt(16), resultSet.getString(17));
+						resultSet.getString(15), resultSet.getInt(16), resultSet.getString(17), resultSet.getString(18));
 				videoList.add(video);
 			}
 		} catch (SQLException e) {

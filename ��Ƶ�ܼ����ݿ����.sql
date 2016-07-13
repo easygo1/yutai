@@ -47,10 +47,10 @@ create TABLE music(
 	music_path_lrc               varchar(300),  ##歌词文件路径
 	music_type1                  varchar(20),   ##音乐一级类型
 	music_type2                  varchar(20),   ##音乐二级类型
-	music_audition_sum_number    int,           ##在线总量
-	music_audition_month_number  int,           ##月在线总量
-	music_audition_week_number   int,           ##周在线总量
-	music_audition_day_number    int,           ##天在线总量
+	music_audition_sum_number    int,           ##在线播放总量
+	music_audition_month_number  int,           ##月在线播放总量
+	music_audition_week_number   int,           ##周在线播放总量
+	music_audition_day_number    int,           ##天在线播放总量
 	music_download_sum_number    int,           ##总下载量
 	music_download_month_number  int,           ##月下载量
 	music_download_week_number   int,           ##周下载量
@@ -58,6 +58,7 @@ create TABLE music(
 	music_type_photo             varchar(300),  ##音乐二级类型图片
 	music_photo                  varchar(300),  ##音乐图片地址
 	music_coins    				 int,           ##(下载所需金币)
+	music_upload_time			 datetime       ##音乐上传时间
 	music_remarks                varchar(100)   ##备注
 );  
 
@@ -79,6 +80,7 @@ create TABLE video(
 	video_type_photo             varchar(300), ##视频二级类型图片
 	video_photo                  varchar(300), ##视频图片
 	video_coins    				 int,          ##(下载所需金币)
+	video_upload_time			 datetime       ##音乐上传时间
 	video_remarks         		 varchar(100)  ##(备注)
 );   
 
