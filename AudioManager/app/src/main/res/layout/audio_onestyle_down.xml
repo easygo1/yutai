@@ -1,7 +1,143 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:orientation="vertical"
               android:layout_width="match_parent"
-              android:layout_height="match_parent">
+              android:layout_height="match_parent"
+              android:orientation="vertical">
 
+    <LinearLayout
+        style="@style/liner_style">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                style="@style/image_onestyle"
+                android:src="@mipmap/style"/>
+
+            <TextView
+                style="@style/text_style"
+                android:text="分类一"/>
+        </LinearLayout>
+        <TextView
+            style="@style/text_liner_y"/>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                style="@style/image_onestyle"
+                android:src="@mipmap/style"/>
+
+            <TextView
+                style="@style/text_style"
+                android:text="分类一"/>
+        </LinearLayout>
+        <TextView
+            style="@style/text_liner_y"/>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                style="@style/image_onestyle"
+                android:src="@mipmap/style"/>
+
+            <TextView
+                style="@style/text_style"
+                android:text="分类一"/>
+        </LinearLayout>
+        <TextView
+            style="@style/text_liner_y"/>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                style="@style/image_onestyle"
+                android:src="@mipmap/style"/>
+
+            <TextView
+                style="@style/text_style"
+                android:text="分类一"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        style="@style/text_liner_x"/>
+
+    <LinearLayout
+        style="@style/liner_style">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                style="@style/image_onestyle"
+                android:src="@mipmap/style"/>
+
+            <TextView
+                style="@style/text_style"
+                android:text="分类一"/>
+        </LinearLayout>
+        <TextView
+            style="@style/text_liner_y"/>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                style="@style/image_onestyle"
+                android:src="@mipmap/style"/>
+
+            <TextView
+                style="@style/text_style"
+                android:text="分类一"/>
+        </LinearLayout>
+        <TextView
+            style="@style/text_liner_y"/>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                style="@style/image_onestyle"
+                android:src="@mipmap/style"/>
+
+            <TextView
+                style="@style/text_style"
+                android:text="分类一"/>
+        </LinearLayout>
+        <TextView
+            style="@style/text_liner_y"/>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                style="@style/image_onestyle"
+                android:src="@mipmap/style"/>
+
+            <TextView
+                style="@style/text_style"
+                android:text="分类一"/>
+        </LinearLayout>
+    </LinearLayout>
 </LinearLayout>

@@ -7,4 +7,5 @@
     <color name="textDown">#f59e1c</color>
     <color name="textUp">#080808</color>
     <color name="alpha_background">#459E9E9E</color>
+    <color name="line_corlor">#459E9E9E</color>
 </resources>

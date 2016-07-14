@@ -15,23 +15,22 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="3"/>
-        <include
-            layout="@layout/audio_onestyle_up"/>
 
-        <!-- <com.yutai.audio.view.custom.MyGridView
-             android:background="@color/bottomColor"
-             android:layout_width="match_parent"
-             android:layout_height="0dp"
-             android:layout_weight="5"
-             android:horizontalSpacing="10dp"
-             android:numColumns="5"
-             android:verticalSpacing="10dp">
-         </com.yutai.audio.view.custom.MyGridView>-->
+        <include
+            layout="@layout/audio_onestyle_up"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="5"/>
 
         <android.support.v4.view.ViewPager
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="2"/>
+            android:layout_height="80dp"
+            android:background="@color/alpha_background"/>
+
+        <include
+            layout="@layout/audio_onestyle_down"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
     </LinearLayout>
 
 </LinearLayout>
