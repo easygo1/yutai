@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <android.support.v4.view.ViewPager
+            android:id="@+id/audio_viewpager_top"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true">
+        </android.support.v4.view.ViewPager>
+        <TextView
+            style="@style/ww"
+            android:text="大赛"/>
+
+        <ImageView
+            android:id="@+id/share_imageview"
+            style="@style/image_style"
+            android:layout_alignParentRight="true"
+            android:src="@mipmap/icon_search"/>
+
+        <ImageView
+            android:id="@+id/search_imageview"
+            style="@style/image_style"
+            android:layout_toLeftOf="@+id/share_imageview"
+            android:src="@mipmap/icon_search"/>
+
+        <ImageView
+            android:id="@+id/record_imageview"
+            style="@style/image_style"
+            android:layout_toLeftOf="@+id/search_imageview"
+            android:src="@mipmap/icon_search"/>
+    </RelativeLayout>
+
+</LinearLayout>
