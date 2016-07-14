@@ -5,15 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.yutai.audio.MainActivity">
-    <!--Ê×Ò³ÄÚÈÝ²¿·Ö-->
+    tools:context=".view.activity.MainActivity">
+    <!--ï¿½ï¿½Ò³ï¿½ï¿½ï¿½Ý²ï¿½ï¿½ï¿½-->
     <android.support.v4.view.ViewPager
         android:id="@+id/middle_viewpager"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="10"></android.support.v4.view.ViewPager>
-    <!--Ê×Ò³µ×²¿µ¼º½-->
-    <!--±ØÐëÖØÐ´¿í¸ß-->
+    <!--ï¿½ï¿½Ò³ï¿½×²ï¿½ï¿½ï¿½ï¿½ï¿½-->
+    <!--ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð´ï¿½ï¿½ï¿½-->
     <include
         layout="@layout/merge"
         android:layout_width="match_parent"
