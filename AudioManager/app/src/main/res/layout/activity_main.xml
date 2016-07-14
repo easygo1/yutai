@@ -6,14 +6,14 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="com.yutai.audio.MainActivity">
-    <!--é¦–é¡µå†…å®¹éƒ¨åˆ†-->
+    <!--Ê×Ò³ÄÚÈÝ²¿·Ö-->
     <android.support.v4.view.ViewPager
         android:id="@+id/middle_viewpager"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="10"></android.support.v4.view.ViewPager>
-    <!--é¦–é¡µåº•éƒ¨å¯¼èˆª-->
-    <!--å¿…é¡»é‡å†™å®½é«˜-->
+    <!--Ê×Ò³µ×²¿µ¼º½-->
+    <!--±ØÐëÖØÐ´¿í¸ß-->
     <include
         layout="@layout/merge"
         android:layout_width="match_parent"

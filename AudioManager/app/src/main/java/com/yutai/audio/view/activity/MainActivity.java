@@ -1,4 +1,4 @@
-package com.yutai.audio;
+package com.yutai.audio.view.activity;
 
 
 import android.os.Bundle;
@@ -16,6 +16,8 @@ import com.yutai.audio.view.fragment.VideoFragment;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import com.yutai.audio.R;
 
 public class MainActivity extends AppCompatActivity {
     private ViewPager mViewPager;
