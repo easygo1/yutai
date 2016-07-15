@@ -8,6 +8,7 @@
         style="@style/liner_style">
 
         <LinearLayout
+            android:id="@+id/style1_linelayout"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"

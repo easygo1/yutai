@@ -50,7 +50,7 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:padding">8dp</item>
     </style>
-    <!--分类linerlayout-->
+    <!--一级分类linerlayout-->
     <style name="liner_style">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
@@ -69,6 +69,20 @@
         <item name="android:layout_width">1dp</item>
         <item name="android:layout_height">match_parent</item>
         <item name="android:background">@color/line_corlor</item>
+    </style>
+    <!--二级分类页面中的两个小分类上下排列-->
+    <style name="two_audio_style_uodown">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+    <!--二级分类中具体分类的textview样式-->
+    <style name="two_audio_style_textview">
+        <item name="android:gravity">center</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:layout_weight">1</item>
     </style>
 
     <style name="AppTheme.NoActionBar">

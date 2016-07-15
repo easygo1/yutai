@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.ImageView;
 
-import com.squareup.picasso.Picasso;
 import com.yutai.audio.R;
 
 public class TestActivity extends AppCompatActivity {
@@ -18,8 +17,5 @@ public class TestActivity extends AppCompatActivity {
         /*Glide.with(this)
                 .load("http://www.yooyoo360.com/photo/2009-1-1/20090112132758194.jpg")
                 .into(mImageView);*/
-        Picasso.with(this)
-                .load("http://pic14.nipic.com/20110615/1347158_233357498344_2.jpg")
-                .into(mImageView);
         }
 }
