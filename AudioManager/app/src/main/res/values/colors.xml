@@ -8,4 +8,7 @@
     <color name="textUp">#080808</color>
     <color name="alpha_background">#459E9E9E</color>
     <color name="line_corlor">#459E9E9E</color>
+    <color name="me_top_background">#45797979</color>
+    <color name="me_center_background">#45d7d7d7</color>
+    <color name="me_text_color">#faf70414</color>
 </resources>
