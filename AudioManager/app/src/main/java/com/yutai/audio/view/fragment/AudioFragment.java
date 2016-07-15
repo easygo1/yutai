@@ -7,6 +7,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.youth.banner.Banner;
@@ -22,6 +24,8 @@ public class AudioFragment extends Fragment {
     String[] images = new String[]{"http://pic.yesky.com/uploadImages/2015/126/48/0S0NK034NU00.jpg", "http://pic1a.nipic.com/2008-12-01/2008121175139413_2.jpg", "http://pic56.nipic.com/file/20141227/19674963_215052431000_2.jpg"};
     // String[] titles=new String[]{"标题"};
     View mView;
+    private TextView mCompetitionTextView;
+    private LinearLayout mStyle1LinearLayout;
 
     @Nullable
     @Override
