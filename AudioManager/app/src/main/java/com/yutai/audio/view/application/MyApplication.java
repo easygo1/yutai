@@ -2,8 +2,6 @@ package com.yutai.audio.view.application;
 
 import android.app.Application;
 
-import java.io.File;
-
 /**
  * Created by ZFG on 2016/7/14.
  */
@@ -17,8 +15,20 @@ public class MyApplication extends Application {
 
     private void init() {
         mInstance = this;
-
+        initUIL();
     }
 
-
+    private void initUIL() {
+        /*File cacheDir = StorageUtils.getOwnCacheDirectory(this,"Banner/cache/image");//缓存文件夹路径
+        ImageLoaderConfiguration config = new ImageLoaderConfiguration.Builder(this)
+                .memoryCache(new LruMemoryCache(2*1024*1024))
+                .memoryCacheSize(2*1024*1024)
+                .diskCache(new UnlimitedDiskCache(cacheDir))
+                .diskCacheSize(50*1024*1024)
+                .imageDownloader(new BaseImageDownloader(this,20*60*60,30*60*60))
+                .diskCacheFileCount(100)
+                .denyCacheImageMultipleSizesInMemory()
+                .build();
+        ImageLoader.getInstance().init(config);*/
+    }
 }
