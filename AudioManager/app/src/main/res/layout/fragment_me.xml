@@ -58,12 +58,12 @@
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:orientation="vertical">
-                <TextView
+                <com.yutai.audio.utils.MyTextView
                     android:id="@+id/me_user_nickname"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="昵称在这里"/>
-                <TextView
+                <com.yutai.audio.utils.MyTextView
                     android:id="@+id/me_user_content"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

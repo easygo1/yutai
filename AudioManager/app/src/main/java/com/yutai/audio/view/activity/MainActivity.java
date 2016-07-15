@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
+import com.yutai.audio.R;
 import com.yutai.audio.view.adapter.FragmentAdapter;
 import com.yutai.audio.view.fragment.AudioFragment;
 import com.yutai.audio.view.fragment.MeFragment;
@@ -16,8 +17,6 @@ import com.yutai.audio.view.fragment.VideoFragment;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import com.yutai.audio.R;
 
 public class MainActivity extends AppCompatActivity {
     private ViewPager mViewPager;

@@ -3,11 +3,9 @@
               android:layout_width="match_parent"
               android:layout_height="match_parent"
               android:orientation="vertical">
-
+    <!--首页大分类第一行-->
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        style="@style/liner_style">
 
         <LinearLayout
             android:layout_width="0dp"
@@ -16,17 +14,15 @@
             android:orientation="vertical">
 
             <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                style="@style/image_onestyle"
                 android:src="@mipmap/style"/>
 
             <TextView
-                android:gravity="center"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                style="@style/text_style"
                 android:text="分类一"/>
         </LinearLayout>
-
+        <TextView
+            style="@style/text_liner_y"/>
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -34,16 +30,15 @@
             android:orientation="vertical">
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                style="@style/image_onestyle"
                 android:src="@mipmap/style"/>
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                style="@style/text_style"
                 android:text="分类一"/>
         </LinearLayout>
-
+        <TextView
+            style="@style/text_liner_y"/>
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -51,14 +46,171 @@
             android:orientation="vertical">
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                style="@style/image_onestyle"
                 android:src="@mipmap/style"/>
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                style="@style/text_style"
+                android:text="分类一"/>
+        </LinearLayout>
+        <TextView
+            style="@style/text_liner_y"/>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                style="@style/image_onestyle"
+                android:src="@mipmap/style"/>
+
+            <TextView
+                style="@style/text_style"
                 android:text="分类一"/>
         </LinearLayout>
     </LinearLayout>
+
+    <TextView
+        style="@style/text_liner_x"/>
+    <!--首页大分类第二行-->
+    <LinearLayout
+        style="@style/liner_style">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                style="@style/image_onestyle"
+                android:src="@mipmap/style"/>
+
+            <TextView
+                style="@style/text_style"
+                android:text="分类一"/>
+        </LinearLayout>
+        <TextView
+            style="@style/text_liner_y"/>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                style="@style/image_onestyle"
+                android:src="@mipmap/style"/>
+
+            <TextView
+                style="@style/text_style"
+                android:text="分类一"/>
+        </LinearLayout>
+        <TextView
+            style="@style/text_liner_y"/>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                style="@style/image_onestyle"
+                android:src="@mipmap/style"/>
+
+            <TextView
+                style="@style/text_style"
+                android:text="分类一"/>
+        </LinearLayout>
+        <TextView
+            style="@style/text_liner_y"/>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                style="@style/image_onestyle"
+                android:src="@mipmap/style"/>
+
+            <TextView
+                style="@style/text_style"
+                android:text="分类一"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        style="@style/text_liner_x"/>
+    <!--首页大分类第三行-->
+    <LinearLayout
+        style="@style/liner_style">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                style="@style/image_onestyle"
+                android:src="@mipmap/style"/>
+
+            <TextView
+                style="@style/text_style"
+                android:text="分类一"/>
+        </LinearLayout>
+        <TextView
+            style="@style/text_liner_y"/>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                style="@style/image_onestyle"
+                android:src="@mipmap/style"/>
+
+            <TextView
+                style="@style/text_style"
+                android:text="分类一"/>
+        </LinearLayout>
+        <TextView
+            style="@style/text_liner_y"/>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                style="@style/image_onestyle"
+                android:src="@mipmap/style"/>
+
+            <TextView
+                style="@style/text_style"
+                android:text="分类一"/>
+        </LinearLayout>
+        <TextView
+            style="@style/text_liner_y"/>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                style="@style/image_onestyle"
+                android:src="@mipmap/style"/>
+
+            <TextView
+                style="@style/text_style"
+                android:text="分类一"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        style="@style/text_liner_x"/>
 </LinearLayout>
