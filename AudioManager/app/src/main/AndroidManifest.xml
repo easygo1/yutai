@@ -24,6 +24,8 @@
         </activity>
         <activity android:name=".view.activity.AudioTwoStyleDetailActivity">
         </activity>
+        <activity android:name=".view.activity.AudioPlayActivity">
+        </activity>
     </application>
 
 </manifest>
