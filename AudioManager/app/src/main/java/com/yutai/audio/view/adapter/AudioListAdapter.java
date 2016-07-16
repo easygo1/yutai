@@ -11,6 +11,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.yutai.audio.R;
 import com.yutai.audio.model.beans.music.Music;
+import com.yutai.audio.utils.ToastUtils;
 import com.yutai.audio.view.application.MyApplication;
 
 import java.util.List;
@@ -49,9 +50,12 @@ public class AudioListAdapter extends BaseAdapter implements View.OnClickListene
         switch (v.getId()) {
             case R.id.item_download_image:
                 //单击下载按钮时
+                ToastUtils.showToast(mContext, "下载对话框");
                 break;
             case R.id.item_share_image:
                 //单击分享按钮时
+                ToastUtils.showToast(mContext, "分享对话框");
+                break;
         }
     }
 
@@ -87,7 +91,7 @@ public class AudioListAdapter extends BaseAdapter implements View.OnClickListene
             viewHolder = (ViewHolder) convertView.getTag();
         }
         final ImageView downloadimageView = (ImageView) convertView.findViewById(R.id.item_download_image);
-        final ImageView shareimageView = (ImageView) convertView.findViewById(R.id.item_download_image);
+        final ImageView shareimageView = (ImageView) convertView.findViewById(R.id.item_share_image);
         downloadimageView.setOnClickListener(this);
         shareimageView.setOnClickListener(this);
         final Music music = mMusicList.get(position);
@@ -95,8 +99,8 @@ public class AudioListAdapter extends BaseAdapter implements View.OnClickListene
                 .load(music.getMusic_photo())
                 .into(viewHolder.itemMusicPhoto);
         viewHolder.itemMusicName.setText(music.getMusic_name());
-        viewHolder.itemMusicAuditionSum.setText(""+music.getMusic_audition_sum_number());
-        viewHolder.itemMusicDownloadSum.setText(""+music.getMusic_download_sum_number());
+        viewHolder.itemMusicAuditionSum.setText("" + music.getMusic_audition_sum_number());
+        viewHolder.itemMusicDownloadSum.setText("" + music.getMusic_download_sum_number());
         return convertView;
     }
 }

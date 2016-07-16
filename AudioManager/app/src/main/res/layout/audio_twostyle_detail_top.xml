@@ -12,12 +12,12 @@
         android:src="@drawable/twostyle"/>
 
     <ImageView
+        android:id="@+id/twostyle_title_back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingLeft="10dp"
         android:paddingTop="10dp"
         android:src="@mipmap/title_back"/>
-
 
     <TextView
         android:layout_width="match_parent"
@@ -28,8 +28,8 @@
         android:textColor="#000000"
         android:textSize="@dimen/title_size"/>
 
-    <TextView
+    <!--<TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#ac818181"/>
+        android:background="#ac818181"/>-->
 </RelativeLayout>
