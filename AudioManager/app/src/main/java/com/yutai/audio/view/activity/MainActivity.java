@@ -11,6 +11,7 @@ import android.widget.RadioGroup;
 
 import com.yutai.audio.R;
 import com.yutai.audio.view.adapter.FragmentAdapter;
+import com.yutai.audio.view.application.MyApplication;
 import com.yutai.audio.view.fragment.AudioFragment;
 import com.yutai.audio.view.fragment.MeFragment;
 import com.yutai.audio.view.fragment.VideoFragment;
@@ -25,6 +26,10 @@ public class MainActivity extends AppCompatActivity {
     Fragment mAudioFragment, mVideoFragment, mMeFragment;
     FragmentManager mFragmentManager;
     FragmentAdapter mFragmentAdapter;
+    private RadioButton mAudioRadio;
+    private RadioButton mVideoRadio;
+    private RadioButton mMyRadio;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +44,12 @@ public class MainActivity extends AppCompatActivity {
     private void initViews() {
         mViewPager = (ViewPager) findViewById(R.id.middle_viewpager);
         mRadioGroup = (RadioGroup) findViewById(R.id.radiogroup);
+        mAudioRadio = (RadioButton) findViewById(R.id.audio_radio);
+        mVideoRadio = (RadioButton) findViewById(R.id.video_radio);
+        mMyRadio = (RadioButton) findViewById(R.id.my_radio);
+        mAudioRadio.setTypeface(MyApplication.sTypeface);
+        mVideoRadio.setTypeface(MyApplication.sTypeface);
+        mMyRadio.setTypeface(MyApplication.sTypeface);
     }
 
     private void initListeners() {

@@ -107,7 +107,7 @@ public class AudioFragment extends Fragment implements View.OnClickListener {
                 //跳转页面
                 Intent intent = new Intent();
                 intent.setClass(getActivity(), AudioTwoStyleActivity.class);
-                startActivity(intent);
+                getActivity().startActivity(intent);
                 break;
         }
     }

@@ -1,12 +1,14 @@
 package com.yutai.audio.view.application;
 
 import android.app.Application;
+import android.graphics.Typeface;
 
 /**
  * Created by ZFG on 2016/7/14.
  */
 public class MyApplication extends Application {
     public static MyApplication mInstance;
+    public static Typeface sTypeface;
     @Override
     public void onCreate() {
         super.onCreate();
@@ -15,6 +17,7 @@ public class MyApplication extends Application {
 
     private void init() {
         mInstance = this;
+        sTypeface=Typeface.createFromAsset(getAssets(),"fonts/myFont.ttf");
         initUIL();
     }
 
