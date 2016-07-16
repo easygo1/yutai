@@ -13,19 +13,31 @@
         <include
             layout="@layout/audio_top"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="3"/>
+            android:layout_height="180dp"/>
 
         <include
             layout="@layout/audio_onestyle_up"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="5"/>
+            android:layout_height="wrap_content"/>
 
-        <android.support.v4.view.ViewPager
+        <TextView
+            style="@style/text_liner_x"
+            android:layout_height="6dp"/>
+
+        <com.youth.banner.Banner
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/banner2"
             android:layout_width="match_parent"
             android:layout_height="80dp"
-            android:background="@color/alpha_background"/>
+            app:indicator_drawable_selected="@drawable/gray_radius"
+            app:indicator_drawable_unselected="@drawable/white_radius"
+            app:indicator_height="10dp"
+            app:indicator_margin="5dp"
+            app:indicator_width="10dp"/>
+
+        <TextView
+            style="@style/text_liner_x"
+            android:layout_height="6dp"/>
 
         <include
             layout="@layout/audio_onestyle_down"

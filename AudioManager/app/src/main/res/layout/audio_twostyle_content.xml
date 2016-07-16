@@ -1,0 +1,453 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:scaleType="fitXY"
+        android:src="@drawable/text1photo"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="8"
+        android:orientation="vertical">
+
+        <TextView
+            style="@style/text_liner_x"
+            android:layout_height="10dp"
+            android:background="@color/bottomColor"/>
+
+        <TextView
+            style="@style/text_liner_x"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:orientation="horizontal"
+            >
+
+            <LinearLayout
+                android:id="@+id/tonghuagushi_linerlayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <ImageView
+                    style="@style/image_onestyle"
+                    android:src="@mipmap/style"/>
+
+                <TextView
+                    android:id="@+id/audio_tonghugushi"
+                    style="@style/text_style"
+                    android:paddingTop="0dp"
+                    android:text="童话故事"/>
+            </LinearLayout>
+
+            <TextView
+                style="@style/text_liner_y"/>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    style="@style/two_audio_style_uodown"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/two_audio_style_textview"
+                        android:text="智慧故事"/>
+
+                    <TextView
+                        style="@style/text_liner_x"/>
+
+                    <TextView
+                        style="@style/two_audio_style_textview"
+                        android:text="智慧故事"/>
+                </LinearLayout>
+
+                <TextView
+                    style="@style/text_liner_y"/>
+
+                <LinearLayout
+                    style="@style/two_audio_style_uodown"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/two_audio_style_textview"
+                        android:text="智慧故事"/>
+
+                    <TextView
+                        style="@style/text_liner_x"/>
+
+                    <TextView
+                        style="@style/two_audio_style_textview"
+                        android:text="智慧故事"/>
+                </LinearLayout>
+
+                <TextView
+                    style="@style/text_liner_y"/>
+
+                <LinearLayout
+                    style="@style/two_audio_style_uodown"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/two_audio_style_textview"
+                        android:text="智慧故事"/>
+
+                    <TextView
+                        style="@style/text_liner_x"/>
+
+                    <TextView
+                        style="@style/two_audio_style_textview"
+                        android:text="智慧故事"/>
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <TextView
+            style="@style/text_liner_x"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/two_audio_style_uodown"
+                android:gravity="center"
+                android:text="智慧故事"
+                />
+
+            <TextView
+                style="@style/text_liner_y"/>
+
+            <TextView
+                style="@style/two_audio_style_uodown"
+                android:gravity="center"
+                android:text="智慧故事"
+                />
+
+            <TextView
+                style="@style/text_liner_y"/>
+
+            <TextView
+                style="@style/two_audio_style_uodown"
+                android:gravity="center"
+                android:text="智慧故事"
+                />
+
+            <TextView
+                style="@style/text_liner_y"/>
+
+            <TextView
+                style="@style/two_audio_style_uodown"
+                android:gravity="center"
+                android:text="智慧故事"
+                />
+        </LinearLayout>
+
+        <TextView
+            style="@style/text_liner_x"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/two_audio_style_uodown"
+                android:gravity="center"
+                android:text="智慧故事"
+                />
+
+            <TextView
+                style="@style/text_liner_y"/>
+
+            <TextView
+                style="@style/two_audio_style_uodown"
+                android:gravity="center"
+                android:text="智慧故事"
+                />
+
+            <TextView
+                style="@style/text_liner_y"/>
+
+            <TextView
+                style="@style/two_audio_style_uodown"
+                android:gravity="center"
+                android:text="智慧故事"
+                />
+
+            <TextView
+                style="@style/text_liner_y"/>
+
+            <TextView
+                style="@style/two_audio_style_uodown"
+                android:gravity="center"
+                android:text="智慧故事"
+                />
+        </LinearLayout>
+
+        <TextView
+            style="@style/text_liner_x"/>
+
+        <TextView
+            style="@style/text_liner_x"
+            android:layout_height="10dp"
+            android:background="@color/bottomColor"/>
+
+        <TextView
+            style="@style/text_liner_x"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <ImageView
+                    style="@style/image_onestyle"
+                    android:src="@mipmap/style"/>
+
+                <TextView
+                    style="@style/text_style"
+                    android:paddingTop="0dp"
+                    android:text="童话故事"/>
+            </LinearLayout>
+
+            <TextView
+                style="@style/text_liner_y"/>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    style="@style/two_audio_style_uodown"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/two_audio_style_textview"
+                        android:text="智慧故事"/>
+
+                    <TextView
+                        style="@style/text_liner_x"/>
+
+                    <TextView
+                        style="@style/two_audio_style_textview"
+                        android:text="智慧故事"/>
+                </LinearLayout>
+
+                <TextView
+                    style="@style/text_liner_y"/>
+
+                <LinearLayout
+                    style="@style/two_audio_style_uodown"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/two_audio_style_textview"
+                        android:text="智慧故事"/>
+
+                    <TextView
+                        style="@style/text_liner_x"/>
+
+                    <TextView
+                        style="@style/two_audio_style_textview"
+                        android:text="智慧故事"/>
+                </LinearLayout>
+
+                <TextView
+                    style="@style/text_liner_y"/>
+
+                <LinearLayout
+                    style="@style/two_audio_style_uodown"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/two_audio_style_textview"
+                        android:text="智慧故事"/>
+
+                    <TextView
+                        style="@style/text_liner_x"/>
+
+                    <TextView
+                        style="@style/two_audio_style_textview"
+                        android:text="智慧故事"/>
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <TextView
+            style="@style/text_liner_x"/>
+
+        <TextView
+            style="@style/text_liner_x"
+            android:layout_height="10dp"
+            android:background="@color/bottomColor"/>
+
+        <TextView
+            style="@style/text_liner_x"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:orientation="horizontal"
+            >
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <ImageView
+                    style="@style/image_onestyle"
+                    android:src="@mipmap/style"/>
+
+                <TextView
+                    style="@style/text_style"
+                    android:paddingTop="0dp"
+                    android:text="童话故事"/>
+            </LinearLayout>
+
+            <TextView
+                style="@style/text_liner_y"/>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    style="@style/two_audio_style_uodown"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/two_audio_style_textview"
+                        android:text="智慧故事"/>
+
+                    <TextView
+                        style="@style/text_liner_x"/>
+
+                    <TextView
+                        style="@style/two_audio_style_textview"
+                        android:text="智慧故事"/>
+                </LinearLayout>
+
+                <TextView
+                    style="@style/text_liner_y"/>
+
+                <LinearLayout
+                    style="@style/two_audio_style_uodown"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/two_audio_style_textview"
+                        android:text="智慧故事"/>
+
+                    <TextView
+                        style="@style/text_liner_x"/>
+
+                    <TextView
+                        style="@style/two_audio_style_textview"
+                        android:text="智慧故事"/>
+                </LinearLayout>
+
+                <TextView
+                    style="@style/text_liner_y"/>
+
+                <LinearLayout
+                    style="@style/two_audio_style_uodown"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/two_audio_style_textview"
+                        android:text="智慧故事"/>
+
+                    <TextView
+                        style="@style/text_liner_x"/>
+
+                    <TextView
+                        style="@style/two_audio_style_textview"
+                        android:text="智慧故事"/>
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <TextView
+            style="@style/text_liner_x"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/two_audio_style_uodown"
+                android:gravity="center"
+                android:text="智慧故事"
+                />
+
+            <TextView
+                style="@style/text_liner_y"/>
+
+            <TextView
+                style="@style/two_audio_style_uodown"
+                android:gravity="center"
+                android:text="智慧故事"
+                />
+
+            <TextView
+                style="@style/text_liner_y"/>
+
+            <TextView
+                style="@style/two_audio_style_uodown"
+                android:gravity="center"
+                android:text="智慧故事"
+                />
+
+            <TextView
+                style="@style/text_liner_y"/>
+
+            <TextView
+                style="@style/two_audio_style_uodown"
+                android:gravity="center"
+                android:text="智慧故事"
+                />
+        </LinearLayout>
+
+        <TextView
+            style="@style/text_liner_x"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2"/>
+    </LinearLayout>
+</LinearLayout>

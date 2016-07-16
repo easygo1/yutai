@@ -24,29 +24,37 @@
             app:indicator_margin="5dp"
             app:indicator_width="10dp"/>
 
-        <TextView
-            style="@style/ww"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="10dp"
-            android:text="大赛"/>
+        <RelativeLayout
+            android:background="@color/alpha_background"
+            android:layout_width="match_parent"
+            android:layout_height="40dp">
 
-        <ImageView
-            android:id="@+id/share_imageview"
-            style="@style/image_style"
-            android:layout_alignParentRight="true"
-            android:src="@mipmap/icon_search"/>
+            <TextView
+                android:id="@+id/competition_textview"
+                style="@style/ww"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:text="大赛"/>
 
-        <ImageView
-            android:id="@+id/search_imageview"
-            style="@style/image_style"
-            android:layout_toLeftOf="@+id/share_imageview"
-            android:src="@mipmap/icon_search"/>
+            <ImageView
+                android:id="@+id/share_imageview"
+                style="@style/image_style"
+                android:layout_alignParentRight="true"
+                android:src="@mipmap/icon_search"/>
 
-        <ImageView
-            android:id="@+id/record_imageview"
-            style="@style/image_style"
-            android:layout_toLeftOf="@+id/search_imageview"
-            android:src="@mipmap/icon_search"/>
+            <ImageView
+                android:id="@+id/search_imageview"
+                style="@style/image_style"
+                android:layout_toLeftOf="@+id/share_imageview"
+                android:src="@mipmap/icon_search"/>
+
+            <ImageView
+                android:id="@+id/record_imageview"
+                style="@style/image_style"
+                android:layout_toLeftOf="@+id/search_imageview"
+                android:src="@mipmap/icon_search"/>
+        </RelativeLayout>
+
     </RelativeLayout>
 
 </LinearLayout>

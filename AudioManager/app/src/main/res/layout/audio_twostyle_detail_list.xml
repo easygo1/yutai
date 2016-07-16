@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+    <!--二级分类的选项卡-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tab_nice"
+            style="@style/horizontal_center_style_textview"
+            android:text="人气推荐"
+            android:textColor="@drawable/text_selector_color"
+            android:textSize="@dimen/tab_textsize"/>
+
+        <TextView
+            style="@style/text_liner_y"/>
+
+        <TextView
+            android:id="@+id/tab_new"
+            style="@style/horizontal_center_style_textview"
+            android:text="最近更新"
+            android:textColor="@drawable/text_selector_color"
+            android:textSize="@dimen/tab_textsize"/>
+
+        <TextView
+            style="@style/text_liner_y"/>
+
+        <TextView
+            android:id="@+id/tab_popular"
+            style="@style/horizontal_center_style_textview"
+            android:text="最受欢迎"
+            android:textColor="@drawable/text_selector_color"
+            android:textSize="@dimen/tab_textsize"/>
+    </LinearLayout>
+
+    <TextView
+        style="@style/text_liner_x"/>
+    <!--<android.support.v4.view.ViewPager
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="7"
+        android:background="@color/textDown"></android.support.v4.view.ViewPager>
+   --> <!--显示具体分类的listview-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="9">
+
+        <ListView
+            android:id="@+id/audio_listview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        </ListView>
+    </LinearLayout>
+
+</LinearLayout>

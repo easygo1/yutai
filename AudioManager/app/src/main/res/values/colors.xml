@@ -4,13 +4,14 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="bottomColor">#EFEEEC</color>
-    <color name="textDown">#f59e1c</color>
+    <color name="textDown">#f29f31</color>
     <color name="textUp">#080808</color>
     <color name="alpha_background">#459E9E9E</color>
     <color name="line_corlor">#459E9E9E</color>
     <color name="me_top_background">#45797979</color>
     <color name="me_center_background">#45d7d7d7</color>
     <color name="me_text_color">#faf70414</color>
+    <color name="gray">#808080</color>
     <color name="me_text_black">#fa000000</color>
     <color name="login_top_color">#f8914e</color>
     <color name="login_white">#ffffff</color>
