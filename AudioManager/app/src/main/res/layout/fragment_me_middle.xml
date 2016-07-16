@@ -11,7 +11,7 @@
         <ImageView
             style="@style/me_middle_image"
             android:src="@drawable/u24"/>
-        <TextView
+        <com.yutai.audio.utils.MyTextView
             style="@style/me_middle_text"
             android:text="喜欢"/>
     </LinearLayout>
@@ -22,7 +22,7 @@
         <ImageView
             style="@style/me_middle_image"
             android:src="@drawable/u24"/>
-        <TextView
+        <com.yutai.audio.utils.MyTextView
             style="@style/me_middle_text"
             android:text="最近播放"/>
     </LinearLayout>
@@ -33,7 +33,7 @@
         <ImageView
             style="@style/me_middle_image"
             android:src="@drawable/u24"/>
-        <TextView
+        <com.yutai.audio.utils.MyTextView
             style="@style/me_middle_text"
             android:text="正在下载"/>
     </LinearLayout>
@@ -44,7 +44,7 @@
         <ImageView
             style="@style/me_middle_image"
             android:src="@drawable/u24"/>
-        <TextView
+        <com.yutai.audio.utils.MyTextView
             style="@style/me_middle_text"
             android:text="定时"/>
     </LinearLayout>
@@ -55,7 +55,7 @@
         <ImageView
             style="@style/me_middle_image"
             android:src="@drawable/u24"/>
-        <TextView
+        <com.yutai.audio.utils.MyTextView
             style="@style/me_middle_text"
             android:text="金币"/>
     </LinearLayout>

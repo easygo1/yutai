@@ -38,6 +38,7 @@
     </RelativeLayout>
     <!--个人信息-->
     <RelativeLayout
+        android:id="@+id/me_user_infolayout"
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:background="@color/me_center_background">
@@ -56,18 +57,21 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:gravity="center"
+                android:gravity="center_vertical"
                 android:orientation="vertical">
                 <com.yutai.audio.utils.MyTextView
                     android:id="@+id/me_user_nickname"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
                     android:text="昵称在这里"/>
                 <com.yutai.audio.utils.MyTextView
                     android:id="@+id/me_user_content"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="1234567890"/>
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="8dp"
+                    android:text="123466"/>
             </LinearLayout>
         </LinearLayout>
         <TextView
@@ -88,7 +92,7 @@
         android:layout_height="40dp"
         android:background="@color/me_center_background"
         android:orientation="horizontal">
-        <TextView
+        <com.yutai.audio.utils.MyTextView
             android:id="@+id/me_localaudio"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -101,7 +105,7 @@
             android:layout_width="1dp"
             android:layout_height="match_parent"
             android:background="@color/me_top_background"/>
-        <TextView
+        <com.yutai.audio.utils.MyTextView
             android:id="@+id/me_localvideo"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -111,6 +115,7 @@
             android:text="本地视频"/>
     </LinearLayout>
     <android.support.v4.view.ViewPager
+        android:id="@+id/me_audio_viewpager"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         

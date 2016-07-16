@@ -4,8 +4,9 @@
               android:layout_width="match_parent"
               android:layout_height="70dp">
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/me_localaudio_image"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:layout_marginTop="10dp"
         android:src="@drawable/u24"/>
     <LinearLayout
@@ -14,6 +15,7 @@
         android:orientation="vertical"
         android:layout_marginLeft="10dp">
         <TextView
+            android:id="@+id/me_localaudio_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
@@ -28,13 +30,14 @@
                 android:layout_height="10dp"
                 android:src="@drawable/u24"/>
             <TextView
+                android:id="@+id/me_localaudio_audition_sum"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="25203"/>
         </LinearLayout>
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="2dp"
+            android:layout_height="1dp"
             android:layout_marginTop="2dp"
             android:background="@color/me_center_background"/>
     </LinearLayout>

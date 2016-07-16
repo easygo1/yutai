@@ -11,4 +11,7 @@
     <color name="me_top_background">#45797979</color>
     <color name="me_center_background">#45d7d7d7</color>
     <color name="me_text_color">#faf70414</color>
+    <color name="me_text_black">#fa000000</color>
+    <color name="login_top_color">#f8914e</color>
+    <color name="login_white">#ffffff</color>
 </resources>
