@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/audio_photo_image"
+        android:layout_width="350dp"
+        android:layout_height="0dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:layout_weight="4"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/music"/>
+
+    <TextView
+        android:id="@+id/audio_lrc_textview"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.5"
+        android:gravity="center"
+        android:lines="1"
+        android:text="我是歌词我是歌词"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/audio_love_image"
+            style="@style/audio_play_image"
+            android:src="@drawable/u24"/>
+
+        <ImageView
+            android:id="@+id/audio_load_image"
+            style="@style/audio_play_image"
+            android:src="@drawable/u24"/>
+
+        <ImageView
+            android:id="@+id/audio_comment_image"
+            style="@style/audio_play_image"
+            android:src="@drawable/u24"/>
+
+        <ImageView
+            android:id="@+id/audio_share_image"
+            style="@style/audio_play_image"
+            android:src="@drawable/u24"/>
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/play_progressBar"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.2"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_weight="0.5"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="00:00"/>
+
+        <SeekBar
+            android:id="@+id/audio_play_seekbar"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="7"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="00:00"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/audio_playstyle_image"
+            style="@style/audio_play_image"
+            android:src="@drawable/u24"/>
+
+        <ImageView
+            android:id="@+id/audio_playprevious_image"
+            style="@style/audio_play_image"
+            android:src="@drawable/u24"/>
+
+        <ImageView
+            android:id="@+id/audio_playnow_image"
+            style="@style/audio_play_image"
+            android:src="@drawable/u24"/>
+
+        <ImageView
+            android:id="@+id/audio_playnext_image"
+            style="@style/audio_play_image"
+            android:src="@drawable/u24"/>
+
+        <ImageView
+            android:id="@+id/audio_playlist_image"
+            style="@style/audio_play_image"
+            android:src="@drawable/u24"/>
+    </LinearLayout>
+
+</LinearLayout>

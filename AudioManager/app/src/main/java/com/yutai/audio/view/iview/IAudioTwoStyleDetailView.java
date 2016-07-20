@@ -4,9 +4,9 @@ package com.yutai.audio.view.iview;
  * Created by ZFG on 2016/7/16.
  * 二级分类详情
  */
-public interface AudioTwoStyleDetailView {
+public interface IAudioTwoStyleDetailView {
     //item跳转的页面
-    void intentNextActivity();
+    void intentNextActivity(int music_id);
     //
     void showToast(String msg);
 
