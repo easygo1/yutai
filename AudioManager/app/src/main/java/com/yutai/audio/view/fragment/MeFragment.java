@@ -1,5 +1,6 @@
 package com.yutai.audio.view.fragment;
 
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -17,6 +18,7 @@ import android.widget.TextView;
 import com.yutai.audio.R;
 import com.yutai.audio.utils.MyTextView;
 import com.yutai.audio.utils.ToastUtils;
+import com.yutai.audio.view.activity.LoginActivity;
 import com.yutai.audio.view.adapter.MeFragmentAdapter;
 
 import java.util.ArrayList;
@@ -132,6 +134,9 @@ public class MeFragment extends Fragment implements View.OnClickListener{
             case R.id.me_set:
                 //点击了设置的事件监听
                 ToastUtils.showToast(getActivity(),"点击了设置");
+                Intent intent = new Intent();
+                intent.setClass(getActivity(), LoginActivity.class);
+                startActivity(intent);
                 break;
             case R.id.me_user_infolayout:
                 //点击了用户信息的事件监听

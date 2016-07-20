@@ -56,7 +56,7 @@
             android:id="@+id/login_userpassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
+            android:inputType="textPassword"
             android:hint="请输入密码"/>
     </LinearLayout>
     <!--登录按钮-->
@@ -90,4 +90,11 @@
             android:layout_marginRight="10dp"
             android:text="忘记密码？"/>
     </RelativeLayout>
+    <!--加载时候提示框，暂时没用-->
+    <ProgressBar
+        android:id="@+id/id_pb_loading"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"/>
 </LinearLayout>
