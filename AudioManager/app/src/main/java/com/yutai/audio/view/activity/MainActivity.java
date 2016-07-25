@@ -30,7 +30,6 @@ public class MainActivity extends AppCompatActivity {
     private RadioButton mVideoRadio;
     private RadioButton mMyRadio;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

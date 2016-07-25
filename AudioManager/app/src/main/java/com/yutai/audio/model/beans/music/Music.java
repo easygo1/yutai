@@ -34,15 +34,7 @@ public class Music implements Serializable {
         // TODO Auto-generated constructor stub
     }
 
-    public Music(int music_id, String music_name, String music_path_mp3,
-                 String music_path_lrc, String music_type1, String music_type2,
-                 int music_audition_sum_number, int music_audition_month_number,
-                 int music_audition_week_number, int music_audition_day_number,
-                 int music_download_sum_number, int music_download_month_number,
-                 int music_download_week_number, int music_download_day_number,
-                 String music_type_photo, String music_photo, int music_coins,
-                 String music_upload_time, String music_remarks) {
-        super();
+    public Music(int music_id, String music_name, String music_path_mp3, String music_path_lrc, String music_type1, String music_type2, int music_audition_sum_number, int music_audition_month_number, int music_audition_week_number, int music_audition_day_number, int music_download_sum_number, int music_download_month_number, int music_download_week_number, int music_download_day_number, String music_type_photo, String music_photo, int music_coins, String music_upload_time, String music_remarks) {
         this.music_id = music_id;
         this.music_name = music_name;
         this.music_path_mp3 = music_path_mp3;
@@ -62,6 +54,16 @@ public class Music implements Serializable {
         this.music_coins = music_coins;
         this.music_upload_time = music_upload_time;
         this.music_remarks = music_remarks;
+    }
+
+    public Music(int music_id, String music_name, String music_photo, String music_path_mp3, String music_path_lrc, String music_type1, String music_type2) {
+        this.music_type2 = music_type2;
+        this.music_name = music_name;
+        this.music_photo = music_photo;
+        this.music_path_mp3 = music_path_mp3;
+        this.music_path_lrc = music_path_lrc;
+        this.music_type1 = music_type1;
+        this.music_id = music_id;
     }
 
     public Music(int music_id, String music_photo, String music_name, int music_audition_sum_number, int music_download_sum_number) {
@@ -224,9 +226,7 @@ public class Music implements Serializable {
         this.music_remarks = music_remarks;
     }
 
-    public static long getSerialversionuid() {
-        return serialVersionUID;
-    }
+
 
     @Override
     public String toString() {

@@ -19,13 +19,13 @@ import com.yutai.audio.presenters.impl.AudioTwoStyleDetailPresenterImpl;
 import com.yutai.audio.utils.ToastUtils;
 import com.yutai.audio.view.adapter.AudioListAdapter;
 import com.yutai.audio.view.application.MyApplication;
-import com.yutai.audio.view.iview.AudioTwoStyleDetailView;
+import com.yutai.audio.view.iview.IAudioTwoStyleDetailView;
 
 import java.util.ArrayList;
 import java.util.List;
 
 //二级分类的详情页面
-public class AudioTwoStyleDetailActivity extends AppCompatActivity implements View.OnClickListener, AudioTwoStyleDetailView {
+public class AudioTwoStyleDetailActivity extends AppCompatActivity implements View.OnClickListener, IAudioTwoStyleDetailView {
     private ImageView mTwostyleTitleBack;
     private TextView mTabNice;
     private TextView mTabNew;
@@ -116,7 +116,7 @@ public class AudioTwoStyleDetailActivity extends AppCompatActivity implements Vi
         mAudioListview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                intentNextActivity();
+                intentNextActivity(mMusicList.get(position).getMusic_id());
             }
         });
     }
@@ -166,9 +166,12 @@ public class AudioTwoStyleDetailActivity extends AppCompatActivity implements Vi
     }
 
     @Override
-    public void intentNextActivity() {
+    public void intentNextActivity(int music_id) {
+        showToast("跳转到播放页面");
         Intent intent = new Intent();
-        intent.setClass(this, TestActivity.class);
+        intent.setClass(this, AudioPlayActivity.class);
+        //绑定数据
+        intent.putExtra("music_id",music_id);//也可以绑定数组
         startActivity(intent);
     }
 

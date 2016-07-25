@@ -4,7 +4,7 @@ import com.yutai.audio.model.beans.music.Music;
 import com.yutai.audio.model.dao.AudioTwoStyleDetailDAO;
 import com.yutai.audio.model.impl.AudioTwoStyleDetailDAOImpl;
 import com.yutai.audio.presenters.dao.AudioTwoStyleDetailPresenter;
-import com.yutai.audio.view.iview.AudioTwoStyleDetailView;
+import com.yutai.audio.view.iview.IAudioTwoStyleDetailView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,10 +15,10 @@ import java.util.List;
 public class AudioTwoStyleDetailPresenterImpl implements AudioTwoStyleDetailPresenter {
 
     private AudioTwoStyleDetailDAO mAudioTwoStyleDetailDAO;
-    private AudioTwoStyleDetailView mAudioTwoStyleDetailView;
+    private IAudioTwoStyleDetailView mAudioTwoStyleDetailView;
     private List<Music> mMusicList;
 
-    public AudioTwoStyleDetailPresenterImpl(AudioTwoStyleDetailView audioTwoStyleDetailView) {
+    public AudioTwoStyleDetailPresenterImpl(IAudioTwoStyleDetailView audioTwoStyleDetailView) {
         mAudioTwoStyleDetailDAO = new AudioTwoStyleDetailDAOImpl();
         mAudioTwoStyleDetailView = audioTwoStyleDetailView;
         mMusicList = new ArrayList<>();

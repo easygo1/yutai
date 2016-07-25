@@ -2,8 +2,24 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/play_layout_liner"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background7"
+    android:orientation="vertical"
     tools:context="com.yutai.audio.view.activity.AudioPlayActivity">
     <!--音乐播放页面-->
+    <include
+        layout="@layout/audio_play_top"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+    </include>
+
+    <include
+        layout="@layout/audio_play_content"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="10"/>
+
 </LinearLayout>
