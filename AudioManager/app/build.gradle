@@ -34,4 +34,5 @@ dependencies {
     compile 'com.loopeer.android.thirdparty.pulltorefresh:Android-PullToRefresh:2.1.1'
     compile name: 'SMSSDK-2.1.1', ext: 'aar'
     compile name: 'SMSSDKGUI-2.1.1', ext: 'aar'
+    compile 'com.jakewharton:butterknife:7.0.1'
 }

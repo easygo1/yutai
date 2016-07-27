@@ -91,7 +91,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                     break;
                 case VerificationError:
                    // show("验证失败，请重新获取验证码！");
-                    ToastUtils.showToast(RegisterActivity.this,"验证失败，住宿舍还想环");
+                    ToastUtils.showToast(RegisterActivity.this,"验证失败");
                     ToastUtils.showToast(RegisterActivity.this,"验证失败，请重新获取验证码！");
                     break;
                 case VerificationSuccess:

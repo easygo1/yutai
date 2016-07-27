@@ -39,7 +39,8 @@ public class MainActivity extends AppCompatActivity {
         initData();
     }
 
-    //初始化布局控件
+    //初始化布局控件initviews();
+
     private void initViews() {
         mViewPager = (ViewPager) findViewById(R.id.middle_viewpager);
         mRadioGroup = (RadioGroup) findViewById(R.id.radiogroup);
@@ -56,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 resetViewPager(checkedId);
+
             }
         });
 

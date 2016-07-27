@@ -197,8 +197,8 @@ public class AudioPlayActivity2 extends AppCompatActivity implements IAudioPlayV
         mAudioCommentImage = (ImageView) findViewById(R.id.audio_comment_image);
         mAudioShareImage = (ImageView) findViewById(R.id.audio_share_image);
         mAudioPlaySeekbar = (SeekBar) findViewById(R.id.audio_play_seekbar);
-        mAudioPlayThistime = (TextView) findViewById(R.id.audio_play_thistime);
-        mAudioPlaySumtime = (TextView) findViewById(R.id.audio_play_sumtime);
+        //mAudioPlayThistime = (TextView) findViewById(R.id.audio_play_thistime);
+        //mAudioPlaySumtime = (TextView) findViewById(R.id.audio_play_sumtime);
         mAudioPlaystyleImage = (ImageView) findViewById(R.id.audio_playstyle_image);
         mAudioPlaypreviousImage = (ImageView) findViewById(R.id.audio_playprevious_image);
         mAudioPlaynowImage = (ImageView) findViewById(R.id.audio_playnow_image);
