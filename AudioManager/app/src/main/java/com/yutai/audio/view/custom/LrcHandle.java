@@ -66,7 +66,7 @@ public class LrcHandle {
     private int timeHandler(String string) {
         string = string.replace(".", ":");
         String timeData[] = string.split(":");
-// 分离出分、秒并转换为整型
+      // 分离出分、秒并转换为整型
         int minute = Integer.parseInt(timeData[0]);
         int second = Integer.parseInt(timeData[1]);
         int millisecond = Integer.parseInt(timeData[2]);

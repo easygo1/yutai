@@ -1,0 +1,457 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+    <!--首页大分类第一行-->
+    <LinearLayout
+        style="@style/liner_style">
+
+        <LinearLayout
+            android:id="@+id/gushixuetang_linearlayout"
+            android:layout_width="0dp"
+            android:layout_height="90dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                style="@style/image_onestyle"
+                android:src="@mipmap/index_story"/>
+
+            <TextView
+                android:id="@+id/gushixuetang_textview"
+                style="@style/text_style"
+                android:text="故事学堂"/>
+        </LinearLayout>
+
+        <TextView
+            style="@style/text_liner_y"/>
+
+        <LinearLayout
+            android:id="@+id/ergexuetang_linearlayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                style="@style/image_onestyle"
+                android:src="@mipmap/index_song"/>
+
+            <TextView
+                android:id="@+id/ergexuetang_textview"
+                style="@style/text_style"
+                android:text="儿歌学堂"/>
+        </LinearLayout>
+
+        <TextView
+            style="@style/text_liner_y"/>
+
+        <LinearLayout
+            android:id="@+id/guoxuexuetang_linearlayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                style="@style/image_onestyle"
+                android:src="@mipmap/index_tdc"/>
+
+            <TextView
+                android:id="@+id/guoxuexuetang_textview"
+                style="@style/text_style"
+                android:text="国学学堂"/>
+        </LinearLayout>
+
+        <TextView
+            style="@style/text_liner_y"/>
+
+        <LinearLayout
+            android:id="@+id/poemxuetang_linearlayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                style="@style/image_onestyle"
+                android:src="@mipmap/index_poem"/>
+
+            <TextView
+                android:id="@+id/poemxuetang_textview"
+                style="@style/text_style"
+                android:text="诗词学堂"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <TextView
+        style="@style/text_liner_x"/>
+    <!--首页大分类第一行-->
+    <LinearLayout
+        style="@style/liner_style">
+
+        <LinearLayout
+            android:id="@+id/safeeducation_linearlayout"
+            android:layout_width="0dp"
+            android:layout_height="90dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                style="@style/image_onestyle"
+                android:src="@mipmap/index_security"/>
+
+            <TextView
+                android:id="@+id/safeeducation_textview"
+                style="@style/text_style"
+                android:text="安全教育"/>
+        </LinearLayout>
+
+        <TextView
+            style="@style/text_liner_y"/>
+
+        <LinearLayout
+            android:id="@+id/xiaohuamiyu_linearlayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                style="@style/image_onestyle"
+                android:src="@mipmap/index_joke"/>
+
+            <TextView
+                android:id="@+id/xiaohuamiyu_textview"
+                style="@style/text_style"
+                android:text="笑话谜语"/>
+        </LinearLayout>
+
+        <TextView
+            style="@style/text_liner_y"/>
+
+        <LinearLayout
+            android:id="@+id/why_linearlayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                style="@style/image_onestyle"
+                android:src="@mipmap/why_son1"/>
+
+            <TextView
+                android:id="@+id/why_textview"
+                style="@style/text_style"
+                android:text="十万个为什么"/>
+        </LinearLayout>
+
+        <TextView
+            style="@style/text_liner_y"/>
+
+        <LinearLayout
+            android:id="@+id/readxuetang_linearlayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                style="@style/image_onestyle"
+                android:src="@mipmap/reading"/>
+
+            <TextView
+                android:id="@+id/readxuetang_textview"
+                style="@style/text_style"
+                android:text="朗诵学堂"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <TextView
+        style="@style/text_liner_x"/>
+    <!--首页大分类第一行-->
+    <LinearLayout
+        style="@style/liner_style">
+
+        <LinearLayout
+            android:id="@+id/haocihaoju_linearlayout"
+            android:layout_width="0dp"
+            android:layout_height="90dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                style="@style/image_onestyle"
+                android:src="@mipmap/index_sentence"/>
+
+            <TextView
+                android:id="@+id/haocihaoju_textview"
+                style="@style/text_style"
+                android:text="好词好句"/>
+        </LinearLayout>
+
+        <TextView
+            style="@style/text_liner_y"/>
+
+        <LinearLayout
+            android:id="@+id/english_linearlayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                style="@style/image_onestyle"
+                android:src="@mipmap/index_english"/>
+
+            <TextView
+                android:id="@+id/english_textview"
+                style="@style/text_style"
+                android:text="英文经典学堂"/>
+        </LinearLayout>
+
+        <TextView
+            style="@style/text_liner_y"/>
+
+        <LinearLayout
+            android:id="@+id/meide_linearlayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                style="@style/image_onestyle"
+                android:src="@mipmap/index_virtue"/>
+
+            <TextView
+                android:id="@+id/meide_textview"
+                style="@style/text_style"
+                android:text="中华美德故事"/>
+        </LinearLayout>
+
+        <TextView
+            style="@style/text_liner_y"/>
+
+        <LinearLayout
+            android:id="@+id/chinamingzhu_linearlayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                style="@style/image_onestyle"
+                android:src="@mipmap/classics_son1"/>
+
+            <TextView
+                android:id="@+id/chinamingzhu_textview"
+                style="@style/text_style"
+                android:text="中国名著"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <TextView
+        style="@style/text_liner_x"/>
+
+    <!--viewpager部分-->
+
+    <TextView
+        style="@style/text_liner_x"
+        android:layout_height="15dp"
+        android:background="@color/background_color"/>
+
+    <com.youth.banner.Banner
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/audio_home_banner"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        app:indicator_drawable_selected="@drawable/gray_radius"
+        app:indicator_drawable_unselected="@drawable/white_radius"
+        app:indicator_height="10dp"
+        app:indicator_margin="5dp"
+        app:indicator_width="10dp"/>
+
+    <TextView
+        style="@style/text_liner_x"
+        android:layout_height="15dp"
+        android:background="@color/background_color"/>
+
+
+    <!--首页大分类第一行-->
+    <LinearLayout
+        style="@style/liner_style">
+
+        <LinearLayout
+            android:id="@+id/chengyu_linearlayout"
+            android:layout_width="0dp"
+            android:layout_height="90dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                style="@style/image_onestyle"
+                android:src="@mipmap/index_idiom"/>
+
+            <TextView
+                android:id="@+id/chengyu_textview"
+                style="@style/text_style"
+                android:text="成语故事"/>
+        </LinearLayout>
+
+        <TextView
+            style="@style/text_liner_y"/>
+
+        <LinearLayout
+            android:id="@+id/mingyanjingju_linearlayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                style="@style/image_onestyle"
+                android:src="@mipmap/index_quotes"/>
+
+            <TextView
+                android:id="@+id/mingyanjingju_textview"
+                style="@style/text_style"
+                android:text="名言警句"/>
+        </LinearLayout>
+
+        <TextView
+            style="@style/text_liner_y"/>
+
+        <LinearLayout
+            android:id="@+id/mingrenmingyan_linearlayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                style="@style/image_onestyle"
+                android:src="@mipmap/index_celebrity"/>
+
+            <TextView
+                android:id="@+id/mingrenmingyan_textview"
+                style="@style/text_style"
+                android:text="名人名言"/>
+        </LinearLayout>
+
+        <TextView
+            style="@style/text_liner_y"/>
+
+        <LinearLayout
+            android:id="@+id/worldmingzhu_linearlayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                style="@style/image_onestyle"
+                android:src="@mipmap/world_son1"/>
+
+            <TextView
+                android:id="@+id/worldmingzhu_textview"
+                style="@style/text_style"
+                android:text="世界名著"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <TextView
+        style="@style/text_liner_x"/>
+    <!--首页大分类第一行-->
+    <LinearLayout
+        style="@style/liner_style">
+
+        <LinearLayout
+            android:id="@+id/zicizhishi_linearlayout"
+            android:layout_width="0dp"
+            android:layout_height="90dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                style="@style/image_onestyle"
+                android:src="@mipmap/index_words"/>
+
+            <TextView
+                android:id="@+id/zicizhishi_textview"
+                style="@style/text_style"
+                android:text="字词知识"/>
+        </LinearLayout>
+
+        <TextView
+            style="@style/text_liner_y"/>
+
+        <LinearLayout
+            android:id="@+id/mingrenzhuan_linearlayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                style="@style/image_onestyle"
+                android:src="@mipmap/biography_son"/>
+
+            <TextView
+                android:id="@+id/mingrenzhuan_textview"
+                style="@style/text_style"
+                android:text="名人传"/>
+        </LinearLayout>
+
+        <TextView
+            style="@style/text_liner_y"/>
+
+        <LinearLayout
+            android:id="@+id/animalworld_linearlayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                style="@style/image_onestyle"
+                android:src="@mipmap/index_biography"/>
+
+            <TextView
+                android:id="@+id/animalworld_textview"
+                style="@style/text_style"
+                android:text="动物世界"/>
+        </LinearLayout>
+
+        <TextView
+            style="@style/text_liner_y"/>
+
+        <LinearLayout
+            android:id="@+id/plantworld_linearlayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                style="@style/image_onestyle"
+                android:src="@mipmap/index_flowers"/>
+
+            <TextView
+                android:id="@+id/plantworld_textview"
+                style="@style/text_style"
+                android:text="植物世界"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <TextView
+        style="@style/text_liner_x"/>
+</LinearLayout>
+

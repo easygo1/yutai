@@ -2,18 +2,49 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="com.yutai.exuetang">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
+        android:name=".view.application.MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity">
+        </activity>
+        <activity
+            android:name=".view.activity.audio.AudioHomeActivity"
+            android:windowSoftInputMode="adjustPan">
+
+            <!-- 设置软键盘的格式，防止因为软键盘的原因使布局改变 -->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
+        </activity>
+        <activity android:name=".view.activity.audio.twostyle.StoryXuetangActivity">
+        </activity>
+        <activity android:name=".view.activity.audio.AudioTwoStyleDetailActivity">
+        </activity>
+        <activity android:name=".view.activity.audio.AudioPlayActivity">
+        </activity>
+        <activity android:name=".view.activity.audio.twostyle.GuoXueXuetangActivity">
+        </activity>
+        <activity android:name=".view.activity.audio.twostyle.ChildSongXuetangActivity">
+        </activity>
+        <activity android:name=".view.activity.audio.twostyle.PomeXuetangActivity">
+        </activity>
+        <activity android:name=".view.activity.audio.twostyle.SafetyEducationActivity">
+        </activity>
+        <activity android:name=".view.activity.audio.twostyle.JokeRiddleActivity">
+        </activity>
+        <activity android:name=".view.activity.audio.twostyle.WhysActivity">
+        </activity>
+        <activity android:name=".view.activity.audio.twostyle.ReciteXuetangActivity">
+        </activity>
+        <activity android:name=".view.activity.audio.twostyle.GoodWordsActivity">
         </activity>
     </application>
 
