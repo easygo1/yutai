@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
@@ -14,4 +14,18 @@
     <color name="me_line">#C7C7C7</color>
     <color name="me_middle_text">#A0A0A0</color>
     <color name="register_verification_code">#007AFF</color>
+    <!--标题栏的颜色,选项卡tab字体颜色-->
+    <color name="titlecolor">#C3ED09</color>
+    <!--白色-->
+    <color name="white">#ffffff</color>
+    <!--搜索提示的颜色灰色-->
+    <color name="gray">#8c8c8c</color>
+    <!--线的颜色-->
+    <color name="line_color">#459E9E9E</color>
+    <!--viewpager小圆点的颜色-->
+    <color name="round_color_down">#E731CF</color>
+    <!--viewpager小圆点的颜色-->
+    <color name="round_color_up">#fbc9c9c9</color>
+    <!--空白处背景颜色-->
+    <color name="background_color">#f2f2f2</color>
 </resources>

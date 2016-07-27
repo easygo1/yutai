@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+    <!--安全教育-->
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="86dp"
+        android:src="@drawable/mp3_son_banner"/>
+
+    <TextView
+        style="@style/text_liner_x"
+        android:layout_height="15dp"
+        android:background="@color/background_color"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="85dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                style="@style/image_onestyle"
+                android:src="@mipmap/virtue_son"/>
+
+            <TextView
+                android:id="@+id/audio_safetyeducation_textview1"
+                style="@style/text_style"
+                android:paddingTop="5dp"
+                android:text="安全教育"/>
+        </LinearLayout>
+
+        <TextView
+            style="@style/text_liner_y"/>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                style="@style/two_audio_style_uodown"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/safety_outdoor_textview"
+                    style="@style/two_audio_style_textview"
+                    android:text="户外安全"/>
+
+                <TextView
+                    style="@style/text_liner_x"/>
+
+                <TextView
+                    android:id="@+id/safety_playgame_textview"
+                    style="@style/two_audio_style_textview"
+                    android:text="游戏安全"/>
+            </LinearLayout>
+
+            <TextView
+                style="@style/text_liner_y"/>
+
+            <LinearLayout
+                style="@style/two_audio_style_uodown"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/safety_home_textview"
+                    style="@style/two_audio_style_textview"
+                    android:text="居家安全"/>
+
+                <TextView
+                    style="@style/text_liner_x"/>
+
+                <TextView
+                    android:id="@+id/safety_traffic_textview"
+                    style="@style/two_audio_style_textview"
+                    android:text="交通安全"/>
+            </LinearLayout>
+
+            <TextView
+                style="@style/text_liner_y"/>
+
+            <LinearLayout
+                style="@style/two_audio_style_uodown"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/safety_school_textview"
+                    style="@style/two_audio_style_textview"
+                    android:text="校园安全"/>
+
+                <TextView
+                    style="@style/text_liner_x"/>
+
+                <TextView
+                    android:id="@+id/satety_other_textview"
+                    style="@style/two_audio_style_textview"
+                    android:text="其他安全"/>
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <TextView
+        style="@style/text_liner_x"/>
+
+</LinearLayout>

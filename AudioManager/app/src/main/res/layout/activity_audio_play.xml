@@ -5,7 +5,6 @@
     android:id="@+id/play_layout_liner"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background7"
     android:orientation="vertical"
     tools:context="com.yutai.audio.view.activity.AudioPlayActivity">
     <!--音乐播放页面-->

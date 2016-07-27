@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+    <!--十万个为什么-->
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="86dp"
+        android:src="@drawable/mp3_son_banner"/>
+
+    <TextView
+        style="@style/text_liner_x"
+        android:layout_height="15dp"
+        android:background="@color/background_color"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="85dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                style="@style/image_onestyle"
+                android:src="@mipmap/why_son1"/>
+
+            <TextView
+                android:id="@+id/audio_whys_textview1"
+                style="@style/text_style"
+                android:paddingTop="5dp"
+                android:text="十万个为什么"/>
+        </LinearLayout>
+
+        <TextView
+            style="@style/text_liner_y"/>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                style="@style/two_audio_style_uodown"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/whys_body_textview"
+                    style="@style/two_audio_style_textview"
+                    android:text="奇妙的人体"/>
+
+                <TextView
+                    style="@style/text_liner_x"/>
+
+                <TextView
+                    android:id="@+id/whys_animal_textview"
+                    style="@style/two_audio_style_textview"
+                    android:text="可爱的动物"/>
+            </LinearLayout>
+
+            <TextView
+                style="@style/text_liner_y"/>
+
+            <LinearLayout
+                style="@style/two_audio_style_uodown"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/whys_life_textview"
+                    style="@style/two_audio_style_textview"
+                    android:text="健康的生活"/>
+
+                <TextView
+                    style="@style/text_liner_x"/>
+
+                <TextView
+                    android:id="@+id/whys_plant_textview"
+                    style="@style/two_audio_style_textview"
+                    android:text="有趣的植物"/>
+            </LinearLayout>
+
+            <TextView
+                style="@style/text_liner_y"/>
+
+            <LinearLayout
+                style="@style/two_audio_style_uodown"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/whys_common_sense_textview"
+                    style="@style/two_audio_style_textview"
+                    android:text="身边的常识"/>
+
+                <TextView
+                    style="@style/text_liner_x"/>
+
+                <TextView
+                    android:id="@+id/whys_earth_textview"
+                    style="@style/two_audio_style_textview"
+                    android:text="美丽的地球"/>
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <TextView
+        style="@style/text_liner_x"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/whys_technology_textview"
+            style="@style/two_audio_style_uodown"
+            android:gravity="center"
+            android:text="神奇的科技"
+            />
+
+        <TextView
+            style="@style/text_liner_y"/>
+
+        <TextView
+            android:id="@+id/whys_universe_textview"
+            style="@style/two_audio_style_uodown"
+            android:gravity="center"
+            android:text="神秘的宇宙"
+            />
+
+        <TextView
+            style="@style/text_liner_y"/>
+
+        <TextView
+            android:id="@+id/whys_militarytraffic_textview"
+            style="@style/two_audio_style_uodown"
+            android:gravity="center"
+            android:text="军事与交通"
+            />
+
+        <TextView
+            style="@style/text_liner_y"/>
+
+        <TextView
+            android:id="@+id/whys_mpc_textview"
+            style="@style/two_audio_style_uodown"
+            android:gravity="center"
+            android:text="数理化之谜"/>
+    </LinearLayout>
+
+    <TextView
+        style="@style/text_liner_x"
+        android:layout_height="15dp"
+        android:background="@color/background_color"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="85dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                style="@style/image_onestyle"
+                android:src="@mipmap/why_son2"/>
+
+            <TextView
+                android:id="@+id/audio_whys_textview2"
+                style="@style/text_style"
+                android:paddingTop="5dp"
+                android:text="十万个为什么"/>
+        </LinearLayout>
+
+        <TextView
+            style="@style/text_liner_y"/>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                style="@style/two_audio_style_uodown"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/whys_culture_art_textview"
+                    style="@style/two_audio_style_textview"
+                    android:text="文化与艺术"/>
+
+                <TextView
+                    style="@style/text_liner_x"/>
+
+                <TextView
+                    android:id="@+id/whys_military_textview"
+                    style="@style/two_audio_style_textview"
+                    android:text="军事知识"/>
+            </LinearLayout>
+
+            <TextView
+                style="@style/text_liner_y"/>
+
+            <LinearLayout
+                style="@style/two_audio_style_uodown"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/whys_sport_country_textview"
+                    style="@style/two_audio_style_textview"
+                    android:text="体育与国家"/>
+
+                <TextView
+                    style="@style/text_liner_x"/>
+
+                <TextView
+                    android:id="@+id/whys_science_textview"
+                    style="@style/two_audio_style_textview"
+                    android:text="科学知识"/>
+            </LinearLayout>
+
+            <TextView
+                style="@style/text_liner_y"/>
+
+            <LinearLayout
+                style="@style/two_audio_style_uodown"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/whys_chinaforeign_history_textview"
+                    style="@style/two_audio_style_textview"
+                    android:text="中外历史"/>
+
+                <TextView
+                    style="@style/text_liner_x"/>
+
+                <TextView
+                    android:id="@+id/whys_astronomy_geography_textview"
+                    style="@style/two_audio_style_textview"
+                    android:text="天文地理"/>
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <TextView
+        style="@style/text_liner_x"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/whys_animal_plant_textview"
+            style="@style/two_audio_style_uodown"
+            android:gravity="center"
+            android:text="动物植物"
+            />
+
+        <TextView
+            style="@style/text_liner_y"/>
+
+        <TextView
+            android:id="@+id/whys_subject_textview"
+            style="@style/two_audio_style_uodown"
+            android:gravity="center"
+            android:text="学科新知"
+            />
+
+        <TextView
+            style="@style/text_liner_y"/>
+
+        <TextView
+            style="@style/two_audio_style_uodown"
+            android:gravity="center"
+            android:text=""
+            />
+
+        <TextView
+            style="@style/text_liner_y"/>
+
+        <TextView
+            style="@style/two_audio_style_uodown"
+            android:gravity="center"
+            android:text=""/>
+    </LinearLayout>
+
+
+</LinearLayout>

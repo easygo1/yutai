@@ -1,5 +1,6 @@
 package com.yutai.exuetang.view.fragment.exuetang;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -11,6 +12,7 @@ import android.widget.TextView;
 
 import com.yutai.exuetang.R;
 import com.yutai.exuetang.utils.ToastUtils;
+import com.yutai.exuetang.view.activity.audio.AudioHomeActivity;
 import com.yutai.exuetang.view.application.MyApplication;
 
 
@@ -95,6 +97,7 @@ public class ExuetangFragment extends Fragment implements View.OnClickListener{
     @Override
     public void onClick(View v) {
         int id = v.getId();
+        Intent intent = new Intent();
         switch (id){
             case R.id.index_competition:
                 ToastUtils.showToast(getActivity(),"点击了大赛");
@@ -116,6 +119,8 @@ public class ExuetangFragment extends Fragment implements View.OnClickListener{
                 break;
             case R.id.index_audio:
                 ToastUtils.showToast(getActivity(),"点击了音频宝");
+                intent.setClass(getActivity(), AudioHomeActivity.class);
+                startActivity(intent);
                 break;
             case R.id.index_study:
                 ToastUtils.showToast(getActivity(),"点击了e学宝");
