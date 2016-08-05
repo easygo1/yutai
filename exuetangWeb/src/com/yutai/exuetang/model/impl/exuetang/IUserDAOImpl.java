@@ -11,7 +11,6 @@ import com.yutai.exuetang.model.beans.exuetang.User;
 import com.yutai.exuetang.model.dao.exuetang.IUserDAO;
 import com.yutai.exuetang.utils.C3P0Utils;
 
-
 public class IUserDAOImpl implements IUserDAO {
 	private Connection connection = null;
 	private PreparedStatement statement = null;

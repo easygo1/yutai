@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="86dp"
+        android:src="@drawable/mp3_son_banner"/>
+
+    <TextView
+        style="@style/text_liner_x"
+        android:layout_height="15dp"
+        android:background="@color/background_color"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="85dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                style="@style/image_onestyle"
+                android:src="@mipmap/classics_son1"/>
+
+            <TextView
+                android:id="@+id/audio_china_literture_textview1"
+                style="@style/text_style"
+                android:paddingTop="5dp"
+                android:text="中国名著1"/>
+        </LinearLayout>
+
+        <TextView
+            style="@style/text_liner_y"/>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                style="@style/two_audio_style_uodown"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/china_literture_updown5000_textview"
+                    style="@style/two_audio_style_textview"
+                    android:text="上下五千年"/>
+
+                <TextView
+                    style="@style/text_liner_x"/>
+
+                <TextView
+                    android:id="@+id/china_literture_shiji_textview"
+                    style="@style/two_audio_style_textview"
+                    android:text="史记"/>
+            </LinearLayout>
+
+            <TextView
+                style="@style/text_liner_y"/>
+
+            <LinearLayout
+                style="@style/two_audio_style_uodown"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/china_literture_lvshichunqiu_textview"
+                    style="@style/two_audio_style_textview"
+                    android:text="吕氏春秋"/>
+
+                <TextView
+                    style="@style/text_liner_x"/>
+
+                <TextView
+                    android:id="@+id/china_literture_hanshu_textview"
+                    style="@style/two_audio_style_textview"
+                    android:text="汉书"/>
+            </LinearLayout>
+
+            <TextView
+                style="@style/text_liner_y"/>
+
+            <LinearLayout
+                style="@style/two_audio_style_uodown"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/china_literture_zhanguoce_textview"
+                    style="@style/two_audio_style_textview"
+                    android:text="战国策"/>
+
+                <TextView
+                    style="@style/text_liner_x"/>
+
+                <TextView
+                    android:id="@+id/china_literture_sanguozhi_textview"
+                    style="@style/two_audio_style_textview"
+                    android:text="三国志"/>
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <TextView
+        style="@style/text_liner_x"/>
+
+    <TextView
+        style="@style/text_liner_x"
+        android:layout_height="15dp"
+        android:background="@color/background_color"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="85dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                style="@style/image_onestyle"
+                android:src="@mipmap/classics_son2"/>
+
+            <TextView
+                android:id="@+id/audio_china_literture_textview2"
+                style="@style/text_style"
+                android:paddingTop="5dp"
+                android:text="中国名著2"/>
+        </LinearLayout>
+
+        <TextView
+            style="@style/text_liner_y"/>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                style="@style/two_audio_style_uodown"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/china_literture_zizhi_textview"
+                    style="@style/two_audio_style_textview"
+                    android:text="资治通鉴"/>
+
+                <TextView
+                    style="@style/text_liner_x"/>
+
+                <TextView
+                    android:id="@+id/china_literture_xiyouji_textview"
+                    style="@style/two_audio_style_textview"
+                    android:text="西游记"/>
+            </LinearLayout>
+
+            <TextView
+                style="@style/text_liner_y"/>
+
+            <LinearLayout
+                style="@style/two_audio_style_uodown"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/china_literture_sanguo_textview"
+                    style="@style/two_audio_style_textview"
+                    android:text="三国演义"/>
+
+                <TextView
+                    style="@style/text_liner_x"/>
+
+                <TextView
+                    android:id="@+id/china_literture_honglou_textview"
+                    style="@style/two_audio_style_textview"
+                    android:text="红楼梦"/>
+            </LinearLayout>
+
+            <TextView
+                style="@style/text_liner_y"/>
+
+            <LinearLayout
+                style="@style/two_audio_style_uodown"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/china_literture_shuihu_textview"
+                    style="@style/two_audio_style_textview"
+                    android:text="水浒传"/>
+
+                <TextView
+                    style="@style/text_liner_x"/>
+
+                <TextView
+                    android:id="@+id/china_literture_bencao_textview"
+                    style="@style/two_audio_style_textview"
+                    android:text="本草纲目"/>
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <TextView
+        style="@style/text_liner_x"/>
+
+</LinearLayout>

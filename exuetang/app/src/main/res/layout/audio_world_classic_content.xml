@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+    <!--世界名著-->
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="86dp"
+        android:src="@drawable/mp3_son_banner"/>
+
+    <TextView
+        style="@style/text_liner_x"
+        android:layout_height="15dp"
+        android:background="@color/background_color"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="85dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                style="@style/image_onestyle"
+                android:src="@mipmap/world_son1"/>
+
+            <TextView
+                android:id="@+id/audio_world_classic_textview1"
+                style="@style/text_style"
+                android:paddingTop="5dp"
+                android:text="世界名著1"/>
+        </LinearLayout>
+
+        <TextView
+            style="@style/text_liner_y"/>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                style="@style/two_audio_style_uodown"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/world_classic_greek_textview"
+                    style="@style/two_audio_style_textview"
+                    android:text="古希腊"/>
+
+                <TextView
+                    style="@style/text_liner_x"/>
+
+                <TextView
+                    android:id="@+id/world_classic_france_textview"
+                    style="@style/two_audio_style_textview"
+                    android:text="法国"/>
+            </LinearLayout>
+
+            <TextView
+                style="@style/text_liner_y"/>
+
+            <LinearLayout
+                style="@style/two_audio_style_uodown"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/world_classic_britain_textview"
+                    style="@style/two_audio_style_textview"
+                    android:text="英国"/>
+
+                <TextView
+                    style="@style/text_liner_x"/>
+
+                <TextView
+                    android:id="@+id/world_classic_russia_textview"
+                    style="@style/two_audio_style_textview"
+                    android:text="苏俄"/>
+            </LinearLayout>
+
+            <TextView
+                style="@style/text_liner_y"/>
+
+            <LinearLayout
+                style="@style/two_audio_style_uodown"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/world_classic_usa_sense_textview"
+                    style="@style/two_audio_style_textview"
+                    android:text="美国"/>
+
+                <TextView
+                    style="@style/text_liner_x"/>
+
+                <TextView
+                    android:id="@+id/world_classic_austria_poland_textview"
+                    style="@style/two_audio_style_textview"
+                    android:text="奥地利与波兰"/>
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <TextView
+        style="@style/text_liner_x"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/world_classic_spain_textview"
+            style="@style/two_audio_style_uodown"
+            android:gravity="center"
+            android:text="西班牙"
+            />
+
+        <TextView
+            style="@style/text_liner_y"/>
+
+        <TextView
+            android:id="@+id/world_classic_italy_textview"
+            style="@style/two_audio_style_uodown"
+            android:gravity="center"
+            android:text="意大利和瑞士"
+            />
+
+        <TextView
+            style="@style/text_liner_y"/>
+
+        <TextView
+            android:id="@+id/world_classic_latin_america_textview"
+            style="@style/two_audio_style_uodown"
+            android:gravity="center"
+            android:text="拉美"
+            />
+
+        <TextView
+            style="@style/text_liner_y"/>
+
+        <TextView
+            android:id="@+id/world_classic_arab_textview"
+            style="@style/two_audio_style_uodown"
+            android:gravity="center"
+            android:text="阿拉伯"/>
+    </LinearLayout>
+
+    <TextView
+        style="@style/text_liner_x"
+        android:layout_height="15dp"
+        android:background="@color/background_color"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="85dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                style="@style/image_onestyle"
+                android:src="@mipmap/world_son2"/>
+
+            <TextView
+                android:id="@+id/audio_world_classic_textview2"
+                style="@style/text_style"
+                android:paddingTop="5dp"
+                android:text="世界名著2"/>
+        </LinearLayout>
+
+        <TextView
+            style="@style/text_liner_y"/>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                style="@style/two_audio_style_uodown"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/world_classic_denmark_art_textview"
+                    style="@style/two_audio_style_textview"
+                    android:text="丹麦和挪威"/>
+
+                <TextView
+                    style="@style/text_liner_x"/>
+
+                <TextView
+                    android:id="@+id/world_classic_japan_textview"
+                    style="@style/two_audio_style_textview"
+                    android:text="日本"/>
+            </LinearLayout>
+
+            <TextView
+                style="@style/text_liner_y"/>
+
+            <LinearLayout
+                style="@style/two_audio_style_uodown"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/world_classic_australia_country_textview"
+                    style="@style/two_audio_style_textview"
+                    android:text="澳大利亚"/>
+
+                <TextView
+                    style="@style/text_liner_x"/>
+
+                <TextView
+                    android:id="@+id/world_classic_persia_textview"
+                    style="@style/two_audio_style_textview"
+                    android:text="波斯"/>
+            </LinearLayout>
+
+            <TextView
+                style="@style/text_liner_y"/>
+
+            <LinearLayout
+                style="@style/two_audio_style_uodown"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/world_classic_india_history_textview"
+                    style="@style/two_audio_style_textview"
+                    android:text="印度和葡萄牙"/>
+
+                <TextView
+                    style="@style/text_liner_x"/>
+
+                <TextView
+                    android:id="@+id/world_classic_sweden_geography_textview"
+                    style="@style/two_audio_style_textview"
+                    android:text="瑞典"/>
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <TextView
+        style="@style/text_liner_x"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/world_classic_lebanon_textview"
+            style="@style/two_audio_style_uodown"
+            android:gravity="center"
+            android:text="黎巴嫩"
+            />
+
+        <TextView
+            style="@style/text_liner_y"/>
+
+        <TextView
+            style="@style/two_audio_style_uodown"
+            android:gravity="center"
+            android:text=""
+            />
+
+        <TextView
+            style="@style/text_liner_y"/>
+
+        <TextView
+            style="@style/two_audio_style_uodown"
+            android:gravity="center"
+            android:text=""
+            />
+
+        <TextView
+            style="@style/text_liner_y"/>
+
+        <TextView
+            style="@style/two_audio_style_uodown"
+            android:gravity="center"
+            android:text=""/>
+    </LinearLayout>
+
+    <TextView
+        style="@style/text_liner_x"/>
+</LinearLayout>

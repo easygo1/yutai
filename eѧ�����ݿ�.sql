@@ -1,4 +1,4 @@
-create table user(
+﻿create table user(
 	user_id        int PRIMARY KEY AUTO_INCREMENT,
 	user_newphone  varchar(15) UNIQUE,   ##(用户手机号，唯一)
 	user_oldphone  varchar(15)
@@ -54,13 +54,20 @@ create TABLE music(
 	music_download_month_number  int,           ##月下载量
 	music_download_week_number   int,           ##周下载量
 	music_download_day_number    int,           ##天下载量
-	music_type_photo             varchar(300),  ##音乐二级类型图片
 	music_photo                  varchar(300),  ##音乐图片地址
+    music_bg_photo               varchar(300),  ##音乐背景图片地址
+    music_main_photo             varchar(300),  ##音乐主图图片地址
+	music_introduct              varchar(200),  ##音乐简介
 	music_coins    				 int,           ##(下载所需金币)
 	music_upload_time			 datetime       ##音乐上传时间
 	music_remarks                varchar(100)   ##备注
 );  
-
+##音乐二级类型图片表：typephoto
+create TABLE musictype(
+	typephoto_id       int PRIMARY KEY AUTO_INCREMENT,
+	music_type2             varchar(20),   ##音乐二级类型
+	music_type2_path        varchar(300)   ##音乐二级类型图片地址
+);
 
 ##music评论表：musiccomment
 create TABLE musiccomment(

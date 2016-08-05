@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                  android:layout_width="match_parent"
+                  android:layout_height="match_parent"
+                  android:orientation="vertical">
+        <!--英语经典学堂-->
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="86dp"
+            android:src="@drawable/mp3_son_banner"/>
+
+        <TextView
+            style="@style/text_liner_x"
+            android:layout_height="15dp"
+            android:background="@color/background_color"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="85dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <ImageView
+                    style="@style/image_onestyle"
+                    android:src="@mipmap/index_biography"/>
+
+                <TextView
+                    android:id="@+id/audio_animal_world_textview1"
+                    style="@style/text_style"
+                    android:paddingTop="5dp"
+                    android:text="动物世界"/>
+            </LinearLayout>
+
+            <TextView
+                style="@style/text_liner_y"/>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    style="@style/two_audio_style_uodown"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/animal_world_crawl_textview"
+                        style="@style/two_audio_style_textview"
+                        android:text="爬行类动物"/>
+
+                    <TextView
+                        style="@style/text_liner_x"/>
+
+                    <TextView
+                        android:id="@+id/animal_world_insect_textview"
+                        style="@style/two_audio_style_textview"
+                        android:text="昆虫类动物"/>
+                </LinearLayout>
+
+                <TextView
+                    style="@style/text_liner_y"/>
+
+                <LinearLayout
+                    style="@style/two_audio_style_uodown"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/animal_world_fly_textview"
+                        style="@style/two_audio_style_textview"
+                        android:maxLines="1"
+                        android:text="飞禽类动物"/>
+
+                    <TextView
+                        style="@style/text_liner_x"/>
+
+                    <TextView
+                        android:id="@+id/animal_world_poultry_textview"
+                        style="@style/two_audio_style_textview"
+                        android:text="家禽类动物"/>
+                </LinearLayout>
+
+                <TextView
+                    style="@style/text_liner_y"/>
+
+                <LinearLayout
+                    style="@style/two_audio_style_uodown"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/animal_world_lactation_textview"
+                        style="@style/two_audio_style_textview"
+                        android:text="哺乳类动物"/>
+
+                    <TextView
+                        style="@style/text_liner_x"/>
+
+                    <TextView
+                        android:id="@+id/animal_world_fish_textview"
+                        style="@style/two_audio_style_textview"
+                        android:text="鱼类动物"/>
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <TextView
+            style="@style/text_liner_x"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/animal_world_carnivorous_textview"
+                style="@style/two_audio_style_uodown"
+                android:gravity="center"
+                android:text="食肉类动物"
+                />
+
+            <TextView
+                style="@style/text_liner_y"/>
+
+            <TextView
+                android:id="@+id/animal_world_amphibious_textview"
+                style="@style/two_audio_style_uodown"
+                android:gravity="center"
+                android:text="两栖类动物"
+                />
+
+            <TextView
+                style="@style/text_liner_y"/>
+
+            <TextView
+                style="@style/two_audio_style_uodown"
+                android:gravity="center"
+                android:text=""/>
+
+            <TextView
+                style="@style/text_liner_y"/>
+
+            <TextView
+                style="@style/two_audio_style_uodown"
+                android:gravity="center"
+                android:text=""/>
+        </LinearLayout>
+    <TextView
+        style="@style/text_liner_x"/>
+    </LinearLayout>

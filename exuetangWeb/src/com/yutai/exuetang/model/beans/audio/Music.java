@@ -9,7 +9,7 @@ public class Music implements Serializable {
 	 * 音乐
 	 */
 	private static final long serialVersionUID = 1L;
-	
+
 	private int music_id;
 	private String music_name;// 音乐名称
 	private String music_path_mp3;// 音乐文件路径
@@ -24,11 +24,14 @@ public class Music implements Serializable {
 	private int music_download_month_number;// 月下载量
 	private int music_download_week_number;// 周下载量
 	private int music_download_day_number;// 天下载量
-	private String music_type_photo;// 音乐二级类型图片
 	private String music_photo;// 音乐图片地址
+    private String music_bg_photo;// 音乐背景图片地址
+    private String music_main_photo;// 音乐主图图片地址
+	private String music_introduct;// 音乐简介
 	private int music_coins;// (下载所需金币)
-	private String music_upload_time;//音乐上传时间
+	private String music_upload_time;// 音乐上传时间
 	private String music_remarks;// 备注
+
 	public Music() {
 		super();
 		// TODO Auto-generated constructor stub
@@ -39,8 +42,9 @@ public class Music implements Serializable {
 			int music_audition_week_number, int music_audition_day_number,
 			int music_download_sum_number, int music_download_month_number,
 			int music_download_week_number, int music_download_day_number,
-			String music_type_photo, String music_photo, int music_coins,
-			String music_upload_time, String music_remarks) {
+			String music_photo, String music_bg_photo, String music_main_photo,
+			String music_introduct, int music_coins, String music_upload_time,
+			String music_remarks) {
 		super();
 		this.music_id = music_id;
 		this.music_name = music_name;
@@ -56,8 +60,10 @@ public class Music implements Serializable {
 		this.music_download_month_number = music_download_month_number;
 		this.music_download_week_number = music_download_week_number;
 		this.music_download_day_number = music_download_day_number;
-		this.music_type_photo = music_type_photo;
 		this.music_photo = music_photo;
+		this.music_bg_photo = music_bg_photo;
+		this.music_main_photo = music_main_photo;
+		this.music_introduct = music_introduct;
 		this.music_coins = music_coins;
 		this.music_upload_time = music_upload_time;
 		this.music_remarks = music_remarks;
@@ -146,17 +152,29 @@ public class Music implements Serializable {
 	public void setMusic_download_day_number(int music_download_day_number) {
 		this.music_download_day_number = music_download_day_number;
 	}
-	public String getMusic_type_photo() {
-		return music_type_photo;
-	}
-	public void setMusic_type_photo(String music_type_photo) {
-		this.music_type_photo = music_type_photo;
-	}
 	public String getMusic_photo() {
 		return music_photo;
 	}
 	public void setMusic_photo(String music_photo) {
 		this.music_photo = music_photo;
+	}
+	public String getMusic_bg_photo() {
+		return music_bg_photo;
+	}
+	public void setMusic_bg_photo(String music_bg_photo) {
+		this.music_bg_photo = music_bg_photo;
+	}
+	public String getMusic_main_photo() {
+		return music_main_photo;
+	}
+	public void setMusic_main_photo(String music_main_photo) {
+		this.music_main_photo = music_main_photo;
+	}
+	public String getMusic_introduct() {
+		return music_introduct;
+	}
+	public void setMusic_introduct(String music_introduct) {
+		this.music_introduct = music_introduct;
 	}
 	public int getMusic_coins() {
 		return music_coins;
@@ -176,9 +194,6 @@ public class Music implements Serializable {
 	public void setMusic_remarks(String music_remarks) {
 		this.music_remarks = music_remarks;
 	}
-	public static long getSerialversionuid() {
-		return serialVersionUID;
-	}
 	@Override
 	public String toString() {
 		return "Music [music_id=" + music_id + ", music_name=" + music_name
@@ -193,8 +208,9 @@ public class Music implements Serializable {
 				+ music_download_sum_number + ", music_download_month_number="
 				+ music_download_month_number + ", music_download_week_number="
 				+ music_download_week_number + ", music_download_day_number="
-				+ music_download_day_number + ", music_type_photo="
-				+ music_type_photo + ", music_photo=" + music_photo
+				+ music_download_day_number + ", music_photo=" + music_photo
+				+ ", music_bg_photo=" + music_bg_photo + ", music_main_photo="
+				+ music_main_photo + ", music_introduct=" + music_introduct
 				+ ", music_coins=" + music_coins + ", music_upload_time="
 				+ music_upload_time + ", music_remarks=" + music_remarks + "]";
 	}

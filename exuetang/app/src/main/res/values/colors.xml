@@ -28,4 +28,5 @@
     <color name="round_color_up">#fbc9c9c9</color>
     <!--空白处背景颜色-->
     <color name="background_color">#f2f2f2</color>
+    <color name="bottomColor">#EFEEEC</color>
 </resources>

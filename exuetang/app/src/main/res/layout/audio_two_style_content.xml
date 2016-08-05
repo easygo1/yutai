@@ -43,6 +43,7 @@
         style="@style/text_liner_x"/>
 
     <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="9">
@@ -52,8 +53,38 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             ptr:ptrAnimationStyle="flip"
+            android:smoothScrollbar="true"
+            android:fadingEdge="none"
+            android:fastScrollEnabled="false"
+            android:footerDividersEnabled="false"
+            android:headerDividersEnabled="false"
             ptr:ptrDrawable="@drawable/default_ptr_flip">
         </com.handmark.pulltorefresh.library.PullToRefreshListView>
+        <!--!&#45;&#45; Here is the view to show if the list is emtpy &ndash;&gt;-->
+        <ScrollView android:id="@+id/empty"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/emptyText"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:text="没有更多内容了"
+                    android:textSize="20sp"
+                    android:textColor="?android:attr/textColorSecondary"
+                    android:paddingLeft="10dip"
+                    android:paddingRight="10dip"
+                    android:paddingTop="10dip"
+                    android:lineSpacingMultiplier="0.92"
+                    android:gravity="center" />
+            </LinearLayout>
+        </ScrollView>
     </LinearLayout>
 
 </LinearLayout>

@@ -1,19 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:layout_width="match_parent"
-              android:layout_height="120dp"
-              android:orientation="horizontal"
-              android:paddingBottom="10dp"
-              android:paddingLeft="5dp"
-              android:paddingRight="5dp"
-              android:paddingTop="10dp">
-
+              android:layout_height="100dp"
+              android:orientation="vertical">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:orientation="horizontal"
+    android:paddingBottom="10dp"
+    android:paddingRight="5dp"
+    android:paddingTop="10dp">
     <ImageView
-        android:id="@+id/item_music_photo"
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:src="@drawable/music_item_defult"/>
+        android:layout_marginLeft="10dp"
+    android:id="@+id/item_music_photo"
+    android:layout_width="0dp"
+    android:layout_height="match_parent"
+    android:layout_weight="1"
+        android:scaleType="fitXY"
+    android:src="@drawable/music_item_defult"/>
 
     <LinearLayout
         android:layout_width="0dp"
@@ -29,6 +33,7 @@
             android:layout_marginBottom="3dp"
             android:layout_weight="1"
             android:gravity="center"
+            android:textColor="@color/me_text_black"
             android:text="龟兔赛跑"/>
 
         <TextView
@@ -63,11 +68,12 @@
                 android:src="@mipmap/headset"/>
 
             <TextView
+                android:lines="1"
                 android:id="@+id/item_music_audition_sum"
-                android:layout_width="match_parent"
+                android:layout_width="50dp"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="5dp"
-                android:gravity="center"
+                android:gravity="left|center_vertical"
                 android:text="12121"
                 android:textSize="@dimen/audio_item_textview"/>
 
@@ -78,11 +84,12 @@
                 android:src="@mipmap/download_small"/>
 
             <TextView
+                android:lines="1"
                 android:id="@+id/item_music_download_sum"
-                android:layout_width="match_parent"
+                android:layout_width="50dp"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="5dp"
-                android:gravity="center"
+                android:gravity="left|center_vertical"
                 android:text="12121"
                 android:textSize="@dimen/audio_item_textview"/>
         </LinearLayout>
@@ -112,4 +119,11 @@
             android:paddingRight="10dp"
             android:src="@mipmap/share_grey"/>
     </LinearLayout>
+   </LinearLayout>
+    <!--<ProgressBar
+        android:id="@+id/down_progressbar"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"/>-->
+    <TextView
+        style="@style/text_liner_x"/>
 </LinearLayout>

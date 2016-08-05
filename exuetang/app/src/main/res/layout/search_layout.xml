@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+               android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="vertical">
+
+    <LinearLayout
+        android:background="@color/titlecolor"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal">
+
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.6">
+
+            <ImageButton
+                android:background="#0000"
+                android:id="@+id/home_really_search_goback"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_centerInParent="true"
+                android:src="@mipmap/return_white"/>
+        </RelativeLayout>
+
+        <FrameLayout
+            android:layout_weight="4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
+            <EditText
+                android:id="@+id/search_et_input"
+                android:layout_gravity="center_vertical"
+                android:layout_margin="10dp"
+                android:drawableLeft="@mipmap/search_gray"
+                android:drawablePadding="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_editview"
+                android:textSize="12sp"
+                android:imeOptions="actionSearch"
+                android:inputType="text"
+                android:hint="搜索歌曲名"/>
+
+            <ImageView
+                android:visibility="gone"
+                android:layout_marginRight="20dp"
+                android:src="@drawable/iv_delete_bg"
+                android:id="@+id/search_iv_delete"
+                android:layout_gravity="right|center_vertical"
+                android:layout_width="20dp"
+                android:layout_height="20dp"/>
+        </FrameLayout>
+
+        <Button
+            android:id="@+id/search_btn_back"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/buttonstyle2"
+            android:layout_width="50dp"
+            android:layout_height="30dp"
+            android:text="返回"/>
+    </LinearLayout>
+
+    <ListView
+        android:visibility="gone"
+        android:id="@+id/search_lv_tips"
+        android:background="@drawable/lv_search_tips_bg"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="200dp">
+    </ListView>
+</LinearLayout>

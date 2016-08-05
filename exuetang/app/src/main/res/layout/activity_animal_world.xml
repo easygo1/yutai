@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+     tools:context="com.yutai.exuetang.view.activity.audio.twostyle.AnimalWorldActivity">
+    <include
+        layout="@layout/audio_story_xuetang_top"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+    <include
+        layout="@layout/audio_animal_world_content"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="11"/>
+</LinearLayout>

@@ -78,19 +78,20 @@
     </style>
     <!--音频宝（首页）大分类中的textview-->
     <style name="text_style">
-        <item name="android:paddingBottom">3dp</item>
         <item name="android:paddingTop">5dp</item>
         <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/me_text_black</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
     </style>
     <!--音频宝（首页）大分类中的imageview-->
     <style name="image_onestyle">
         <item name="android:layout_gravity">center</item>
-        <item name="android:layout_marginTop">15dp</item>
-        <item name="android:layout_width">33dp</item>
-        <item name="android:layout_height">33dp</item>
+        <item name="android:layout_marginTop">20dp</item>
+        <item name="android:layout_width">25dp</item>
+        <item name="android:layout_height">25dp</item>
         <item name="android:scaleType">fitXY</item>
+        <item name="android:layout_marginBottom">6dp</item>
     </style>
     <!--音频宝一级分类linerlayout-->
     <style name="liner_style">
@@ -118,6 +119,7 @@
         <item name="android:layout_height">match_parent</item>
         <item name="android:layout_weight">1</item>
         <item name="android:orientation">vertical</item>
+        <item name="android:textColor">@color/me_text_black</item>
     </style>
     <!--二级分类中具体分类的textview样式-->
     <style name="two_audio_style_textview">
@@ -125,6 +127,7 @@
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">0dp</item>
         <item name="android:layout_weight">1</item>
+        <item name="android:textColor">@color/me_text_black</item>
     </style>
     <!--水平按权重的textView设置-->
     <style name="horizontal_center_style_textview">
@@ -132,6 +135,7 @@
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">match_parent</item>
         <item name="android:layout_weight">1</item>
+        <item name="android:textColor">@color/me_text_black</item>
     </style>
     <!--音乐播放页面底部暂停上一首下一首图片样式-->
     <style name="audio_play_image">

@@ -1,5 +1,11 @@
 package com.yutai.exuetang.view.iview.audio;
 
+import android.app.Activity;
+
+import com.yutai.exuetang.model.beans.audio.music.Music;
+
+import java.util.List;
+
 /**
  * Created by ZFG on 2016/7/16.
  * 二级分类详情
@@ -7,7 +13,6 @@ package com.yutai.exuetang.view.iview.audio;
 public interface IAudioTwoStyleDetailView {
     //item跳转的页面
     void intentNextActivity(int music_id);
-
     //
     void showToast(String msg);
 
@@ -22,4 +27,11 @@ public interface IAudioTwoStyleDetailView {
 
     String getmusicTYype2();
 
+    Activity getactivity();
+
+    void toActivity(List<Music> musicList);
+
+    int UpdateAuditionRequest();
+
+   void gettypepath(String type_path);
 }

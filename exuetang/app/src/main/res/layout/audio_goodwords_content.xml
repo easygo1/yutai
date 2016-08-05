@@ -34,7 +34,7 @@
                 android:id="@+id/audio_goodwords_textview1"
                 style="@style/text_style"
                 android:paddingTop="5dp"
-                android:text="好吃好句"/>
+                android:text="好词好句"/>
         </LinearLayout>
 
         <TextView

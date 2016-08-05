@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="86dp"
+        android:src="@drawable/mp3_son_banner"/>
+
+    <TextView
+        style="@style/text_liner_x"
+        android:layout_height="15dp"
+        android:background="@color/background_color"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="85dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                style="@style/image_onestyle"
+                android:src="@mipmap/quotes_son1"/>
+
+            <TextView
+                android:id="@+id/audio_famous_aphorism_textview1"
+                style="@style/text_style"
+                android:paddingTop="5dp"
+                android:text="名言警句1"/>
+        </LinearLayout>
+
+        <TextView
+            style="@style/text_liner_y"/>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                style="@style/two_audio_style_uodown"
+                android:orientation="vertical">
+
+                    <TextView
+                    android:id="@+id/famous_aphorism_person_textview"
+                    style="@style/two_audio_style_textview"
+                    android:text="为人篇"/>
+
+                <TextView
+                    style="@style/text_liner_x"/>
+
+                <TextView
+                    android:id="@+id/famous_aphorism_things_textview"
+                    style="@style/two_audio_style_textview"
+                    android:text="处事篇"/>
+            </LinearLayout>
+
+            <TextView
+                style="@style/text_liner_y"/>
+
+            <LinearLayout
+                style="@style/two_audio_style_uodown"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/famous_aphorism_conduct_textview"
+                    style="@style/two_audio_style_textview"
+                    android:text="品行篇"/>
+
+                <TextView
+                    style="@style/text_liner_x"/>
+
+                <TextView
+                    android:id="@+id/famous_aphorism_career_textview"
+                    style="@style/two_audio_style_textview"
+                    android:text="立业篇"/>
+            </LinearLayout>
+
+            <TextView
+                style="@style/text_liner_y"/>
+
+            <LinearLayout
+                style="@style/two_audio_style_uodown"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/famous_aphorism_mentality_textview"
+                    style="@style/two_audio_style_textview"
+                    android:text="心态篇"/>
+
+                <TextView
+                    style="@style/text_liner_x"/>
+
+                <TextView
+                    android:id="@+id/famous_aphorism_personnel_textview"
+                    style="@style/two_audio_style_textview"
+                    android:text="人才篇"/>
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <TextView
+        style="@style/text_liner_x"/>
+
+    <TextView
+        style="@style/text_liner_x"
+        android:layout_height="15dp"
+        android:background="@color/background_color"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="85dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                style="@style/image_onestyle"
+                android:src="@mipmap/quotes_son2"/>
+
+            <TextView
+                android:id="@+id/audio_famous_aphorism_textview2"
+                style="@style/text_style"
+                android:paddingTop="5dp"
+                android:text="名言警句2"/>
+        </LinearLayout>
+
+        <TextView
+            style="@style/text_liner_y"/>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                style="@style/two_audio_style_uodown"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/famous_aphorism_scholarship_textview"
+                    style="@style/two_audio_style_textview"
+                    android:text="治学篇"/>
+
+                <TextView
+                    style="@style/text_liner_x"/>
+
+                <TextView
+                    android:id="@+id/famous_aphorism_contact_textview"
+                    style="@style/two_audio_style_textview"
+                    android:text="交际篇"/>
+            </LinearLayout>
+
+            <TextView
+                style="@style/text_liner_y"/>
+
+            <LinearLayout
+                style="@style/two_audio_style_uodown"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/famous_aphorism_life_textview"
+                    style="@style/two_audio_style_textview"
+                    android:text="生活篇"/>
+
+                <TextView
+                    style="@style/text_liner_x"/>
+
+                <TextView
+                    android:id="@+id/famous_aphorism_emotion_textview"
+                    style="@style/two_audio_style_textview"
+                    android:text="情感篇"/>
+            </LinearLayout>
+
+            <TextView
+                style="@style/text_liner_y"/>
+
+            <LinearLayout
+                style="@style/two_audio_style_uodown"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/famous_aphorism_healthy_textview"
+                    style="@style/two_audio_style_textview"
+                    android:text="健康篇"/>
+
+                <TextView
+                    style="@style/text_liner_x"/>
+
+                <TextView
+                    android:id="@+id/famous_aphorism_wealth_textview"
+                    style="@style/two_audio_style_textview"
+                    android:text="财富篇"/>
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <TextView
+        style="@style/text_liner_x"/>
+
+</LinearLayout>
