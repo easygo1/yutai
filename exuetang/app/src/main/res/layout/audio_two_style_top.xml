@@ -8,6 +8,7 @@
         android:id="@+id/audio_twostyle_image"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:adjustViewBounds="true"
         android:scaleType="fitXY"
         android:src="@drawable/fairy_tale_banner"/>
 

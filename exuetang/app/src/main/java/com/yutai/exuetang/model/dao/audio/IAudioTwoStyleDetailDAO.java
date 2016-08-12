@@ -1,14 +1,15 @@
 package com.yutai.exuetang.model.dao.audio;
 
-import com.yutai.exuetang.model.beans.audio.music.Music;
-import com.yutai.exuetang.presenter.dao.audio.AudioTwoStyleDetailPresenter;
-
-import java.util.List;
+import android.app.Activity;
 
 /**
  * Created by Administrator on 2016/7/26.
  */
 public interface IAudioTwoStyleDetailDAO {
     //得到数据 分页显示
-    List<Music> getData(String type1,String type2,int tabstyle, int cur, AudioTwoStyleDetailPresenter twoStyleDetailPresenter);
+    void getData(String type1, String type2, int tabstyle, int cur, TwoListener twoListener, Activity mactivity);
+//    更新音乐在线量
+    void updateaudition(int music_id,Activity activity);
+//    得到二级类型图片
+    void getTypephoto(String type2,Activity activity,TypePathListener typePathListener);
 }

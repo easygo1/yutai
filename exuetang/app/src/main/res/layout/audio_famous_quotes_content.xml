@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+    <!--笑话谜语-->
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="86dp"
+        android:src="@drawable/mp3_son_banner"/>
+
+    <TextView
+        style="@style/text_liner_x"
+        android:layout_height="15dp"
+        android:background="@color/background_color"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="85dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                style="@style/image_onestyle"
+                android:src="@mipmap/celebrity_son1"/>
+
+            <TextView
+                android:id="@+id/audio_famous_quotes_textview1"
+                style="@style/text_style"
+                android:paddingTop="5dp"
+                android:text="名人名言1"/>
+        </LinearLayout>
+
+        <TextView
+            style="@style/text_liner_y"/>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                style="@style/two_audio_style_uodown"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/famous_quotes_life_textview"
+                    style="@style/two_audio_style_textview"
+                    android:text="人生篇"/>
+
+                <TextView
+                    style="@style/text_liner_x"/>
+
+                <TextView
+                    android:id="@+id/famous_quotes_dothing_textview"
+                    style="@style/two_audio_style_textview"
+                    android:text="处事篇"/>
+            </LinearLayout>
+
+            <TextView
+                style="@style/text_liner_y"/>
+
+            <LinearLayout
+                style="@style/two_audio_style_uodown"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/famous_quotes_truth_textview"
+                    style="@style/two_audio_style_textview"
+                    android:text="真理篇"/>
+
+                <TextView
+                    style="@style/text_liner_x"/>
+
+                <TextView
+                    android:id="@+id/famous_quotes_happiness_textview"
+                    style="@style/two_audio_style_textview"
+                    android:text="幸福篇"/>
+            </LinearLayout>
+
+            <TextView
+                style="@style/text_liner_y"/>
+
+            <LinearLayout
+                style="@style/two_audio_style_uodown"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/famous_quotes_virtue_textview"
+                    style="@style/two_audio_style_textview"
+                    android:text="美德篇"/>
+
+                <TextView
+                    style="@style/text_liner_x"/>
+
+                <TextView
+                    android:id="@+id/famous_quotes_friendship_textview"
+                    style="@style/two_audio_style_textview"
+                    android:text="情谊篇"/>
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <TextView
+        style="@style/text_liner_x"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/famous_quotes_lizhi_teaser_textview"
+            style="@style/two_audio_style_uodown"
+            android:gravity="center"
+            android:text="励志篇"
+            />
+
+        <TextView
+            style="@style/text_liner_y"/>
+
+        <TextView
+            android:id="@+id/famous_quotes_talent_textview"
+            style="@style/two_audio_style_uodown"
+            android:gravity="center"
+            android:text="成才篇"
+            />
+
+        <TextView
+            style="@style/text_liner_y"/>
+
+        <TextView
+            android:id="@+id/famous_quotes_youth_textview"
+            style="@style/two_audio_style_uodown"
+            android:gravity="center"
+            android:text="青春篇"
+            />
+
+        <TextView
+            style="@style/text_liner_y"/>
+
+        <TextView
+            android:id="@+id/famous_quotes_treasure_time_textview"
+            style="@style/two_audio_style_uodown"
+            android:gravity="center"
+            android:text="珍惜时篇"/>
+    </LinearLayout>
+
+    <TextView
+        style="@style/text_liner_x"
+        android:layout_height="15dp"
+        android:background="@color/background_color"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="85dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                style="@style/image_onestyle"
+                android:src="@mipmap/celebrity_son2"/>
+
+            <TextView
+                android:id="@+id/audio_famous_quotes_textview2"
+                style="@style/text_style"
+                android:paddingTop="5dp"
+                android:text="名人名言2"/>
+        </LinearLayout>
+
+        <TextView
+            style="@style/text_liner_y"/>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                style="@style/two_audio_style_uodown"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/famous_quotes_seekknow_textview"
+                    style="@style/two_audio_style_textview"
+                    android:text="求知篇"/>
+
+                <TextView
+                    style="@style/text_liner_x"/>
+
+                <TextView
+                    android:id="@+id/famous_quotes_collective_textview"
+                    style="@style/two_audio_style_textview"
+                    android:text="集体篇"/>
+            </LinearLayout>
+
+            <TextView
+                style="@style/text_liner_y"/>
+
+            <LinearLayout
+                style="@style/two_audio_style_uodown"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/famous_quotes_labour_textview"
+                    style="@style/two_audio_style_textview"
+                    android:text="劳动篇"/>
+
+                <TextView
+                    style="@style/text_liner_x"/>
+
+                <TextView
+                    style="@style/two_audio_style_textview"
+                    android:text=""/>
+            </LinearLayout>
+
+            <TextView
+                style="@style/text_liner_y"/>
+
+            <LinearLayout
+                style="@style/two_audio_style_uodown"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/famous_quotes_patriotic_textview"
+                    style="@style/two_audio_style_textview"
+                    android:text="爱国篇"/>
+
+                <TextView
+                    style="@style/text_liner_x"/>
+
+                <TextView
+                    style="@style/two_audio_style_textview"
+                    android:text=""/>
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+    <TextView
+        style="@style/text_liner_x"/>
+</LinearLayout>

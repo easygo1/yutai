@@ -263,14 +263,14 @@
 
     <TextView
         style="@style/text_liner_x"
-        android:layout_height="15dp"
+        android:layout_height="10dp"
         android:background="@color/background_color"/>
 
     <com.youth.banner.Banner
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:id="@+id/audio_home_banner"
         android:layout_width="match_parent"
-        android:layout_height="80dp"
+        android:layout_height="72dp"
         app:indicator_drawable_selected="@drawable/gray_radius"
         app:indicator_drawable_unselected="@drawable/white_radius"
         app:indicator_height="10dp"
@@ -279,7 +279,7 @@
 
     <TextView
         style="@style/text_liner_x"
-        android:layout_height="15dp"
+        android:layout_height="10dp"
         android:background="@color/background_color"/>
 
 

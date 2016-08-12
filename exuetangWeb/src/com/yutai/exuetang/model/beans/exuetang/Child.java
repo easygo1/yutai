@@ -2,28 +2,28 @@ package com.yutai.exuetang.model.beans.exuetang;
 
 import java.io.Serializable;
 
-public class Child implements Serializable{
+public class Child implements Serializable {
 
 	/**
 	 * 宝宝表
 	 */
 	private static final long serialVersionUID = 1L;
-	
+
 	private int child_id;
-	private int user_id;//(外键)
-	private String child_birthday;//(宝宝生日)
-	private String child_name;//(姓名)
-	private String child_photo;//(头像)
-	private String child_sex;//(性别)
+	private int user_id;// (外键)
+	private String child_birthday;// (宝宝生日)
+	private String child_name;// (姓名)
+	private String child_photo;// (头像)
+	private String child_sex;// (性别)
 	private String child_school_class_name;//(学校名称及班级)
-	private String child_home_province;//(家庭住址省)
-	private String child_home_city;//(家庭住址市)
-	private String child_home_county;//(家庭住址区)
-	private String child_home_address;//(家庭住址)
+	private String child_home_province;// (家庭住址省)
+	private String child_home_city;// (家庭住址市)
+	private String child_home_county;// (家庭住址区)
+	private String child_home_address;// (家庭住址)
 	private String child_dream;//(孩子梦想)
-	private String child_hobby;//(宝宝特长)
+	private String child_hobby;// (宝宝特长)
 	private String child_trainplan;//(宝宝培训计划)
-	private String child_remarks;//（备注）
+	private String child_remarks;// (备注)
 	public Child() {
 		super();
 		// TODO Auto-generated constructor stub
@@ -36,28 +36,6 @@ public class Child implements Serializable{
 			String child_trainplan, String child_remarks) {
 		super();
 		this.child_id = child_id;
-		this.user_id = user_id;
-		this.child_birthday = child_birthday;
-		this.child_name = child_name;
-		this.child_photo = child_photo;
-		this.child_sex = child_sex;
-		this.child_school_class_name = child_school_class_name;
-		this.child_home_province = child_home_province;
-		this.child_home_city = child_home_city;
-		this.child_home_county = child_home_county;
-		this.child_home_address = child_home_address;
-		this.child_dream = child_dream;
-		this.child_hobby = child_hobby;
-		this.child_trainplan = child_trainplan;
-		this.child_remarks = child_remarks;
-	}
-	public Child(int user_id, String child_birthday,
-			String child_name, String child_photo, String child_sex,
-			String child_school_class_name, String child_home_province,
-			String child_home_city, String child_home_county,
-			String child_home_address, String child_dream, String child_hobby,
-			String child_trainplan, String child_remarks) {
-		super();
 		this.user_id = user_id;
 		this.child_birthday = child_birthday;
 		this.child_name = child_name;
@@ -162,9 +140,6 @@ public class Child implements Serializable{
 	}
 	public void setChild_remarks(String child_remarks) {
 		this.child_remarks = child_remarks;
-	}
-	public static long getSerialversionuid() {
-		return serialVersionUID;
 	}
 	@Override
 	public String toString() {

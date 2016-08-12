@@ -253,4 +253,6 @@
         </LinearLayout>
 
     </LinearLayout>
+    <TextView
+        style="@style/text_liner_x"/>
 </LinearLayout>

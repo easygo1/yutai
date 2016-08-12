@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="296dp"
+              android:layout_height="160dp"
+              android:background="@drawable/corners_bg">
+<Button
+    android:id="@+id/download_cancle"
+    android:background="@mipmap/fork"
+    android:layout_marginTop="7dp"
+    android:layout_marginRight="7dp"
+    android:layout_gravity="right|center_vertical"
+    android:layout_width="17dp"
+    android:layout_height="17dp"/>
+    <TextView
+        android:id="@+id/download_textview"
+    android:text="@string/dialog_download"
+    android:layout_gravity="center"
+    android:layout_marginTop="6dp"
+    android:textSize="13sp"
+    android:layout_width="217dp"
+    android:layout_height="wrap_content"/>
+    <Button
+        android:id="@+id/download_ok"
+        android:textColor="@color/white"
+        android:text="确定"
+        android:textSize="17dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/corner_btn"
+        android:layout_width="245dp"
+        android:layout_height="42dp"
+        android:layout_marginBottom="15dp"/>
+</LinearLayout>

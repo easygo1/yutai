@@ -16,6 +16,7 @@ import android.widget.TextView;
 import com.yutai.exuetang.R;
 import com.yutai.exuetang.utils.ToastUtils;
 import com.yutai.exuetang.view.activity.exuetang.LoginActivity;
+import com.yutai.exuetang.view.activity.exuetang.MyInfoActivity;
 import com.yutai.exuetang.view.application.MyApplication;
 
 /**
@@ -86,15 +87,17 @@ public class MeFragment extends Fragment implements View.OnClickListener{
     @Override
     public void onClick(View v) {
         int id = v.getId();
+        Intent intent = new Intent();
         switch (id){
             case R.id.me_set:
                 ToastUtils.showToast(getActivity(),"点击了设置按钮");
-                Intent intent = new Intent();
                 intent.setClass(getActivity(), LoginActivity.class);
                 startActivity(intent);
                 break;
             case R.id.me_user_photo:
                 ToastUtils.showToast(getActivity(),"点击了用户头像");
+                intent.setClass(getActivity(), MyInfoActivity.class);
+                startActivity(intent);
                 break;
             case R.id.me_album:
                 ToastUtils.showToast(getActivity(),"点击了相册");

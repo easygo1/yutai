@@ -54,6 +54,5 @@ public class C3P0Utils {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-
 	}
 }

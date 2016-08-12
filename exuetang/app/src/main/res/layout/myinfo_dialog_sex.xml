@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+    <TextView
+        android:id="@+id/my_info_dialog_title"
+        android:textColor="@color/me_text_black"
+        android:textSize="15sp"
+        android:gravity="center"
+        android:layout_marginTop="15sp"
+        android:text="修改性别"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <RadioGroup
+        android:id="@+id/sex_radiogroup"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="72dp">
+
+        <RadioButton
+            android:checked="true"
+            android:paddingRight="48dp"
+            android:layout_marginLeft="65dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:id="@+id/radio_male"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:drawableRight="@mipmap/male"/>
+
+
+        <RadioButton
+            android:paddingRight="53dp"
+            android:layout_marginLeft="51dp"
+            android:layout_gravity="center"
+            android:id="@+id/radio_female"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:drawableRight="@mipmap/female"/>
+    </RadioGroup>
+
+    <TextView
+        style="@style/text_liner_x"/>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="45dp">
+        <TextView
+            android:id="@+id/my_info_dialog_sex_cancle"
+            android:textColor="@color/my_info_blue"
+            android:textSize="@dimen/tab_textsize"
+            android:gravity="center"
+            android:text="取消"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"/>
+        <TextView
+            style="@style/text_liner_y"/>
+        <TextView
+            android:id="@+id/my_info_dialog_sex_ok"
+            android:textColor="@color/my_info_blue"
+            android:textSize="@dimen/tab_textsize"
+            android:gravity="center"
+            android:text="确定"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"/>
+    </LinearLayout>
+</LinearLayout>

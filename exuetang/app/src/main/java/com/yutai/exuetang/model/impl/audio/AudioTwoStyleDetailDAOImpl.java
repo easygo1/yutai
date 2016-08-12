@@ -1,9 +1,31 @@
 package com.yutai.exuetang.model.impl.audio;
 
+import android.app.Activity;
+import android.util.Log;
+
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+import com.yolanda.nohttp.NoHttp;
+import com.yolanda.nohttp.RequestMethod;
+import com.yolanda.nohttp.error.NetworkError;
+import com.yolanda.nohttp.error.NotFoundCacheError;
+import com.yolanda.nohttp.error.ServerError;
+import com.yolanda.nohttp.error.TimeoutError;
+import com.yolanda.nohttp.error.URLError;
+import com.yolanda.nohttp.error.UnKnownHostError;
+import com.yolanda.nohttp.rest.OnResponseListener;
+import com.yolanda.nohttp.rest.Request;
+import com.yolanda.nohttp.rest.Response;
 import com.yutai.exuetang.model.beans.audio.music.Music;
 import com.yutai.exuetang.model.dao.audio.IAudioTwoStyleDetailDAO;
-import com.yutai.exuetang.presenter.dao.audio.AudioTwoStyleDetailPresenter;
+import com.yutai.exuetang.model.dao.audio.TwoListener;
+import com.yutai.exuetang.model.dao.audio.TypePathListener;
+import com.yutai.exuetang.utils.RequestManager;
+import com.yutai.exuetang.utils.ToastUtils;
+import com.yutai.exuetang.utils.nohttp.WaitDialog;
+import com.yutai.exuetang.view.application.MyApplication;
 
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,51 +33,169 @@ import java.util.List;
  * Created by ZFG on 2016/7/16.
  */
 public class AudioTwoStyleDetailDAOImpl implements IAudioTwoStyleDetailDAO {
-    private List<Music> mMusicList;
+    public static final int GET_MUSIC_LIST_WHAT = 1;
+    public static final int UPDATE_AUDITION_NUM = 2;
+    public static final int GET_MUSICTYPE2_PATH = 3;
+    public String mPath = MyApplication.url + "/audioservlet";
+//    Request<String> request;
+    //自定义一个dialog
+    private WaitDialog mDialog;
+    private Activity mActivity;
+    private List<Music> mMusicList = new ArrayList<>();
+    private String type2_path = "";
+    //网络请求队列
+    // 创建请求队列, 默认并发3个请求,传入你想要的数字可以改变默认并发数, 例如NoHttp.newRequestQueue(1);
+//    private RequestQueue requestQueue= NoHttp.newRequestQueue();
+    private boolean isSucess = false;
 
     @Override
-    public List<Music> getData(String type1, String type2, int tabstyle, int cur, AudioTwoStyleDetailPresenter twoStyleDetailPresenter) {
-        mMusicList = new ArrayList<>();
-        //网络请求 得到数据
-        switch (tabstyle) {
-            case 1:
-                //人气推荐（按照试听量排序）
-                Music music1 = new Music(1, "http://video.234.cn/234/ly/%B6%F9%B8%E8%CD%AF%D2%A5/%D6%D0%CE%C4%B6%F9%B8%E8/%C1%BD%D6%BB%C0%CF%BB%A2.jpg", "两只老虎-人气","http://easygo.b0.upaiyun.com/music/1469771068619.mp3", "http://easygo.b0.upaiyun.com/music/1469771070544.lrc",12000, 13000);
-                Music music2 = new Music(2, "http://video.234.cn/234/ly/%B6%F9%B8%E8%CD%AF%D2%A5/%D6%D0%CE%C4%B6%F9%B8%E8/%C1%BD%D6%BB%C0%CF%BB%A2.jpg", "春天来了-人气", "http://easygo.b0.upaiyun.com/music/1469772498860.mp3","http://easygo.b0.upaiyun.com/music/1469772500356.lrc",12000, 13000);
-                Music music3 = new Music(3, "http://video.234.cn/234/ly/%B6%F9%B8%E8%CD%AF%D2%A5/%D6%D0%CE%C4%B6%F9%B8%E8/%C1%BD%D6%BB%C0%CF%BB%A2.jpg", "小白船-人气", "http://easygo.b0.upaiyun.com/music/1469843033616.mp3","http://easygo.b0.upaiyun.com/music/1469843035506.lrc",12000, 13000);
-                Music music4 = new Music(4, "http://video.234.cn/234/ly/%B6%F9%B8%E8%CD%AF%D2%A5/%D6%D0%CE%C4%B6%F9%B8%E8/%C1%BD%D6%BB%C0%CF%BB%A2.jpg", "两只老虎1-人气", "http://easygo.b0.upaiyun.com/music/1469773802602.mp3","http://easygo.b0.upaiyun.com/music/1469773804410.lrc",12000, 13000);
-                mMusicList.add(music1);
-                mMusicList.add(music2);
-                mMusicList.add(music3);
-                mMusicList.add(music4);
-                break;
-            case 2:
-                // 最近更新（按照上传时间排序）
-                Music music5 = new Music(5, "http://www.baby-cloud.com/attachments/2011/12/1_201112161602541KtvV.png", "两只老虎-最近", "http://easygo.b0.upaiyun.com/yutaimp3/林俊杰-她说.mp3","http://easygo.b0.upaiyun.com/music/1469773804410.lrc",12000, 13000);
-                Music music6 = new Music(6, "http://www.baby-cloud.com/attachments/2011/12/1_201112161602541KtvV.png", "两只老虎-最近", "http://easygo.b0.upaiyun.com/yutaimp3/林俊杰-她说.mp3","http://easygo.b0.upaiyun.com/music/1469773804410.lrc",12000, 13000);
-                Music music7 = new Music(7, "http://video.234.cn/234/ly/%B6%F9%B8%E8%CD%AF%D2%A5/%D6%D0%CE%C4%B6%F9%B8%E8/%C1%BD%D6%BB%C0%CF%BB%A2.jpg", "两只老虎-最近", "http://easygo.b0.upaiyun.com/yutaimp3/林俊杰-她说.mp3","http://easygo.b0.upaiyun.com/music/1469773804410.lrc",12000, 13000);
-                Music music8 = new Music(8, "http://video.234.cn/234/ly/%B6%F9%B8%E8%CD%AF%D2%A5/%D6%D0%CE%C4%B6%F9%B8%E8/%C1%BD%D6%BB%C0%CF%BB%A2.jpg", "两只老虎-最近", "http://easygo.b0.upaiyun.com/yutaimp3/林俊杰-她说.mp3","http://easygo.b0.upaiyun.com/music/1469773804410.lrc",12000, 13000);
-                mMusicList.add(music5);
-                mMusicList.add(music6);
-                mMusicList.add(music7);
-                mMusicList.add(music8);
-                break;
-            case 3:
-                //最受欢迎（按照下载量排序）
-                Music music9 = new Music(9, "http://video.234.cn/234/ly/%B6%F9%B8%E8%CD%AF%D2%A5/%D6%D0%CE%C4%B6%F9%B8%E8/%C1%BD%D6%BB%C0%CF%BB%A2.jpg", "两只老虎-最受欢迎", "http://easygo.b0.upaiyun.com/yutaimp3/林俊杰-她说.mp3","http://easygo.b0.upaiyun.com/music/1469773804410.lrc",12000, 13000);
-                Music music10 = new Music(10, "http://video.234.cn/234/ly/%B6%F9%B8%E8%CD%AF%D2%A5/%D6%D0%CE%C4%B6%F9%B8%E8/%C1%BD%D6%BB%C0%CF%BB%A2.jpg", "两只老虎-最受欢迎", "http://easygo.b0.upaiyun.com/yutaimp3/林俊杰-她说.mp3","http://easygo.b0.upaiyun.com/music/1469773804410.lrc",12000, 13000);
-                Music music11 = new Music(11, "http://video.234.cn/234/ly/%B6%F9%B8%E8%CD%AF%D2%A5/%D6%D0%CE%C4%B6%F9%B8%E8/%C1%BD%D6%BB%C0%CF%BB%A2.jpg", "两只老虎-最受欢迎", "http://easygo.b0.upaiyun.com/yutaimp3/林俊杰-她说.mp3","http://easygo.b0.upaiyun.com/music/1469773804410.lrc",12000, 13000);
-                Music music12 = new Music(12, "http://video.234.cn/234/ly/%B6%F9%B8%E8%CD%AF%D2%A5/%D6%D0%CE%C4%B6%F9%B8%E8/%C1%BD%D6%BB%C0%CF%BB%A2.jpg", "两只老虎-最受欢迎", "http://easygo.b0.upaiyun.com/yutaimp3/林俊杰-她说.mp3","http://easygo.b0.upaiyun.com/music/1469773804410.lrc",12000, 13000);
-                Music music13 = new Music(13, "http://video.234.cn/234/ly/%B6%F9%B8%E8%CD%AF%D2%A5/%D6%D0%CE%C4%B6%F9%B8%E8/%C1%BD%D6%BB%C0%CF%BB%A2.jpg", "两只老虎-最受欢迎", "http://easygo.b0.upaiyun.com/yutaimp3/林俊杰-她说.mp3","http://easygo.b0.upaiyun.com/music/1469773804410.lrc",12000, 13000);
-                Music music14 = new Music(14, "http://video.234.cn/234/ly/%B6%F9%B8%E8%CD%AF%D2%A5/%D6%D0%CE%C4%B6%F9%B8%E8/%C1%BD%D6%BB%C0%CF%BB%A2.jpg", "两只老虎-最受欢迎", "http://easygo.b0.upaiyun.com/yutaimp3/林俊杰-她说.mp3","http://easygo.b0.upaiyun.com/music/1469773804410.lrc",12000, 13000);
-                mMusicList.add(music9);
-                mMusicList.add(music10);
-                mMusicList.add(music11);
-                mMusicList.add(music12);
-                mMusicList.add(music13);
-                mMusicList.add(music14);
-                break;
-        }
-        return mMusicList;
+    public void getData(final String type1, final String type2, final int tabstyle, final int cur, final TwoListener twoListener, Activity mactivity) {
+        mActivity = mactivity;
+        mDialog = new WaitDialog(mActivity);//提示框
+        // 创建请求对象
+        Request<String> request = NoHttp.createStringRequest(mPath, RequestMethod.POST);
+        // 添加请求参数
+        request.add("methods", "selecttwoStyleMusic");
+        request.add("type1", type1);
+        request.add("type2", type2);
+        request.add("cur", cur);
+        request.add("tabstyle", tabstyle);
+        RequestManager.getInstance().add(GET_MUSIC_LIST_WHAT, request, new OnResponseListener<String>() {
+            @Override
+            public void onStart(int what) {
+// 请求开始，这里可以显示一个dialog
+                mDialog.show();
+            }
+
+            @Override
+            public void onSucceed(int what, Response<String> response) {
+                //获取音乐
+                String result2 = response.get();// 响应结果
+                Log.e("music::", result2);//list
+                if (result2.equals("400")) {
+                    ToastUtils.showToast(mActivity, "获取数据异常");
+                } else if (result2.equals("201")) {
+                    ToastUtils.showToast(mActivity, "没有数据了");
+                    isSucess = true;
+                } else{
+                    Log.e("result2", result2);
+                    //此时的判断是 有时会出现图片请求的结果 不明白为啥 这样写也不能解决
+                    isSucess = true;
+                    Gson gson = new Gson();
+                    Type type = new TypeToken<List<Music>>() {
+                    }.getType();
+                    mMusicList = gson.fromJson(result2, type);
+                   /* myObservable1 =
+                            Observable.just(mMusicList);
+                    myObservable1.subscribe(onNextAction1);*/
+                }
+                if (isSucess) {
+                    twoListener.test(mMusicList);
+                }
+            }
+
+            @Override
+            public void onFailed(int what, String url, Object tag, Exception exception, int responseCode, long networkMillis) {
+               /*  if (exception instanceof ClientError) {// 客户端错误
+                ToastUtils.showToast(mActivity, "客户端错误");
+            } else */
+                    if (exception instanceof ServerError) {// 服务器错误
+                ToastUtils.showToast(mActivity, "服务器错误");
+            } else if (exception instanceof NetworkError) {// 网络不好
+                ToastUtils.showToast(mActivity, "网络不好");
+            } else if (exception instanceof TimeoutError) {// 请求超时
+                ToastUtils.showToast(mActivity, "请求超时");
+            } else if (exception instanceof UnKnownHostError) {// 找不到服务器
+                ToastUtils.showToast(mActivity, "找不到服务器");
+            } else if (exception instanceof URLError) {// URL是错的
+                ToastUtils.showToast(mActivity, "URL是错的");
+            } else if (exception instanceof NotFoundCacheError) {
+                ToastUtils.showToast(mActivity, "没有发现缓存");
+                // 这个异常只会在仅仅查找缓存时没有找到缓存时返回
+            } else {
+                ToastUtils.showToast(mActivity, "未知错误");
+            }
+            }
+
+            @Override
+            public void onFinish(int what) {
+                mDialog.dismiss();
+            }
+        });
+    }
+
+    @Override
+    public void updateaudition(int music_id, Activity mactivity) {
+        mActivity = mactivity;
+        mDialog = new WaitDialog(mActivity);//提示框
+        // 创建请求对象
+        Request<String> request = NoHttp.createStringRequest(mPath, RequestMethod.POST);
+        // 添加请求参数
+        request.add("methods", "updateAuditionNum");
+        request.add("music_id", music_id);
+        RequestManager.getInstance().add(UPDATE_AUDITION_NUM, request, new OnResponseListener<String>() {
+            @Override
+            public void onStart(int what) {
+            // 请求开始，这里可以显示一个dialog
+                //mDialog.show();
+            }
+
+            @Override
+            public void onSucceed(int what, Response<String> response) {
+
+            }
+
+            @Override
+            public void onFailed(int what, String url, Object tag, Exception exception, int responseCode, long networkMillis) {
+
+            }
+
+            @Override
+            public void onFinish(int what) {
+//                mDialog.dismiss();
+            }
+        });
+    }
+
+    @Override
+    public void getTypephoto(final String type2, Activity activity, final TypePathListener typePathListener) {
+        mActivity = activity;
+        mDialog = new WaitDialog(mActivity);//提示框
+        // 创建请求对象
+        Request<String> request = NoHttp.createStringRequest(mPath, RequestMethod.POST);
+        // 添加请求参数
+        request.add("methods", "gettypephoto");
+        request.add("music_type2", type2);
+        RequestManager.getInstance().add(GET_MUSICTYPE2_PATH, request, new OnResponseListener<String>() {
+            @Override
+            public void onStart(int what) {
+           // 请求开始，这里可以显示一个dialog
+                mDialog.show();
+            }
+
+            @Override
+            public void onSucceed(int what, Response<String> response) {
+                Log.e("GET_MUSICTYPE2_PATH",""+what);
+                typePathListener.test(response.get());
+            }
+
+            @Override
+            public void onFailed(int what, String url, Object tag, Exception exception, int responseCode, long networkMillis) {
+
+            }
+
+            @Override
+            public void onFinish(int what) {
+                mDialog.dismiss();
+            }
+        });
+        /*onNextAction = new Action1<String>() {
+            @Override
+            public void call(String s) {
+                Log.e("asasa",s);
+                typePathListener.test(s);
+            }
+        };*/
     }
 }
+

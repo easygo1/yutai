@@ -149,4 +149,6 @@
             android:gravity="center"
             android:text=""/>
     </LinearLayout>
+    <TextView
+        style="@style/text_liner_x"/>
 </LinearLayout>

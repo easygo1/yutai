@@ -17,6 +17,9 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
     <!--播放音乐需要的权限-->
     <uses-permission android:name="android.permission.MEDIA_CONTENT_CONTROL"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+
     <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"/>
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
@@ -46,6 +49,7 @@
         <activity
             android:name=".view.activity.audio.AudioHomeActivity"
             android:windowSoftInputMode="adjustPan">
+
             <!-- 设置软键盘的格式，防止因为软键盘的原因使布局改变 -->
         </activity>
         <activity android:name=".view.activity.exuetang.LoginActivity">
@@ -82,6 +86,34 @@
                 <action android:name="com.wwj.media.MUSIC_SERVICE"/>
             </intent-filter>
         </service>
+        <activity android:name=".view.activity.audio.twostyle.EnglishXuetangActivity">
+        </activity>
+        <activity android:name=".view.activity.audio.twostyle.VirtueStoryActivity">
+        </activity>
+        <activity android:name=".view.activity.audio.twostyle.ChinaLiteratureActivity">
+        </activity>
+        <activity android:name=".view.activity.audio.twostyle.IdiomStoryActivity">
+        </activity>
+        <activity android:name=".view.activity.audio.twostyle.FamousAphorismActivity">
+        </activity>
+        <activity android:name=".view.activity.audio.twostyle.FamousQuotesActivity">
+        </activity>
+        <activity android:name=".view.activity.audio.twostyle.WorldClassicActivity">
+        </activity>
+        <activity android:name=".view.activity.audio.twostyle.WordKnowActivity">
+        </activity>
+        <activity android:name=".view.activity.audio.twostyle.FamousPersonActivity">
+        </activity>
+        <activity android:name=".view.activity.audio.twostyle.AnimalWorldActivity">
+        </activity>
+        <activity android:name=".view.activity.audio.twostyle.PlantWorldActivity">
+        </activity>
+        <activity android:name=".view.activity.audio.SearchMusicActivity">
+        </activity>
+        <activity android:name=".view.activity.exuetang.MyInfoActivity">
+        </activity>
+        <activity android:name=".view.activity.exuetang.MyIntoPhoneActivity">
+        </activity>
     </application>
 
 </manifest>

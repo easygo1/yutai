@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".view.activity.exuetang.MyIntoPhoneActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="51dp"
+        android:background="@color/titlecolor">
+
+        <ImageView
+            android:id="@+id/my_info_back_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="14dp"
+            android:layout_marginTop="18dp"
+            android:src="@mipmap/return_image"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="更换手机号"
+            android:textColor="@color/me_text_black"
+            android:textSize="@dimen/title_textsize"/>
+    </RelativeLayout>
+
+    <TextView
+        style="@style/text_liner_x"
+        android:layout_marginTop="16dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="43dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/info_phone_t1"
+            style="@style/my_info_text_left"
+            android:text="国家地区"/>
+
+        <TextView
+            android:id="@+id/info_phone_t2"
+            style="@style/my_info_text_left"
+            android:layout_marginLeft="189dp"
+            android:text="中国大陆+86"/>
+    </LinearLayout>
+
+    <TextView
+        style="@style/text_liner_x"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="43dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/info_phone_old"
+            style="@style/my_info_text_left"
+            android:text="旧手机号"/>
+
+        <EditText
+            android:id="@+id/info_phone_old_editview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="24dp"
+            android:layout_marginRight="25dp"
+            android:background="@null"
+            android:hint="请输入手机号"/>
+    </LinearLayout>
+
+    <TextView
+        style="@style/text_liner_x"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="43dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/info_phone_new"
+            style="@style/my_info_text_left"
+            android:text="新手机号"/>
+
+        <EditText
+            android:id="@+id/info_phone_new_editview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="24dp"
+            android:layout_marginRight="25dp"
+            android:background="@null"
+            android:hint="请输入手机号"/>
+    </LinearLayout>
+
+    <TextView
+        style="@style/text_liner_x"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="43dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/info_phone_code"
+            style="@style/my_info_text_left"
+            android:text="验证码   "/>
+
+        <EditText
+            android:id="@+id/info_phone_code_editview"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="24dp"
+            android:layout_marginRight="25dp"
+            android:background="@null"
+            android:hint="请输入验证码"/>
+
+        <TextView
+            android:id="@+id/info_phone_code_tv"
+            style="@style/my_info_text_left"
+            android:text="发送验证码"
+            android:textColor="@color/my_info_blue"/>
+    </LinearLayout>
+
+    <TextView
+        style="@style/text_liner_x"/>
+
+    <Button
+        android:id="@+id/info_phone_sendok_btn"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginLeft="14dp"
+        android:layout_marginRight="14dp"
+        android:layout_marginTop="31dp"
+        android:background="@drawable/corner_btn"
+        android:text="完成"
+        android:textColor="@color/white"
+        android:textSize="@dimen/tab_textsize"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center_vertical">
+
+        <CheckBox
+            android:id="@+id/info_phone_checkbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/agree_str_tv"
+            android:checked="true"/>
+
+        <TextView
+            android:id="@+id/agree_str_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:text="本人已阅读并同意注册协议"
+            android:textSize="11sp"/>
+    </RelativeLayout>
+
+</LinearLayout>

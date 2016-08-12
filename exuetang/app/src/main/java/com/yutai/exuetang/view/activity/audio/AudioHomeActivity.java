@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -12,14 +13,26 @@ import com.bumptech.glide.Glide;
 import com.youth.banner.Banner;
 import com.yutai.exuetang.R;
 import com.yutai.exuetang.utils.ToastUtils;
+import com.yutai.exuetang.view.activity.audio.twostyle.AnimalWorldActivity;
 import com.yutai.exuetang.view.activity.audio.twostyle.ChildSongXuetangActivity;
+import com.yutai.exuetang.view.activity.audio.twostyle.ChinaLiteratureActivity;
+import com.yutai.exuetang.view.activity.audio.twostyle.EnglishXuetangActivity;
+import com.yutai.exuetang.view.activity.audio.twostyle.FamousAphorismActivity;
+import com.yutai.exuetang.view.activity.audio.twostyle.FamousPersonActivity;
+import com.yutai.exuetang.view.activity.audio.twostyle.FamousQuotesActivity;
+import com.yutai.exuetang.view.activity.audio.twostyle.GoodWordsActivity;
 import com.yutai.exuetang.view.activity.audio.twostyle.GuoXueXuetangActivity;
+import com.yutai.exuetang.view.activity.audio.twostyle.IdiomStoryActivity;
 import com.yutai.exuetang.view.activity.audio.twostyle.JokeRiddleActivity;
+import com.yutai.exuetang.view.activity.audio.twostyle.PlantWorldActivity;
 import com.yutai.exuetang.view.activity.audio.twostyle.PomeXuetangActivity;
 import com.yutai.exuetang.view.activity.audio.twostyle.ReciteXuetangActivity;
 import com.yutai.exuetang.view.activity.audio.twostyle.SafetyEducationActivity;
 import com.yutai.exuetang.view.activity.audio.twostyle.StoryXuetangActivity;
+import com.yutai.exuetang.view.activity.audio.twostyle.VirtueStoryActivity;
 import com.yutai.exuetang.view.activity.audio.twostyle.WhysActivity;
+import com.yutai.exuetang.view.activity.audio.twostyle.WordKnowActivity;
+import com.yutai.exuetang.view.activity.audio.twostyle.WorldClassicActivity;
 import com.yutai.exuetang.view.application.MyApplication;
 
 public class AudioHomeActivity extends AppCompatActivity implements View.OnClickListener {
@@ -68,11 +81,9 @@ public class AudioHomeActivity extends AppCompatActivity implements View.OnClick
     private ImageView mAudioHomeBackImage;
     private ImageView mAudioHomeLikeImage;
     private ImageView mAudioHomeResentImage;
-
+    private EditText mSearchEditText;
     //轮播图的图片地址
     String[] images1 = new String[]{"http://pic15.nipic.com/20110803/7929674_090036056357_2.jpg", "http://pic21.nipic.com/20120525/9894811_180438440328_2.jpg", "http://pic.58pic.com/58pic/11/30/16/73d58PICPIZ.jpg", "http://i0.letvimg.com/cms/201406/04/0b35ddfe94174f03a7bf984e63309a0e.jpg"};
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -128,6 +139,8 @@ public class AudioHomeActivity extends AppCompatActivity implements View.OnClick
         mAudioHomeBackImage = (ImageView) findViewById(R.id.audio_home_back_image);
         mAudioHomeLikeImage = (ImageView) findViewById(R.id.audio_home_like_image);
         mAudioHomeResentImage = (ImageView) findViewById(R.id.audio_home_resent_image);
+        mSearchEditText= (EditText) findViewById(R.id.search_edit1);
+
         mAudioHomeBanner = (Banner) findViewById(R.id.audio_home_banner);
         //设置轮播图圆点样式
         //显示小圆点
@@ -201,6 +214,18 @@ public class AudioHomeActivity extends AppCompatActivity implements View.OnClick
 
         mAudioHomeLikeImage.setOnClickListener(this);
         mAudioHomeResentImage.setOnClickListener(this);
+        mSearchEditText.setOnClickListener(this);
+        mSearchEditText.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+//                if(hasFocus){
+//                    获取焦点的时候就跳转到SearchMusicActivity页面
+                    Intent intent=new Intent();
+                    intent.setClass(AudioHomeActivity.this,SearchMusicActivity.class);
+                startActivity(intent);
+//                }
+            }
+        });
     }
 
     @Override
@@ -258,50 +283,74 @@ public class AudioHomeActivity extends AppCompatActivity implements View.OnClick
             case R.id.haocihaoju_linearlayout:
 //                好词好句
                 show("好词好句");
+                intent.setClass(this, GoodWordsActivity.class);
+                startActivity(intent);
                 break;
             case R.id.english_linearlayout:
 //                英语经典学堂
                 show("英语经典学堂");
+                intent.setClass(this, EnglishXuetangActivity.class);
+                startActivity(intent);
                 break;
             case R.id.meide_linearlayout:
 //                中华美德故事
                 show("中华美德故事");
+                intent.setClass(this, VirtueStoryActivity.class);
+                startActivity(intent);
                 break;
             case R.id.chinamingzhu_linearlayout:
 //                中国名著
                 show("中国名著");
+                intent.setClass(this, ChinaLiteratureActivity.class);
+                startActivity(intent);
                 break;
             case R.id.chengyu_linearlayout:
 //                成语故事
                 show("成语故事");
+                intent.setClass(this, IdiomStoryActivity.class);
+                startActivity(intent);
                 break;
             case R.id.mingyanjingju_linearlayout:
 //                名言警句
                 show("名言警句");
+                intent.setClass(this, FamousAphorismActivity.class);
+                startActivity(intent);
                 break;
             case R.id.mingrenmingyan_linearlayout:
 //                名人名言
-                show("");
+                show("名人名言");
+                intent.setClass(this, FamousQuotesActivity.class);
+                startActivity(intent);
                 break;
             case R.id.worldmingzhu_linearlayout:
 //                世界名著
                 show("世界名著");
+                intent.setClass(this, WorldClassicActivity.class);
+                startActivity(intent);
                 break;
             case R.id.zicizhishi_linearlayout:
 //                字词知识
                 show("字词知识");
+                intent.setClass(this, WordKnowActivity.class);
+                startActivity(intent);
                 break;
             case R.id.mingrenzhuan_linearlayout:
 //                名人传
                 show("名人传");
+                intent.setClass(this, FamousPersonActivity.class);
+                startActivity(intent);
                 break;
             case R.id.animalworld_linearlayout:
 //                动物世界
                 show("动物世界");
+                intent.setClass(this, AnimalWorldActivity.class);
+                startActivity(intent);
                 break;
             case R.id.plantworld_linearlayout:
 //                植物世界
                 show("植物世界");
+                intent.setClass(this, PlantWorldActivity.class);
+                startActivity(intent);
                 break;
             case R.id.audio_home_back_image:
                 finish();
@@ -311,6 +360,10 @@ public class AudioHomeActivity extends AppCompatActivity implements View.OnClick
                 break;
             case R.id.audio_home_resent_image:
                 show("最近播放");
+                break;
+            case R.id.search_edit1:
+                intent.setClass(AudioHomeActivity.this,SearchMusicActivity.class);
+                startActivity(intent);
                 break;
         }
     }
