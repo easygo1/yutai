@@ -281,9 +281,13 @@ public class SearchMusicActivity extends AppCompatActivity implements SearchView
      */
     private void getHotData() {
         hintData = new ArrayList<>(hintSize);
-        for (int i = 1; i <= hintSize; i++) {
+        hintData.add("两只老虎");
+        hintData.add("小白船");
+        hintData.add("小苹果");
+        hintData.add("小水牛");
+        /*for (int i = 1; i <= hintSize; i++) {
             hintData.add("热搜版" + i + "：经典儿歌");
-        }
+        }*/
         hintAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, hintData);
     }
 
@@ -385,4 +389,5 @@ public class SearchMusicActivity extends AppCompatActivity implements SearchView
     public void gettypepath(String type_path) {
 
     }
+
 }

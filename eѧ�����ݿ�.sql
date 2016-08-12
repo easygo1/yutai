@@ -1,12 +1,12 @@
 ﻿create table user(
 	user_id        int PRIMARY KEY AUTO_INCREMENT,
 	user_newphone  varchar(15) UNIQUE,   ##(用户手机号，唯一)
-	user_oldphone  varchar(15)
+	user_oldphone  varchar(15),
 	user_password  varchar(50),          ##(用户密码)
 	user_nickname  varchar(20),          ##(用户昵称)
 	user_mood		varchar(100),		 ##(个性签名(最多输入50字))
 	user_qq_token     varchar(200),      ##(第三方qq登陆token)
-	user_wechar_token    varchar(200),   ##(第三方微信登录openid)
+	user_wechat_token    varchar(200),   ##(第三方微信登录openid)
 	user_realname  varchar(20),          ##(用户的真实姓名)
 	user_sex       char(2),              ##(用户性别)
 	user_type      int,                  ##(是否为会员)
@@ -16,14 +16,14 @@
 CREATE table coins(
 	coins_id            int PRIMARY KEY AUTO_INCREMENT,
 	user_id             int,           ##(用户ID，外键)
-	coins_num           double,           ##(学习币数)
+	coins_num           double(10,2),           ##(学习币数)
 	coins_remarks       varchar(100)); ##(备注)
 
 ##用户小孩信息表：child
 CREATE table child(
 	child_id               int PRIMARY KEY AUTO_INCREMENT,
 	user_id                int,              	##(外键)
-	child_birthday         date,             	##(宝宝生日)
+	child_birthday         varchar(30),         ##(宝宝生日)
 	child_name             varchar(20),      	##(姓名)
 	child_photo            varchar(100),     	##(头像)
 	child_sex              char(2),          	##(性别)
@@ -55,11 +55,11 @@ create TABLE music(
 	music_download_week_number   int,           ##周下载量
 	music_download_day_number    int,           ##天下载量
 	music_photo                  varchar(300),  ##音乐图片地址
-    music_bg_photo               varchar(300),  ##音乐背景图片地址
-    music_main_photo             varchar(300),  ##音乐主图图片地址
+  music_bg_photo               varchar(300),  ##音乐背景图片地址
+  music_main_photo             varchar(300),  ##音乐主图图片地址
 	music_introduct              varchar(200),  ##音乐简介
-	music_coins    				 int,           ##(下载所需金币)
-	music_upload_time			 datetime       ##音乐上传时间
+	music_coins    				       double,        ##(下载所需金币)
+	music_upload_time			       datetime,      ##音乐上传时间
 	music_remarks                varchar(100)   ##备注
 );  
 ##音乐二级类型图片表：typephoto

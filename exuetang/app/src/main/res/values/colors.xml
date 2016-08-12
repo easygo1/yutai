@@ -18,6 +18,8 @@
     <color name="titlecolor">#C3ED09</color>
     <!--白色-->
     <color name="white">#ffffff</color>
+    <!--白色-->
+    <color name="black">#000000</color>
     <!--搜索提示的颜色灰色-->
     <color name="gray">#8c8c8c</color>
     <!--线的颜色-->
@@ -29,4 +31,10 @@
     <!--空白处背景颜色-->
     <color name="background_color">#f2f2f2</color>
     <color name="bottomColor">#EFEEEC</color>
+    <color name="my_info_right1_text">#5A5A5A</color>
+    <color name="my_info_right_text">#A0A0A0</color>
+    <color name="my_info_blue">#007AFF</color>
+    <!--hint的颜色-->
+    <color name="hint_color">#bebebe</color>
+    <color name="yellow">#FFCC33</color>
 </resources>

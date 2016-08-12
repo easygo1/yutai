@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.yutai.exuetang.view.activity.exuetang.MyInfoActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="51dp"
+        android:background="@color/titlecolor">
+
+        <ImageView
+            android:id="@+id/my_info_back_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="14dp"
+            android:layout_marginTop="18dp"
+            android:src="@mipmap/return_image"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="个人信息"
+            android:textColor="@color/me_text_black"
+            android:textSize="@dimen/title_textsize"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/my_info_user_photo_layout"
+        android:layout_width="match_parent"
+        android:layout_height="83dp">
+
+        <TextView
+            android:id="@+id/my_info_user_photo"
+            style="@style/my_info_text_left"
+            android:text="头像"/>
+
+        <ImageView
+            android:id="@+id/my_info_user_photo_image"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
+            android:layout_marginBottom="9dp"
+            android:layout_marginRight="40dp"
+            android:src="@mipmap/portrait_2"/>
+
+        <ImageView
+            style="@style/my_info_image_arrow"/>
+    </RelativeLayout>
+
+    <TextView
+        style="@style/text_liner_x"/>
+
+    <RelativeLayout
+        android:id="@+id/my_info_nickname_layout"
+        android:layout_width="match_parent"
+        android:layout_height="43dp">
+
+        <TextView
+            android:id="@+id/my_info_nickname"
+            style="@style/my_info_text_left"
+            android:text="昵称"/>
+
+        <TextView
+            android:id="@+id/my_info_nickname_tv"
+            style="@style/my_info_text_right"
+            android:text="我的昵称"
+            android:textColor="@color/my_info_right1_text"/>
+
+        <ImageView
+            style="@style/my_info_image_arrow"/>
+    </RelativeLayout>
+
+    <TextView
+        style="@style/text_liner_x"/>
+
+    <RelativeLayout
+        android:id="@+id/my_info_phone_layout"
+        android:layout_width="match_parent"
+        android:layout_height="43dp">
+
+        <TextView
+            android:id="@+id/my_info_phone"
+            style="@style/my_info_text_left"
+            android:text="修改手机号"/>
+
+        <TextView
+            android:id="@+id/my_info_phone_tv"
+            style="@style/my_info_text_right"
+            android:text="13252411223"
+            android:textColor="@color/my_info_right1_text"/>
+
+        <ImageView
+            style="@style/my_info_image_arrow"/>
+    </RelativeLayout>
+
+    <TextView
+        style="@style/text_liner_x"/>
+
+    <TextView
+        style="@style/text_liner_x"
+        android:layout_height="15dp"
+        android:background="@color/background_color"/>
+
+    <TextView
+        style="@style/text_liner_x"/>
+
+    <RelativeLayout
+        android:id="@+id/my_info_sex_layout"
+        android:layout_width="match_parent"
+        android:layout_height="43dp">
+
+        <TextView
+            android:id="@+id/my_info_sex"
+            style="@style/my_info_text_left"
+            android:text="性别"/>
+
+        <ImageView
+            android:id="@+id/my_info_sex_image"
+            style="@style/my_info_text_right"
+            android:src="@mipmap/female"/>
+
+        <ImageView
+            style="@style/my_info_image_arrow"/>
+    </RelativeLayout>
+
+    <TextView
+        style="@style/text_liner_x"/>
+
+    <RelativeLayout
+        android:id="@+id/my_info_birthday_layout"
+        android:layout_width="match_parent"
+        android:layout_height="43dp">
+
+        <TextView
+            android:id="@+id/my_info_birthday"
+            style="@style/my_info_text_left"
+            android:text="生日"/>
+
+        <TextView
+            android:id="@+id/my_info_birthday_tv"
+            style="@style/my_info_text_right"
+            android:text="XX年X月X日"/>
+
+        <ImageView
+            style="@style/my_info_image_arrow"/>
+    </RelativeLayout>
+
+    <TextView
+        style="@style/text_liner_x"/>
+
+    <RelativeLayout
+        android:id="@+id/my_info_school_class_layout"
+        android:layout_width="match_parent"
+        android:layout_height="43dp">
+
+        <TextView
+            android:id="@+id/my_info_school_class"
+            style="@style/my_info_text_left"
+            android:text="学校及班级"/>
+
+        <TextView
+            android:id="@+id/my_info_school_class_tv"
+            style="@style/my_info_text_right"
+            android:text="杭州市育才小学一年级4班"/>
+
+        <ImageView
+            style="@style/my_info_image_arrow"/>
+    </RelativeLayout>
+
+    <TextView
+        style="@style/text_liner_x"/>
+
+    <TextView
+        style="@style/text_liner_x"
+        android:layout_height="15dp"
+        android:background="@color/background_color"/>
+
+    <TextView
+        style="@style/text_liner_x"/>
+
+    <RelativeLayout
+        android:id="@+id/my_info_dream_layout"
+        android:layout_width="match_parent"
+        android:layout_height="43dp">
+
+        <TextView
+            android:id="@+id/my_info_dream"
+            style="@style/my_info_text_left"
+            android:text="我的梦想"/>
+
+        <TextView
+            android:id="@+id/my_info_dream_tv"
+            style="@style/my_info_text_right"
+            android:text="例：我要成为科学家为祖国做贡献"/>
+
+        <ImageView
+            style="@style/my_info_image_arrow"/>
+    </RelativeLayout>
+
+    <TextView
+        style="@style/text_liner_x"/>
+
+    <RelativeLayout
+        android:id="@+id/my_info_hobby_layout"
+        android:layout_width="match_parent"
+        android:layout_height="43dp">
+
+        <TextView
+            android:id="@+id/my_info_hobby"
+            style="@style/my_info_text_left"
+            android:text="特长"/>
+
+        <TextView
+            android:id="@+id/my_info_hobby_tv"
+            style="@style/my_info_text_right"
+            android:text="例：唱歌、跳绳、跳舞"/>
+
+        <ImageView
+            style="@style/my_info_image_arrow"/>
+    </RelativeLayout>
+
+    <TextView
+        style="@style/text_liner_x"/>
+
+    <RelativeLayout
+        android:id="@+id/my_info_trainplan_layout"
+        android:layout_width="match_parent"
+        android:layout_height="43dp">
+
+        <TextView
+            android:id="@+id/my_info_trainplan"
+            style="@style/my_info_text_left"
+            android:text="我的培训计划"/>
+
+        <TextView
+            android:id="@+id/my_info_trainplan_tv"
+            style="@style/my_info_text_right"
+            android:text="例：钢琴、练字、小歌手"/>
+
+        <ImageView
+            style="@style/my_info_image_arrow"/>
+    </RelativeLayout>
+
+    <TextView
+        style="@style/text_liner_x"/>
+
+    <TextView
+        style="@style/text_liner_x"
+        android:layout_height="15dp"
+        android:background="@color/background_color"/>
+
+    <TextView
+        style="@style/text_liner_x"/>
+
+    <RelativeLayout
+        android:id="@+id/my_info_area_layout"
+        android:layout_width="match_parent"
+        android:layout_height="43dp">
+
+        <TextView
+            android:id="@+id/my_info_area"
+            style="@style/my_info_text_left"
+            android:text="地区"/>
+
+        <TextView
+            android:id="@+id/my_info_area_tv"
+            style="@style/my_info_text_right"
+            android:text="XX省X市X区"/>
+
+        <ImageView
+            style="@style/my_info_image_arrow"/>
+    </RelativeLayout>
+
+    <TextView
+        style="@style/text_liner_x"/>
+
+    <RelativeLayout
+        android:id="@+id/my_info_address_layout"
+        android:layout_width="match_parent"
+        android:layout_height="43dp">
+
+        <TextView
+            android:id="@+id/my_info_address"
+            style="@style/my_info_text_left"
+            android:text="通讯地址"/>
+
+        <TextView
+            android:id="@+id/my_info_address_tv"
+            style="@style/my_info_text_right"
+            android:text="例：莫干山路7号1幢1单元3室"/>
+
+        <ImageView
+            style="@style/my_info_image_arrow"/>
+    </RelativeLayout>
+</LinearLayout>

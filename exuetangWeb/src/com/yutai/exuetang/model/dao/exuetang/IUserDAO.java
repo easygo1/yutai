@@ -27,4 +27,8 @@ public interface IUserDAO {
 	// 修改用户密码
 	public abstract boolean updateUserPasswordByID(String user_password_new,
 			int user_id);
+    //修改用户昵称
+	public abstract boolean updateUserNickname(int user_id,String new_nickname);
+    //修改用户性别
+	public abstract boolean updatUserSex(int user_id,String user_sex);
 }

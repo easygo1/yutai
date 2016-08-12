@@ -4,6 +4,7 @@ import java.io.Serializable;
 
 public class Music implements Serializable {
 
+
     /**
      * 音乐
      */
@@ -27,7 +28,7 @@ public class Music implements Serializable {
     private String music_bg_photo;// 音乐背景图片地址
     private String music_main_photo;// 音乐主图图片地址
     private String music_introduct;// 音乐简介
-    private int music_coins;// (下载所需金币)
+    private double music_coins;// (下载所需金币)
     private String music_upload_time;// 音乐上传时间
     private String music_remarks;// 备注
 
@@ -42,7 +43,7 @@ public class Music implements Serializable {
                  int music_download_sum_number, int music_download_month_number,
                  int music_download_week_number, int music_download_day_number,
                  String music_photo, String music_bg_photo, String music_main_photo,
-                 String music_introduct, int music_coins, String music_upload_time,
+                 String music_introduct, double music_coins, String music_upload_time,
                  String music_remarks) {
         super();
         this.music_id = music_id;
@@ -175,10 +176,10 @@ public class Music implements Serializable {
     public void setMusic_introduct(String music_introduct) {
         this.music_introduct = music_introduct;
     }
-    public int getMusic_coins() {
+    public double getMusic_coins() {
         return music_coins;
     }
-    public void setMusic_coins(int music_coins) {
+    public void setMusic_coins(double music_coins) {
         this.music_coins = music_coins;
     }
     public String getMusic_upload_time() {
@@ -213,4 +214,5 @@ public class Music implements Serializable {
                 + ", music_coins=" + music_coins + ", music_upload_time="
                 + music_upload_time + ", music_remarks=" + music_remarks + "]";
     }
+
 }

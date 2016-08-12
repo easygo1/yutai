@@ -9,7 +9,7 @@ public class Paging {
 	private Connection connection = null;
 	private PreparedStatement statement = null;
 	private ResultSet resultSet = null;
-	int pageSize = 4;// 每页显示几条记录
+	int pageSize = 3;// 每页显示几条记录
 	int pageNow = 1;// 希望显示第几页
 	int rowCount = 0;// 共有几条纪录（查表）
 	int pageCount = 0;// 共有几页（计算出得到）

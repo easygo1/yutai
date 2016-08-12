@@ -53,7 +53,7 @@ public class IMusicDAOImpl implements IMusicDAO {
 			statement.setString(15, music.getMusic_bg_photo());
 			statement.setString(16, music.getMusic_main_photo());
 			statement.setString(17, music.getMusic_introduct());
-			statement.setInt(18, music.getMusic_coins());
+			statement.setDouble(18, music.getMusic_coins());
 			statement.setString(19, music.getMusic_upload_time());
 			statement.setString(20, music.getMusic_remarks());
 			statement.execute();
@@ -87,7 +87,7 @@ public class IMusicDAOImpl implements IMusicDAO {
 						resultSet.getInt(13), resultSet.getInt(14),
 						resultSet.getString(15), resultSet.getString(16),
 						resultSet.getString(17), resultSet.getString(18),
-						resultSet.getInt(19), resultSet.getString(20),
+						resultSet.getDouble(19), resultSet.getString(20),
 						resultSet.getString(21));
 			}
 		} catch (SQLException e) {
@@ -119,7 +119,7 @@ public class IMusicDAOImpl implements IMusicDAO {
 						resultSet.getInt(13), resultSet.getInt(14),
 						resultSet.getString(15), resultSet.getString(16),
 						resultSet.getString(17), resultSet.getString(18),
-						resultSet.getInt(19), resultSet.getString(20),
+						resultSet.getDouble(19), resultSet.getString(20),
 						resultSet.getString(21));
 				musicList.add(music);
 			}
@@ -151,7 +151,7 @@ public class IMusicDAOImpl implements IMusicDAO {
 						resultSet.getInt(13), resultSet.getInt(14),
 						resultSet.getString(15), resultSet.getString(16),
 						resultSet.getString(17), resultSet.getString(18),
-						resultSet.getInt(19), resultSet.getString(20),
+						resultSet.getDouble(19), resultSet.getString(20),
 						resultSet.getString(21));
 				musicList.add(music);
 			}
@@ -209,7 +209,7 @@ public class IMusicDAOImpl implements IMusicDAO {
 				String music_bg_photo = resultSet.getString(16);
 				String music_main_photo = resultSet.getString(17);
 				String music_introduct = resultSet.getString(18);
-				int music_coins = resultSet.getInt(19);
+				double music_coins = resultSet.getDouble(19);
 				String music_upload_time = resultSet.getString(20);
 				String music_remarks = resultSet.getString(21);
 				Music music = new Music(music_id, music_name, music_path_mp3,
@@ -268,5 +268,27 @@ public class IMusicDAOImpl implements IMusicDAO {
 		} finally {
 			C3P0Utils.close(resultSet, statement, connection);
 		}
+	}
+
+	@Override
+	public double getMusicCoins(int music_id) {
+		connection = C3P0Utils.getConnection();
+		sql = "select music_coins from music where music_id=?";
+		double coins_num = 0;
+		try {
+			statement = connection.prepareStatement(sql);
+			statement.setInt(1, music_id);
+			resultSet = statement.executeQuery();
+			while (resultSet.next()) {
+				coins_num = resultSet.getDouble(1);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			System.out.println("查找失败");
+			e.printStackTrace();
+		} finally {
+			C3P0Utils.close(resultSet, statement, connection);
+		}
+		return coins_num;
 	}
 }

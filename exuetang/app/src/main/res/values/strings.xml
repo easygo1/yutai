@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">exuetang</string>
+    <string name="dialog_download">您需要花费1个学习币下载当前歌曲</string>
 </resources>

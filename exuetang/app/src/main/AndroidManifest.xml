@@ -78,6 +78,10 @@
         </activity>
         <activity android:name=".view.activity.audio.SearchMusicActivity">
         </activity>
+        <activity android:name=".view.activity.exuetang.MyInfoActivity">
+        </activity>
+        <activity android:name=".view.activity.exuetang.MyIntoPhoneActivity">
+        </activity>
     </application>
 
 </manifest>

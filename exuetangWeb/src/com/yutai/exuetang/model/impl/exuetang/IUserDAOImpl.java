@@ -24,18 +24,20 @@ public class IUserDAOImpl implements IUserDAO {
 		boolean result = false;
 		connection = C3P0Utils.getConnection();
 		// 向表中加入该用户
-		sql = "insert into user(user_phone,user_password,user_nickname,user_token,user_openid,user_realname,user_sex,user_type,user_remarks) values(?,?,?,?,?,?,?,?,?)";
+		sql = "insert into user(user_newphone,user_oldphone,user_password,user_nickname,user_mood,user_qq_token,user_wechat_token,user_realname,user_sex,user_type,user_remarks) values(?,?,?,?,?,?,?,?,?,?,?)";
 		try {
 			statement = connection.prepareStatement(sql);
-			statement.setString(1, user.getUser_phone());
-			statement.setString(2, user.getUser_password());
-			statement.setString(3, user.getUser_nickname());
-			statement.setString(4, user.getUser_token());
-			statement.setString(5, user.getUser_openid());
-			statement.setString(6, user.getUser_realname());
-			statement.setString(7, user.getUser_sex());
-			statement.setInt(8, user.getUser_type());
-			statement.setString(9, user.getUser_remarks());
+			statement.setString(1, user.getUser_newphone());
+			statement.setString(2, user.getUser_oldphone());
+			statement.setString(3, user.getUser_password());
+			statement.setString(4, user.getUser_nickname());
+			statement.setString(5, user.getUser_mood());
+			statement.setString(6, user.getUser_qq_token());
+			statement.setString(7, user.getUser_wechat_token());
+			statement.setString(8, user.getUser_realname());
+			statement.setString(9, user.getUser_sex());
+			statement.setInt(10, user.getUser_type());
+			statement.setString(11, user.getUser_remarks());
 			statement.executeUpdate();
 			System.out.println("插入用户成功");
 			result = true;
@@ -61,18 +63,18 @@ public class IUserDAOImpl implements IUserDAO {
 			resultSet = statement.executeQuery();
 			while (resultSet.next()) {
 				int user_id1 = resultSet.getInt(1);
-				String user_phone = resultSet.getString(2);
-				String user_password = resultSet.getString(3);
-				String user_nickname = resultSet.getString(4);
-				String user_token = resultSet.getString(5);
-				String user_openid = resultSet.getString(6);
-				String user_realname = resultSet.getString(7);
-				String user_sex = resultSet.getString(8);
-				int user_type = resultSet.getInt(9);
-				String user_remarks = resultSet.getString(10);
-				user = new User(user_id1, user_phone, user_password,
-						user_nickname, user_token, user_openid, user_realname,
-						user_sex, user_type, user_remarks);
+				String user_newphone = resultSet.getString(2);
+				String user_oldphone = resultSet.getString(3);
+				String user_password = resultSet.getString(4);
+				String user_nickname = resultSet.getString(5);
+				String user_mood = resultSet.getString(6);
+				String user_qq_token = resultSet.getString(7);
+				String user_wechat_token = resultSet.getString(8);
+				String user_realname = resultSet.getString(9);
+				String user_sex = resultSet.getString(10);
+				int user_type = resultSet.getInt(11);
+				String user_remarks = resultSet.getString(12);
+				user = new User(user_id1, user_newphone, user_oldphone, user_password, user_nickname, user_mood, user_qq_token, user_wechat_token, user_realname, user_sex, user_type, user_remarks);
 				System.out.println("查找成功");
 				return user;
 			}
@@ -90,25 +92,26 @@ public class IUserDAOImpl implements IUserDAO {
 	public User selectUserByPhone(String user_phone) {
 		// TODO Auto-generated method stub
 		connection = C3P0Utils.getConnection();
-		sql = "select * from user where user_phone=?";
+		sql = "select * from user where user_newphone=?";
 		try {
 			statement = connection.prepareStatement(sql);
 			statement.setString(1, user_phone);
 			resultSet = statement.executeQuery();
 			while (resultSet.next()) {
-				int user_id = resultSet.getInt(1);
-				String user_phone1 = resultSet.getString(2);
-				String user_password = resultSet.getString(3);
-				String user_nickname = resultSet.getString(4);
-				String user_token = resultSet.getString(5);
-				String user_openid = resultSet.getString(6);
-				String user_realname = resultSet.getString(7);
-				String user_sex = resultSet.getString(8);
-				int user_type = resultSet.getInt(9);
-				String user_remarks = resultSet.getString(10);
-				user = new User(user_id, user_phone1, user_password,
-						user_nickname, user_token, user_openid, user_realname,
-						user_sex, user_type, user_remarks);
+				int user_id1 = resultSet.getInt(1);
+				String user_newphone = resultSet.getString(2);
+				String user_oldphone = resultSet.getString(3);
+				String user_password = resultSet.getString(4);
+				String user_nickname = resultSet.getString(5);
+				String user_mood = resultSet.getString(6);
+				String user_qq_token = resultSet.getString(7);
+				String user_wechat_token = resultSet.getString(8);
+				String user_realname = resultSet.getString(9);
+				String user_sex = resultSet.getString(10);
+				int user_type = resultSet.getInt(11);
+				String user_remarks = resultSet.getString(12);
+				user = new User(user_id1, user_newphone, user_oldphone, user_password, user_nickname, user_mood, user_qq_token, user_wechat_token, user_realname, user_sex, user_type, user_remarks);
+				
 				System.out.println("查找成功");
 				return user;
 			}
@@ -131,20 +134,20 @@ public class IUserDAOImpl implements IUserDAO {
 			statement = connection.prepareStatement(sql);
 			resultSet = statement.executeQuery();
 			while (resultSet.next()) {
-				int user_id = resultSet.getInt(1);
-				String user_phone = resultSet.getString(2);
-				String user_password = resultSet.getString(3);
-				String user_nickname = resultSet.getString(4);
-				String user_token = resultSet.getString(5);
-				String user_openid = resultSet.getString(6);
-				String user_realname = resultSet.getString(7);
-				String user_sex = resultSet.getString(8);
-				int user_type = resultSet.getInt(9);
-				String user_remarks = resultSet.getString(10);
-
-				user = new User(user_id, user_phone, user_password,
-						user_nickname, user_token, user_openid, user_realname,
-						user_sex, user_type, user_remarks);
+				int user_id1 = resultSet.getInt(1);
+				String user_newphone = resultSet.getString(2);
+				String user_oldphone = resultSet.getString(3);
+				String user_password = resultSet.getString(4);
+				String user_nickname = resultSet.getString(5);
+				String user_mood = resultSet.getString(6);
+				String user_qq_token = resultSet.getString(7);
+				String user_wechat_token = resultSet.getString(8);
+				String user_realname = resultSet.getString(9);
+				String user_sex = resultSet.getString(10);
+				int user_type = resultSet.getInt(11);
+				String user_remarks = resultSet.getString(12);
+				user = new User(user_id1, user_newphone, user_oldphone, user_password, user_nickname, user_mood, user_qq_token, user_wechat_token, user_realname, user_sex, user_type, user_remarks);
+				
 				userlist.add(user);
 			}
 		} catch (SQLException e) {
@@ -159,19 +162,21 @@ public class IUserDAOImpl implements IUserDAO {
 	@Override
 	public boolean updateUserByID(User user, int user_id) {
 		connection = C3P0Utils.getConnection();
-		sql = "UPDATE user SET user_phone=?,user_password=?,user_nickname=?,user_token=?,user_openid=?,user_realname=?,user_sex=?,user_type=?,user_remarks=? where user_id = ?";
+		sql = "UPDATE user SET user_newphone=?,user_oldphone=?,user_password=?,user_nickname=?,user_mood,user_qq_token=?,user_wechat_token=?,user_realname=?,user_sex=?,user_type=?,user_remarks=? where user_id = ?";
 		try {
 			statement = connection.prepareStatement(sql);
-			statement.setString(1, user.getUser_phone());
-			statement.setString(2, user.getUser_password());// 用户密码
-			statement.setString(3, user.getUser_nickname());// 用户昵称
-			statement.setString(4, user.getUser_token());
-			statement.setString(5, user.getUser_openid());
-			statement.setString(6, user.getUser_realname());
-			statement.setString(7, user.getUser_sex());// 个性签名
-			statement.setInt(8, user.getUser_type());
-			statement.setString(9, user.getUser_remarks());
-			statement.setInt(10, user_id);
+			statement.setString(1, user.getUser_newphone());
+			statement.setString(2, user.getUser_oldphone());
+			statement.setString(3, user.getUser_password());// 用户密码
+			statement.setString(4, user.getUser_nickname());// 用户昵称
+			statement.setString(5, user.getUser_mood());
+			statement.setString(6, user.getUser_qq_token());
+			statement.setString(7, user.getUser_wechat_token());
+			statement.setString(8, user.getUser_realname());
+			statement.setString(9, user.getUser_sex());// 个性签名
+			statement.setInt(10, user.getUser_type());
+			statement.setString(11, user.getUser_remarks());
+			statement.setInt(12, user_id);
 			statement.executeUpdate();
 			return true;
 		} catch (SQLException e) {
@@ -209,7 +214,6 @@ public class IUserDAOImpl implements IUserDAO {
 			int user_id) {
 		connection = C3P0Utils.getConnection();
 		sql = "select user_password from user where user_id=?";
-
 		try {
 			statement = connection.prepareStatement(sql);
 			String user_password = null;
@@ -228,6 +232,48 @@ public class IUserDAOImpl implements IUserDAO {
 			// TODO Auto-generated catch block
 			System.out.println("密碼不一致");
 			e.printStackTrace();
+			return false;
+		} finally {
+			C3P0Utils.close(resultSet, statement, connection);
+		}
+	}
+
+	@Override
+	public boolean updateUserNickname(int user_id, String new_nickname) {
+		connection = C3P0Utils.getConnection();
+		sql = "UPDATE user SET user_nickname=? where user_id = ?";
+		try {
+			statement = connection.prepareStatement(sql);
+			statement.setString(1, new_nickname);
+			statement.setInt(2, user_id);
+			statement.executeUpdate();
+			System.out.println("修改昵称成功");
+			return true;
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			System.out.println("修改昵称失败");
+			return false;
+		} finally {
+			C3P0Utils.close(resultSet, statement, connection);
+		}
+	}
+
+	@Override
+	public boolean updatUserSex(int user_id, String user_sex) {
+		connection = C3P0Utils.getConnection();
+		sql = "UPDATE user SET user_sex=? where user_id = ?";
+		try {
+			statement = connection.prepareStatement(sql);
+			statement.setString(1, user_sex);
+			statement.setInt(2, user_id);
+			statement.executeUpdate();
+			System.out.println("修改用户性别成功");
+			return true;
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			System.out.println("修改用户性别失败");
 			return false;
 		} finally {
 			C3P0Utils.close(resultSet, statement, connection);

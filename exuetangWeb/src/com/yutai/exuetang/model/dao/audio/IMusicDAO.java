@@ -23,12 +23,13 @@ public interface IMusicDAO {
 	ordertype 为3时 按上传时间 降序排列*/
 	public abstract List<Music> selectMusicBytypesOrder1(String type1,
 			String type2, int cur,int ordertype);
-
 	// 查询所有的音乐
 	public abstract List<Music> selectAllMusic();
    // 更新音乐的下载量
 	public abstract boolean updateDownloadNum(int music_id);
 	//更新音乐的在线量
 	public abstract boolean updateAuditionNum(int music_id);
+   //根据音乐的id得到该音乐所用的金币数
+	public abstract double getMusicCoins(int music_id);
 	
 }

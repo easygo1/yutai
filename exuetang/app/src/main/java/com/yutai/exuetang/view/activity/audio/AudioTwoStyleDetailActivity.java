@@ -40,7 +40,7 @@ public class AudioTwoStyleDetailActivity extends AppCompatActivity implements Vi
     private PullToRefreshListView mAudioListview;
     private AudioTwoStyleDetailPresenter mAudioTwoStyleDetailPresenter;
     //设置分页
-    private int cur = 1;//分页显示初始值是第一页
+    private  static int cur = 1;//分页显示初始值是第一页
 
     private AudioListAdapter mAudioListAdapter;
     private List<Music> mMusicList;
@@ -49,6 +49,7 @@ public class AudioTwoStyleDetailActivity extends AppCompatActivity implements Vi
     private String type1 = "";
     private String type2 = "";
     private String type_path;
+    private boolean isFirst=true;
     private Handler mHandler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
@@ -56,21 +57,26 @@ public class AudioTwoStyleDetailActivity extends AppCompatActivity implements Vi
             switch (msg.what) {
                 case 1:
                     mAudioListview.setAdapter(mAudioListAdapter);
-                    //通知刷新
-                    mAudioListAdapter.notifyDataSetChanged();
                     //表示刷新完成
                     mAudioListview.onRefreshComplete();
+                    //通知刷新
+                    mAudioListAdapter.notifyDataSetChanged();
                     break;
                 case 2:
                     Log.e("图片地址",type_path);
                     Glide.with(AudioTwoStyleDetailActivity.this)
                             .load(type_path)
+                            .placeholder(R.mipmap.twostyle_defult)
+                            .error(R.mipmap.twostyle_defult)
                             .into(mAudioTwostyleImage);
+                    break;
+                case 3:
+                    mAudioListview.onRefreshComplete();//刷新完成
+//                    mAudioListAdapter.notifyDataSetChanged();
                     break;
             }
         }
     };
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -89,8 +95,8 @@ public class AudioTwoStyleDetailActivity extends AppCompatActivity implements Vi
         mAudioListview.setMode(PullToRefreshBase.Mode.BOTH);
         initRefreshListView();
         initListener();
-        getData();
         settypeImage();
+        getData1();
         mTabNice.setTextColor(getResources().getColor(R.color.titlecolor));
     }
 
@@ -167,13 +173,26 @@ public class AudioTwoStyleDetailActivity extends AppCompatActivity implements Vi
             }
         });
     }
+    private void getData1() {
+        /*mAudioTwoStyleDetailPresenter = new AudioTwoStyleDetailPresenterImpl(this);
+        mAudioTwoStyleDetailPresenter.onSuccess();
+*/
+        try {
+            Thread.sleep(100);
+            mAudioTwoStyleDetailPresenter = new AudioTwoStyleDetailPresenterImpl(this);
+            mAudioTwoStyleDetailPresenter.onSuccess();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
 
+    }
     private void getData() {
         mAudioTwoStyleDetailPresenter = new AudioTwoStyleDetailPresenterImpl(this);
         mAudioTwoStyleDetailPresenter.onSuccess();
     }
 
     private void settypeImage() {
+        mAudioTwoStyleDetailPresenter = new AudioTwoStyleDetailPresenterImpl(this);
         mAudioTwoStyleDetailPresenter.onGetTypePhoto();
     }
 
@@ -224,13 +243,28 @@ public class AudioTwoStyleDetailActivity extends AppCompatActivity implements Vi
 
     @Override
     public void toActivity(List<Music> musicList) {
-        mMusicList.addAll(musicList);
-//        Log.e("activity得到数据", mMusicList.toString());
-        mAudioListAdapter = new AudioListAdapter(mMusicList, this);
-        //        通知UI刷新页面
-        Message message = new Message();
-        message.what = 1;
-        mHandler.sendMessage(message);
+        Log.e("toActivity", mMusicList.toString());
+        if(cur==1&&(!isFirst)&&mMusicList.size()!=0&&musicList!=null){
+            mMusicList.clear();}
+        if(musicList!=null){
+            mMusicList.addAll(musicList);
+            mAudioListAdapter = new AudioListAdapter(mMusicList, this);
+            // 通知UI刷新页面
+            Message message = new Message();
+            message.what = 1;
+            mHandler.sendMessage(message);
+        }
+//        Log.e("传过来的数据", "wqwq"+musicList.toString());
+        if(musicList==null){
+            Message message1 = new Message();
+            message1.what = 3;
+            mHandler.sendMessage(message1);}
+        else if(musicList.size()==0){
+            Message message2 = new Message();
+            // 通知UI刷新页面
+            message2.what = 3;
+            mHandler.sendMessage(message2);
+        }
     }
 
     @Override
@@ -261,6 +295,7 @@ public class AudioTwoStyleDetailActivity extends AppCompatActivity implements Vi
                 cur = 1;
                 tabstyle = 1;
                 mMusicList.clear();
+                isFirst=false;
                 getData();
                 mTabNice.setTextColor(getResources().getColor(R.color.titlecolor));
 //                Log.e("人气推荐list", "" + mMusicList.size());
@@ -273,6 +308,8 @@ public class AudioTwoStyleDetailActivity extends AppCompatActivity implements Vi
                 cur = 1;
                 tabstyle = 2;
                 mMusicList.clear();
+                Log.e("clear","clear");
+                isFirst=false;
                 getData();
                 mTabNew.setTextColor(getResources().getColor(R.color.titlecolor));
 //                Log.e("最近更新list", "" + mMusicList.size());
@@ -282,8 +319,9 @@ public class AudioTwoStyleDetailActivity extends AppCompatActivity implements Vi
 //                showToast("最受欢迎");
                 cur = 1;
                 tabstyle = 3;
-                mMusicList.clear();
                 resetColor();
+                mMusicList.clear();
+                isFirst=false;
                 getData();
                 mTabPopular.setTextColor(getResources().getColor(R.color.titlecolor));
 //                Log.e("最受欢迎list", "" + mMusicList.size());

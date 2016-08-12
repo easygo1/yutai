@@ -25,10 +25,12 @@
         <item name="android:layout_width">62dp</item>
         <item name="android:layout_height">108dp</item>
     </style>
+
     <style name="index_middle_image">
         <item name="android:layout_width">62dp</item>
         <item name="android:layout_height">62dp</item>
     </style>
+
     <style name="index_middle_text">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
@@ -44,6 +46,7 @@
         <item name="android:background">@drawable/me_layout</item>
         <item name="android:orientation">horizontal</item>
     </style>
+
     <style name="me_middle_layout1">
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">match_parent</item>
@@ -51,11 +54,13 @@
         <item name="android:gravity">center_vertical</item>
         <item name="android:orientation">horizontal</item>
     </style>
+
     <style name="me_middle_image">
         <item name="android:layout_width">24dp</item>
         <item name="android:layout_height">24dp</item>
         <item name="android:layout_marginLeft">14dp</item>
     </style>
+
     <style name="me_middle_layout2">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">match_parent</item>
@@ -63,12 +68,14 @@
         <item name="android:gravity">center_vertical</item>
         <item name="android:orientation">vertical</item>
     </style>
+
     <style name="me_middle_text_top">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textSize">16dp</item>
         <item name="android:textColor">@color/me_text_black</item>
     </style>
+
     <style name="me_middle_bottom">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
@@ -143,5 +150,52 @@
         <item name="android:layout_height">25dp</item>
         <item name="android:layout_gravity">center</item>
         <item name="android:layout_weight">1</item>
+    </style>
+
+    <style name="AlertDialogCustom">
+        <item name="android:textColor">#00FF00</item>
+        <item name="android:typeface">monospace</item>
+        <item name="android:textSize">13sp</item>
+    </style>
+    <!--我的信息里面左边的textview-->
+<style name="my_info_text_left">
+    <item name="android:layout_gravity">center</item>
+    <item name="android:layout_width">wrap_content</item>
+    <item name="android:layout_height">wrap_content</item>
+    <item name="android:layout_alignParentLeft">true</item>
+    <item name="android:layout_centerVertical">true</item>
+    <item name="android:layout_marginLeft">14dp</item>
+    <item name="android:textColor">@color/me_text_black</item>
+    <item name="android:textSize">@dimen/my_info_left_textsize</item>
+</style>
+<!--我的信息里面右面的textView-->
+    <style name="my_info_text_right">
+        <item name="android:layout_marginLeft">110dp</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:textColor">@color/my_info_right_text</item>
+        <item name="android:textSize">@dimen/my_info_right_textsize</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginRight">41dp</item>
+    </style>
+    <!--我的信息里面右面的image-->
+    <style name="my_info_image_arrow">
+        <item name="android:layout_marginRight">14dp</item>
+        <item name="android:layout_centerInParent">true</item>
+        <item name="android:src">@mipmap/right_arrow</item>
+        <item name="android:layout_width">10dp</item>
+        <item name="android:layout_height">18dp</item>
+        <item name="android:layout_alignParentRight">true</item>
+    </style>
+
+    <!--spinner菜单-->
+    <style name="city_spinner_dialog" parent="android:Theme.Holo.Light.NoActionBar">
+        <item name="android:dropDownWidth">280dp</item>
+        <item name="android:dropDownHorizontalOffset">0dp</item>
+        <item name="android:dropDownVerticalOffset">0dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_gravity">center</item>
     </style>
 </resources>

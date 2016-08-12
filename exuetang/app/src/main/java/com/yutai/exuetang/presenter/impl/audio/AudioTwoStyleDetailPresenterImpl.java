@@ -10,7 +10,6 @@ import com.yutai.exuetang.model.impl.audio.AudioTwoStyleDetailDAOImpl;
 import com.yutai.exuetang.presenter.dao.audio.AudioTwoStyleDetailPresenter;
 import com.yutai.exuetang.view.iview.audio.IAudioTwoStyleDetailView;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -20,12 +19,12 @@ public class AudioTwoStyleDetailPresenterImpl implements AudioTwoStyleDetailPres
 
     private IAudioTwoStyleDetailDAO mAudioTwoStyleDetailDAO;
     private IAudioTwoStyleDetailView mAudioTwoStyleDetailView;
-    private List<Music> mMusicList;
+//    private List<Music> mMusicList;
 
     public AudioTwoStyleDetailPresenterImpl(IAudioTwoStyleDetailView audioTwoStyleDetailView) {
         mAudioTwoStyleDetailDAO = new AudioTwoStyleDetailDAOImpl();
         mAudioTwoStyleDetailView = audioTwoStyleDetailView;
-        mMusicList = new ArrayList<>();
+//        mMusicList = new ArrayList<>();
     }
 
     @Override
@@ -39,7 +38,7 @@ public class AudioTwoStyleDetailPresenterImpl implements AudioTwoStyleDetailPres
         mAudioTwoStyleDetailDAO.getData(type1, type2, tabstyle, cur, new TwoListener() {
             @Override
             public void test(List<Music> musicList) {
-                mAudioTwoStyleDetailView.toActivity(musicList);
+                 mAudioTwoStyleDetailView.toActivity(musicList);
             }
         }, mactivity);
         /*mMusicList =mAudioTwoStyleDetailDAO.getMusicList();*/
