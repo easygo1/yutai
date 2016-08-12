@@ -55,7 +55,7 @@ public class AudioManagerServlet extends HttpServlet {
 			throws ServletException, IOException {
 		String method = request.getParameter("methods");
 		mPrintWriter = response.getWriter();
-
+		
 		switch (method) {
 		case "adduser":
 			//用户表中插入数据

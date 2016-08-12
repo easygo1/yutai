@@ -11,7 +11,7 @@ public interface IUserDAO {
 	//根据ID查找用户
 	public abstract User selectUserByID(int user_id);
 	//根据手机号查找用户
-	public abstract User selectUserByPhone(String user_phone);
+	public abstract User selectUserByPhone(String user_newphone);
 	//查询所有的用户
 	public abstract List<User> selectAllUser();
 	//修改用户

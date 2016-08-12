@@ -25,7 +25,7 @@ public class Music implements Serializable {
     private int music_download_day_number;// 天下载量
     private String music_type_photo;// 音乐二级类型图片
     private String music_photo;// 音乐图片地址
-    private int music_coins;// (下载所需金币)
+    private double music_coins;// (下载所需金币)
     private String music_upload_time;//音乐上传时间
     private String music_remarks;// 备注
 
@@ -34,7 +34,7 @@ public class Music implements Serializable {
         // TODO Auto-generated constructor stub
     }
 
-    public Music(int music_id, String music_name, String music_path_mp3, String music_path_lrc, String music_type1, String music_type2, int music_audition_sum_number, int music_audition_month_number, int music_audition_week_number, int music_audition_day_number, int music_download_sum_number, int music_download_month_number, int music_download_week_number, int music_download_day_number, String music_type_photo, String music_photo, int music_coins, String music_upload_time, String music_remarks) {
+    public Music(int music_id, String music_name, String music_path_mp3, String music_path_lrc, String music_type1, String music_type2, int music_audition_sum_number, int music_audition_month_number, int music_audition_week_number, int music_audition_day_number, int music_download_sum_number, int music_download_month_number, int music_download_week_number, int music_download_day_number, String music_type_photo, String music_photo, double music_coins, String music_upload_time, String music_remarks) {
         this.music_id = music_id;
         this.music_name = music_name;
         this.music_path_mp3 = music_path_mp3;
@@ -66,10 +66,12 @@ public class Music implements Serializable {
         this.music_id = music_id;
     }
 
-    public Music(int music_id, String music_photo, String music_name, int music_audition_sum_number, int music_download_sum_number) {
+    public Music(int music_id, String music_photo, String music_name,String music_path_mp3, String music_path_lrc, int music_audition_sum_number, int music_download_sum_number) {
         this.music_id = music_id;
         this.music_photo = music_photo;
         this.music_name = music_name;
+        this.music_path_mp3 = music_path_mp3;
+        this.music_path_lrc = music_path_lrc;
         this.music_audition_sum_number = music_audition_sum_number;
         this.music_download_sum_number = music_download_sum_number;
     }
@@ -202,11 +204,11 @@ public class Music implements Serializable {
         this.music_photo = music_photo;
     }
 
-    public int getMusic_coins() {
+    public double getMusic_coins() {
         return music_coins;
     }
 
-    public void setMusic_coins(int music_coins) {
+    public void setMusic_coins(double music_coins) {
         this.music_coins = music_coins;
     }
 

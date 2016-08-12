@@ -14,9 +14,11 @@ import com.handmark.pulltorefresh.library.ILoadingLayout;
 import com.handmark.pulltorefresh.library.PullToRefreshBase;
 import com.handmark.pulltorefresh.library.PullToRefreshListView;
 import com.yutai.exuetang.R;
+import com.yutai.exuetang.db.MusciTableOperate;
 import com.yutai.exuetang.model.beans.audio.music.Music;
 import com.yutai.exuetang.presenter.dao.audio.AudioTwoStyleDetailPresenter;
 import com.yutai.exuetang.presenter.impl.audio.AudioTwoStyleDetailPresenterImpl;
+import com.yutai.exuetang.utils.AppConstant;
 import com.yutai.exuetang.utils.ToastUtils;
 import com.yutai.exuetang.view.adapter.audio.AudioListAdapter;
 import com.yutai.exuetang.view.application.MyApplication;
@@ -43,7 +45,8 @@ public class AudioTwoStyleDetailActivity extends AppCompatActivity implements Vi
     public int tabstyle = 1;//默认显示第一个<试听量排序>
     public String type1 = "";
     public String type2 = "";
-
+    //sqlite操作类
+    private MusciTableOperate mMusciTableOperate = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -126,7 +129,8 @@ public class AudioTwoStyleDetailActivity extends AppCompatActivity implements Vi
         mAudioListview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                intentNextActivity(mMusicList.get(position).getMusic_id());
+                //position从1开始，而list中从0开始，所以要position-1
+                intentNextActivity(mMusicList.get(position-1));
             }
         });
     }
@@ -140,12 +144,20 @@ public class AudioTwoStyleDetailActivity extends AppCompatActivity implements Vi
         mAudioListview.onRefreshComplete();
     }
 
-    public void intentNextActivity(int music_id) {
+    public void intentNextActivity(Music music) {
         showToast("跳转到播放页面");
+        Log.e("music",music.toString());
+        mMusciTableOperate = new MusciTableOperate(AudioTwoStyleDetailActivity.this);
+        mMusciTableOperate.deleteMusicByMusicid(music.getMusic_id());
+        mMusciTableOperate.insertData(music);
         Intent intent = new Intent();
         intent.setClass(this, AudioPlayActivity.class);
         //绑定数据
-        intent.putExtra("music_id",music_id);//也可以绑定数组
+        //intent.putExtra("music_id",music_id);//也可以绑定数组
+        Bundle bundle = new Bundle();
+        bundle.putSerializable("music", music);
+        bundle.putInt("MSG", AppConstant.PlayerMsg.PLAY_MSG);
+        intent.putExtras(bundle);
         startActivity(intent);
     }
 

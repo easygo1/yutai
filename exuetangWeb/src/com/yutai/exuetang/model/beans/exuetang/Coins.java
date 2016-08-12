@@ -11,13 +11,13 @@ public class Coins implements Serializable {
 
 	private int coins_id;
 	private int user_id;//(用户ID，外键)
-	private int coins_num;//(学习币数)
+	private double coins_num;//(学习币数)
 	private String coins_remarks;//##(备注)
 	public Coins() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public Coins(int coins_id, int user_id, int coins_num, String coins_remarks) {
+	public Coins(int coins_id, int user_id, double coins_num, String coins_remarks) {
 		super();
 		this.coins_id = coins_id;
 		this.user_id = user_id;
@@ -36,10 +36,10 @@ public class Coins implements Serializable {
 	public void setUser_id(int user_id) {
 		this.user_id = user_id;
 	}
-	public int getCoins_num() {
+	public double getCoins_num() {
 		return coins_num;
 	}
-	public void setCoins_num(int coins_num) {
+	public void setCoins_num(double coins_num) {
 		this.coins_num = coins_num;
 	}
 	public String getCoins_remarks() {

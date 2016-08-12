@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <faceted-project>
-<<<<<<< HEAD
   <runtime name="com.genuitec.runtime.generic.jee60"/>
-=======
   <runtime name="MyEclipse Tomcat v7.0"/>
->>>>>>> 9ef908f75eb109ab19d3f63116836efd82c0b5f5
   <fixed facet="wst.jsdt.web"/>
   <fixed facet="jst.web"/>
   <fixed facet="java"/>

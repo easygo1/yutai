@@ -26,7 +26,7 @@ public class Music implements Serializable {
 	private int music_download_day_number;// 天下载量
 	private String music_type_photo;// 音乐二级类型图片
 	private String music_photo;// 音乐图片地址
-	private int music_coins;// (下载所需金币)
+	private double music_coins;// (下载所需金币)
 	private String music_upload_time;//音乐上传时间
 	private String music_remarks;// 备注
 	public Music() {
@@ -39,7 +39,7 @@ public class Music implements Serializable {
 			int music_audition_week_number, int music_audition_day_number,
 			int music_download_sum_number, int music_download_month_number,
 			int music_download_week_number, int music_download_day_number,
-			String music_type_photo, String music_photo, int music_coins,
+			String music_type_photo, String music_photo, double music_coins,
 			String music_upload_time, String music_remarks) {
 		super();
 		this.music_id = music_id;
@@ -158,10 +158,10 @@ public class Music implements Serializable {
 	public void setMusic_photo(String music_photo) {
 		this.music_photo = music_photo;
 	}
-	public int getMusic_coins() {
+	public double getMusic_coins() {
 		return music_coins;
 	}
-	public void setMusic_coins(int music_coins) {
+	public void setMusic_coins(double music_coins) {
 		this.music_coins = music_coins;
 	}
 	public String getMusic_upload_time() {

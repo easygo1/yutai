@@ -29,7 +29,7 @@ public class ICoinsDAOImpl implements ICoinsDAO {
 		try {
 			statement = connection.prepareStatement(sql);
 			statement.setInt(1, coins.getUser_id());
-			statement.setInt(2, coins.getCoins_num());
+			statement.setDouble(2, coins.getCoins_num());
 			statement.setString(3,coins.getCoins_remarks());
 			statement.executeUpdate();
 			System.out.println("插入积分成功");
@@ -56,7 +56,7 @@ public class ICoinsDAOImpl implements ICoinsDAO {
 			while (resultSet.next()) {
 				int coins_id1 = resultSet.getInt(1);
 				int user_id = resultSet.getInt(2);
-				int coins_num = resultSet.getInt(3);
+				double coins_num = resultSet.getDouble(3);
 				String coins_remarks = resultSet.getString(4);
 				coins=new Coins(coins_id1, user_id, coins_num, coins_remarks);
 				System.out.println("查找成功");
@@ -73,16 +73,16 @@ public class ICoinsDAOImpl implements ICoinsDAO {
 	}
 
 	@Override
-	public int selectCoinsNumByUserID(int user_id) {
+	public double selectCoinsNumByUserID(int user_id) {
 		connection = C3P0Utils.getConnection();
 		sql = "select coins_num from coins where user_id=?";
-		int coins_num=0;
+		double coins_num=0;
 		try {
 			statement = connection.prepareStatement(sql);
 			statement.setInt(1, user_id);
 			resultSet = statement.executeQuery();
 			while (resultSet.next()) {
-				coins_num = resultSet.getInt(1);
+				coins_num = resultSet.getDouble(1);
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -100,7 +100,7 @@ public class ICoinsDAOImpl implements ICoinsDAO {
 		sql = "UPDATE coins SET coins_num=? where user_id = ?";
 		try {
 			statement = connection.prepareStatement(sql);
-			statement.setInt(1, coins_num);
+			statement.setDouble(1, coins_num);
 			statement.setInt(2, user_id);
 			statement.executeUpdate();
 			System.out.println("积分更新成功");
@@ -125,7 +125,7 @@ public class ICoinsDAOImpl implements ICoinsDAO {
 			while (resultSet.next()) {
 				int coins_id = resultSet.getInt(1);
 				int user_id = resultSet.getInt(2);
-				int coins_num = resultSet.getInt(3);
+				double coins_num = resultSet.getDouble(3);
 				String coins_remarks = resultSet.getString(4);
 				coins=new Coins(coins_id, user_id, coins_num, coins_remarks);
 				coinsList.add(coins);

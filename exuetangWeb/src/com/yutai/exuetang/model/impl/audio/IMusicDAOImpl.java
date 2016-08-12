@@ -44,7 +44,7 @@ public class IMusicDAOImpl implements IMusicDAO {
 			statement.setInt(13, music.getMusic_download_day_number());
 			statement.setString(14, music.getMusic_type_photo());
 			statement.setString(15, music.getMusic_photo());
-			statement.setInt(16, music.getMusic_coins());
+			statement.setDouble(16, music.getMusic_coins());
 			statement.setString(17, music.getMusic_upload_time());
 			statement.setString(18, music.getMusic_remarks());
 			statement.executeQuery();
@@ -74,7 +74,7 @@ public class IMusicDAOImpl implements IMusicDAO {
 						resultSet.getString(3), resultSet.getString(4), resultSet.getString(5), resultSet.getString(6),
 						resultSet.getInt(7), resultSet.getInt(8), resultSet.getInt(9), resultSet.getInt(10), resultSet.getInt(11),
 						resultSet.getInt(12), resultSet.getInt(13), resultSet.getInt(14), resultSet.getString(15),
-						resultSet.getString(16), resultSet.getInt(17), resultSet.getString(18),resultSet.getString(19));
+						resultSet.getString(16), resultSet.getDouble(17), resultSet.getString(18),resultSet.getString(19));
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -102,7 +102,7 @@ public class IMusicDAOImpl implements IMusicDAO {
 						resultSet.getString(3), resultSet.getString(4), resultSet.getString(5), resultSet.getString(6),
 						resultSet.getInt(7), resultSet.getInt(8), resultSet.getInt(9), resultSet.getInt(10), resultSet.getInt(11),
 						resultSet.getInt(12), resultSet.getInt(13), resultSet.getInt(14), resultSet.getString(15),
-						resultSet.getString(16), resultSet.getInt(17), resultSet.getString(18), resultSet.getString(19));
+						resultSet.getString(16), resultSet.getDouble(17), resultSet.getString(18), resultSet.getString(19));
 				musicList.add(music);
 			}
 		} catch (SQLException e) {
@@ -129,7 +129,7 @@ public class IMusicDAOImpl implements IMusicDAO {
 						resultSet.getString(3), resultSet.getString(4), resultSet.getString(5), resultSet.getString(6),
 						resultSet.getInt(7), resultSet.getInt(8), resultSet.getInt(9), resultSet.getInt(10), resultSet.getInt(11),
 						resultSet.getInt(12), resultSet.getInt(13), resultSet.getInt(14), resultSet.getString(15),
-						resultSet.getString(16), resultSet.getInt(17), resultSet.getString(18), resultSet.getString(19));
+						resultSet.getString(16), resultSet.getDouble(17), resultSet.getString(18), resultSet.getString(19));
 				musicList.add(music);
 			}
 		} catch (SQLException e) {

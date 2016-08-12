@@ -15,17 +15,14 @@ public class Child implements Serializable{
 	private String child_name;//(姓名)
 	private String child_photo;//(头像)
 	private String child_sex;//(性别)
-	private String child_school_province;//(学校省份)
-	private String child_school_city;//(学校城市)
-	private String child_school_county;//(学校区)
-	private String child_school_town;//(学校镇)
-	private String child_school_name;//(学校名称)
-	private String child_school_class;//(字符串)小班 中班 大班..
+	private String child_school_class_name;//(学校名称及班级)
 	private String child_home_province;//(家庭住址省)
 	private String child_home_city;//(家庭住址市)
 	private String child_home_county;//(家庭住址区)
 	private String child_home_address;//(家庭住址)
-	private String child_hobby;//(宝宝爱好)
+	private String child_dream;//(孩子梦想)
+	private String child_hobby;//(宝宝特长)
+	private String child_trainplan;//(宝宝培训计划)
 	private String child_remarks;//（备注）
 	public Child() {
 		super();
@@ -33,12 +30,10 @@ public class Child implements Serializable{
 	}
 	public Child(int child_id, int user_id, String child_birthday,
 			String child_name, String child_photo, String child_sex,
-			String child_school_province, String child_school_city,
-			String child_school_county, String child_school_town,
-			String child_school_name, String child_school_class,
-			String child_home_province, String child_home_city,
-			String child_home_county, String child_home_address,
-			String child_hobby, String child_remarks) {
+			String child_school_class_name, String child_home_province,
+			String child_home_city, String child_home_county,
+			String child_home_address, String child_dream, String child_hobby,
+			String child_trainplan, String child_remarks) {
 		super();
 		this.child_id = child_id;
 		this.user_id = user_id;
@@ -46,44 +41,36 @@ public class Child implements Serializable{
 		this.child_name = child_name;
 		this.child_photo = child_photo;
 		this.child_sex = child_sex;
-		this.child_school_province = child_school_province;
-		this.child_school_city = child_school_city;
-		this.child_school_county = child_school_county;
-		this.child_school_town = child_school_town;
-		this.child_school_name = child_school_name;
-		this.child_school_class = child_school_class;
+		this.child_school_class_name = child_school_class_name;
 		this.child_home_province = child_home_province;
 		this.child_home_city = child_home_city;
 		this.child_home_county = child_home_county;
 		this.child_home_address = child_home_address;
+		this.child_dream = child_dream;
 		this.child_hobby = child_hobby;
+		this.child_trainplan = child_trainplan;
 		this.child_remarks = child_remarks;
 	}
-	
-	public Child(int user_id, String child_birthday, String child_name,
-			String child_photo, String child_sex, String child_school_province,
-			String child_school_city, String child_school_county,
-			String child_school_town, String child_school_name,
-			String child_school_class, String child_home_province,
+	public Child(int user_id, String child_birthday,
+			String child_name, String child_photo, String child_sex,
+			String child_school_class_name, String child_home_province,
 			String child_home_city, String child_home_county,
-			String child_home_address, String child_hobby, String child_remarks) {
+			String child_home_address, String child_dream, String child_hobby,
+			String child_trainplan, String child_remarks) {
 		super();
 		this.user_id = user_id;
 		this.child_birthday = child_birthday;
 		this.child_name = child_name;
 		this.child_photo = child_photo;
 		this.child_sex = child_sex;
-		this.child_school_province = child_school_province;
-		this.child_school_city = child_school_city;
-		this.child_school_county = child_school_county;
-		this.child_school_town = child_school_town;
-		this.child_school_name = child_school_name;
-		this.child_school_class = child_school_class;
+		this.child_school_class_name = child_school_class_name;
 		this.child_home_province = child_home_province;
 		this.child_home_city = child_home_city;
 		this.child_home_county = child_home_county;
 		this.child_home_address = child_home_address;
+		this.child_dream = child_dream;
 		this.child_hobby = child_hobby;
+		this.child_trainplan = child_trainplan;
 		this.child_remarks = child_remarks;
 	}
 	public int getChild_id() {
@@ -122,41 +109,11 @@ public class Child implements Serializable{
 	public void setChild_sex(String child_sex) {
 		this.child_sex = child_sex;
 	}
-	public String getChild_school_province() {
-		return child_school_province;
+	public String getChild_school_class_name() {
+		return child_school_class_name;
 	}
-	public void setChild_school_province(String child_school_province) {
-		this.child_school_province = child_school_province;
-	}
-	public String getChild_school_city() {
-		return child_school_city;
-	}
-	public void setChild_school_city(String child_school_city) {
-		this.child_school_city = child_school_city;
-	}
-	public String getChild_school_county() {
-		return child_school_county;
-	}
-	public void setChild_school_county(String child_school_county) {
-		this.child_school_county = child_school_county;
-	}
-	public String getChild_school_town() {
-		return child_school_town;
-	}
-	public void setChild_school_town(String child_school_town) {
-		this.child_school_town = child_school_town;
-	}
-	public String getChild_school_name() {
-		return child_school_name;
-	}
-	public void setChild_school_name(String child_school_name) {
-		this.child_school_name = child_school_name;
-	}
-	public String getChild_school_class() {
-		return child_school_class;
-	}
-	public void setChild_school_class(String child_school_class) {
-		this.child_school_class = child_school_class;
+	public void setChild_school_class_name(String child_school_class_name) {
+		this.child_school_class_name = child_school_class_name;
 	}
 	public String getChild_home_province() {
 		return child_home_province;
@@ -182,11 +139,23 @@ public class Child implements Serializable{
 	public void setChild_home_address(String child_home_address) {
 		this.child_home_address = child_home_address;
 	}
+	public String getChild_dream() {
+		return child_dream;
+	}
+	public void setChild_dream(String child_dream) {
+		this.child_dream = child_dream;
+	}
 	public String getChild_hobby() {
 		return child_hobby;
 	}
 	public void setChild_hobby(String child_hobby) {
 		this.child_hobby = child_hobby;
+	}
+	public String getChild_trainplan() {
+		return child_trainplan;
+	}
+	public void setChild_trainplan(String child_trainplan) {
+		this.child_trainplan = child_trainplan;
 	}
 	public String getChild_remarks() {
 		return child_remarks;
@@ -194,23 +163,22 @@ public class Child implements Serializable{
 	public void setChild_remarks(String child_remarks) {
 		this.child_remarks = child_remarks;
 	}
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
 	@Override
 	public String toString() {
 		return "Child [child_id=" + child_id + ", user_id=" + user_id
 				+ ", child_birthday=" + child_birthday + ", child_name="
 				+ child_name + ", child_photo=" + child_photo + ", child_sex="
-				+ child_sex + ", child_school_province="
-				+ child_school_province + ", child_school_city="
-				+ child_school_city + ", child_school_county="
-				+ child_school_county + ", child_school_town="
-				+ child_school_town + ", child_school_name="
-				+ child_school_name + ", child_school_class="
-				+ child_school_class + ", child_home_province="
+				+ child_sex + ", child_school_class_name="
+				+ child_school_class_name + ", child_home_province="
 				+ child_home_province + ", child_home_city=" + child_home_city
 				+ ", child_home_county=" + child_home_county
 				+ ", child_home_address=" + child_home_address
-				+ ", child_hobby=" + child_hobby + ", child_remarks="
-				+ child_remarks + "]";
+				+ ", child_dream=" + child_dream + ", child_hobby="
+				+ child_hobby + ", child_trainplan=" + child_trainplan
+				+ ", child_remarks=" + child_remarks + "]";
 	}
-
+	
 }

@@ -20,7 +20,7 @@ android {
 }
 repositories {
     flatDir {
-        dirs 'libs'//´æ·ÅaarµÄÂ·¾¶
+        dirs 'libs'//ï¿½ï¿½ï¿½aarï¿½ï¿½Â·ï¿½ï¿½
     }
 }
 dependencies {
@@ -33,4 +33,6 @@ dependencies {
     compile 'com.github.bumptech.glide:glide:3.7.0'
     compile 'com.loopeer.android.thirdparty.pulltorefresh:Android-PullToRefresh:2.1.1'
     compile 'com.jakewharton:butterknife:7.0.1'
+    compile 'com.yanzhenjie:recyclerview-swipe:1.0.0'
+    compile 'com.android.support:recyclerview-v7:23.4.0'
 }
