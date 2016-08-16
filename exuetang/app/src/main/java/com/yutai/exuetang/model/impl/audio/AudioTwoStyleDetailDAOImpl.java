@@ -13,6 +13,7 @@ import com.yolanda.nohttp.error.ServerError;
 import com.yolanda.nohttp.error.TimeoutError;
 import com.yolanda.nohttp.error.URLError;
 import com.yolanda.nohttp.error.UnKnownHostError;
+import com.yolanda.nohttp.rest.CacheMode;
 import com.yolanda.nohttp.rest.OnResponseListener;
 import com.yolanda.nohttp.rest.Request;
 import com.yolanda.nohttp.rest.Response;
@@ -42,7 +43,7 @@ public class AudioTwoStyleDetailDAOImpl implements IAudioTwoStyleDetailDAO {
     private WaitDialog mDialog;
     private Activity mActivity;
     private List<Music> mMusicList = new ArrayList<>();
-    private String type2_path = "";
+//    private String type2_path = "";
     //网络请求队列
     // 创建请求队列, 默认并发3个请求,传入你想要的数字可以改变默认并发数, 例如NoHttp.newRequestQueue(1);
 //    private RequestQueue requestQueue= NoHttp.newRequestQueue();
@@ -166,6 +167,7 @@ public class AudioTwoStyleDetailDAOImpl implements IAudioTwoStyleDetailDAO {
         // 添加请求参数
         request.add("methods", "gettypephoto");
         request.add("music_type2", type2);
+        request.setCacheMode(CacheMode.NONE_CACHE_REQUEST_NETWORK);
         RequestManager.getInstance().add(GET_MUSICTYPE2_PATH, request, new OnResponseListener<String>() {
             @Override
             public void onStart(int what) {

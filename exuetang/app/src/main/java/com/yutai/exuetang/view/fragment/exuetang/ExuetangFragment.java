@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 import com.yutai.exuetang.R;
 import com.yutai.exuetang.utils.ToastUtils;
+import com.yutai.exuetang.view.activity.audio.AudioCommentActivity;
 import com.yutai.exuetang.view.activity.audio.AudioHomeActivity;
 import com.yutai.exuetang.view.application.MyApplication;
 
@@ -107,6 +108,8 @@ public class ExuetangFragment extends Fragment implements View.OnClickListener{
                 break;
             case R.id.index_stageshow:
                 ToastUtils.showToast(getActivity(),"点击了舞台秀");
+                intent.setClass(getActivity(), AudioCommentActivity.class);
+                startActivity(intent);
                 break;
             case R.id.index_celebrityforum:
                 ToastUtils.showToast(getActivity(),"点击了名人讲堂");

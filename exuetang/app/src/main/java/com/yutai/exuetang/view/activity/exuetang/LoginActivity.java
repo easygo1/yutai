@@ -96,7 +96,7 @@ public class LoginActivity extends AppCompatActivity implements ILoginView,View.
 
     @Override
     public void toMainActivity(User user) {
-        ToastUtils.showToast(this,"跳转到主页面"+user.getUser_phone()+"密码："+user.getUser_password());
+        //ToastUtils.showToast(this,"跳转到主页面"+user.getUser_phone()+"密码："+user.getUser_password());
         Log.e("cuikai","333");
     }
 
