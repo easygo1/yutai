@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.yutai.exuetang.model.beans.exuetang.GsonMeInfo;
 import com.yutai.exuetang.model.beans.exuetang.User;
 import com.yutai.exuetang.model.dao.exuetang.IUserDAO;
 import com.yutai.exuetang.utils.C3P0Utils;
@@ -18,6 +19,7 @@ public class IUserDAOImpl implements IUserDAO {
 	private String sql = null;
 	private User user = null;
 	private List<User> userlist = null;
+	private GsonMeInfo gsonMeInfo=null;
 
 	@Override
 	public boolean addUser(User user) {
@@ -315,5 +317,35 @@ public class IUserDAOImpl implements IUserDAO {
 			C3P0Utils.close(resultSet, statement, connection);
 		}
 		return user;
+	}
+	@Override
+	public GsonMeInfo getUserSomeInfo(int user_id) {
+		connection = C3P0Utils.getConnection();
+		sql = "select `user`.user_id,`user`.user_nickname,`user`.user_newphone,child.child_photo,coins.coins_num FROM `user`,child,coins WHERE `user`.user_id=? and coins.user_id=? and child.user_id=?;";
+		try {
+			statement = connection.prepareStatement(sql);
+			statement.setInt(1, user_id);
+			statement.setInt(2, user_id);
+			statement.setInt(3, user_id);
+			resultSet = statement.executeQuery();
+			while (resultSet.next()) {
+				int user_id1 = resultSet.getInt(1);
+				String user_nickname = resultSet.getString(2);
+				String user_newphone = resultSet.getString(3);
+				String child_photo = resultSet.getString(4);
+				double coins_num = resultSet.getDouble(5);
+				gsonMeInfo=new GsonMeInfo(user_id1, user_nickname, child_photo, user_newphone, coins_num);
+				System.out.println("查找成功");
+				return gsonMeInfo;
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			System.out.println("查找失败");
+			e.printStackTrace();
+		} finally {
+			C3P0Utils.close(resultSet, statement, connection);
+		}
+		return gsonMeInfo;
+
 	}
 }

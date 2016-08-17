@@ -26,7 +26,6 @@ public class C3P0Utils {
 		} catch (PropertyVetoException e) {
 			e.printStackTrace();
 		}
-
 	}
 
 	public static Connection getConnection() {

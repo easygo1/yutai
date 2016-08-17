@@ -38,4 +38,5 @@
     <!--hint的颜色-->
     <color name="hint_color">#bebebe</color>
     <color name="yellow">#FFCC33</color>
+    <color name="liner_bg">#C7C7C7</color>
 </resources>

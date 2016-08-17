@@ -18,6 +18,9 @@ public interface IChildDAO {
 	public abstract List<Child> selectAllChild();
 
 	// 修改宝宝性别
+	public abstract boolean updateChildPhoto(int child_id, String child_photo);
+		
+	// 修改宝宝性别
 	public abstract boolean updateChildSex(int child_id, String child_sex);
 
 	// 修改宝宝生日

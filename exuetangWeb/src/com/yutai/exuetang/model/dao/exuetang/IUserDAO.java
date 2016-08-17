@@ -2,6 +2,7 @@ package com.yutai.exuetang.model.dao.exuetang;
 
 import java.util.List;
 
+import com.yutai.exuetang.model.beans.exuetang.GsonMeInfo;
 import com.yutai.exuetang.model.beans.exuetang.User;
 
 public interface IUserDAO {
@@ -33,4 +34,7 @@ public interface IUserDAO {
 	public abstract boolean updatUserSex(int user_id,String user_sex);
 	//用户登陆
 	public abstract User login(String user_newphone,String user_password);
+	
+//	连接查询MeFragment中的个人信息
+	public abstract GsonMeInfo getUserSomeInfo(int user_id);
 }

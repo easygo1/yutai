@@ -28,10 +28,10 @@ public class User implements Serializable {
 		// TODO Auto-generated constructor stub
 	}
 	public User(int user_id, String user_newphone, String user_oldphone,
-				String user_password, String user_nickname, String user_mood,
-				String user_qq_token, String user_wechat_token,
-				String user_realname, String user_sex, int user_type,
-				String user_remarks) {
+			String user_password, String user_nickname, String user_mood,
+			String user_qq_token, String user_wechat_token,
+			String user_realname, String user_sex, int user_type,
+			String user_remarks) {
 		super();
 		this.user_id = user_id;
 		this.user_newphone = user_newphone;

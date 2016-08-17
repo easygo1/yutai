@@ -55,8 +55,6 @@ public class StoryXuetangActivity extends AppCompatActivity implements View.OnCl
 
     private String type1 = "故事学堂";
     private String type2 = "童话故事";
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

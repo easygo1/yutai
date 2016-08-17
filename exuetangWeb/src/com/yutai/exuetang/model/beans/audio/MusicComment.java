@@ -19,6 +19,14 @@ public class MusicComment implements Serializable {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+	public MusicComment(int music_id, int user_id,
+			String comment_content, String comment_time) {
+		super();
+		this.music_id = music_id;
+		this.user_id = user_id;
+		this.comment_content = comment_content;
+		this.comment_time = comment_time;
+	}
 
 	public MusicComment(int comment_id, int music_id, int user_id,
 			String comment_content, String comment_time) {

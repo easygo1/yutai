@@ -53,7 +53,7 @@ public class LoginDAOImpl implements ILoginDAO {
                 //模拟登陆成功
                 if ("ck".equals(userphone) && "123".equals(password)){
                     User user = new User();
-                    user.setUser_phone(userphone);
+                   // user.setUser_phone(userphone);
                     user.setUser_password(password);
                     onLoginListener.loginSuccess(user);
                 }else {

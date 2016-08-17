@@ -56,17 +56,17 @@ public class IChildDAOImpl implements IChildDAO {
 	}
 
 	@Override
-	public Child selectChildByChildID(int child_id) {
+	public Child selectChildByChildID(int user_id) {
 		// TODO Auto-generated method stub
 		connection = C3P0Utils.getConnection();
-		sql = "select * from child where child_id=?";
+		sql = "select * from child where user_id=?";
 		try {
 			statement = connection.prepareStatement(sql);
-			statement.setInt(1, child_id);
+			statement.setInt(1, user_id);
 			resultSet = statement.executeQuery();
 			while (resultSet.next()) {
 				int child_id1 = resultSet.getInt(1);
-				int user_id = resultSet.getInt(2);
+				int user_id1 = resultSet.getInt(2);
 				String child_birthday = resultSet.getString(3);
 				String child_name = resultSet.getString(4);
 				String child_photo = resultSet.getString(5);
@@ -80,7 +80,7 @@ public class IChildDAOImpl implements IChildDAO {
 				String child_hobby = resultSet.getString(13);
 				String child_trainplan = resultSet.getString(14);
 				String child_remarks = resultSet.getString(15);
-				child = new Child(child_id1, user_id, child_birthday,
+				child = new Child(child_id1, user_id1, child_birthday,
 						child_name, child_photo, child_sex,
 						child_school_class_name, child_home_province,
 						child_home_city, child_home_county, child_home_address,
@@ -185,13 +185,13 @@ public class IChildDAOImpl implements IChildDAO {
 	}
 
 	@Override
-	public boolean updateChildSex(int child_id, String child_sex) {
+	public boolean updateChildSex(int user_id, String child_sex) {
 		connection = C3P0Utils.getConnection();
-		sql = "UPDATE child SET child_sex=? where child_id = ?";
+		sql = "UPDATE child SET child_sex=? where user_id = ?";
 		try {
 			statement = connection.prepareStatement(sql);
 			statement.setString(1, child_sex);
-			statement.setInt(2, child_id);
+			statement.setInt(2, user_id);
 			statement.executeUpdate();
 			System.out.println("修改宝宝性别成功");
 			return true;
@@ -206,13 +206,13 @@ public class IChildDAOImpl implements IChildDAO {
 	}
 
 	@Override
-	public boolean updateChildBirthday(int child_id, String child_birthday) {
+	public boolean updateChildBirthday(int user_id, String child_birthday) {
 		connection = C3P0Utils.getConnection();
-		sql = "UPDATE child SET child_birthday=? where child_id = ?";
+		sql = "UPDATE child SET child_birthday=? where user_id = ?";
 		try {
 			statement = connection.prepareStatement(sql);
 			statement.setString(1, child_birthday);
-			statement.setInt(2, child_id);
+			statement.setInt(2, user_id);
 			statement.executeUpdate();
 			System.out.println("修改宝宝生日成功");
 			return true;
@@ -227,14 +227,14 @@ public class IChildDAOImpl implements IChildDAO {
 	}
 
 	@Override
-	public boolean updateChildSchoolClass(int child_id,
+	public boolean updateChildSchoolClass(int user_id,
 			String child_school_class_name) {
 		connection = C3P0Utils.getConnection();
-		sql = "UPDATE child SET child_school_class_name=? where child_id = ?";
+		sql = "UPDATE child SET child_school_class_name=? where user_id = ?";
 		try {
 			statement = connection.prepareStatement(sql);
 			statement.setString(1, child_school_class_name);
-			statement.setInt(2, child_id);
+			statement.setInt(2, user_id);
 			statement.executeUpdate();
 			System.out.println("修改宝宝学校及班级成功");
 			return true;
@@ -249,13 +249,13 @@ public class IChildDAOImpl implements IChildDAO {
 	}
 
 	@Override
-	public boolean updateChildDream(int child_id, String child_dream) {
+	public boolean updateChildDream(int user_id, String child_dream) {
 		connection = C3P0Utils.getConnection();
-		sql = "UPDATE child SET child_dream=? where child_id = ?";
+		sql = "UPDATE child SET child_dream=? where user_id = ?";
 		try {
 			statement = connection.prepareStatement(sql);
 			statement.setString(1, child_dream);
-			statement.setInt(2, child_id);
+			statement.setInt(2, user_id);
 			statement.executeUpdate();
 			System.out.println("修改宝宝梦想成功");
 			return true;
@@ -270,13 +270,13 @@ public class IChildDAOImpl implements IChildDAO {
 	}
 
 	@Override
-	public boolean updateChildHobby(int child_id, String child_hobby) {
+	public boolean updateChildHobby(int user_id, String child_hobby) {
 		connection = C3P0Utils.getConnection();
-		sql = "UPDATE child SET child_hobby=? where child_id = ?";
+		sql = "UPDATE child SET child_hobby=? where user_id = ?";
 		try {
 			statement = connection.prepareStatement(sql);
 			statement.setString(1, child_hobby);
-			statement.setInt(2, child_id);
+			statement.setInt(2, user_id);
 			statement.executeUpdate();
 			System.out.println("修改宝宝特长成功");
 			return true;
@@ -312,23 +312,38 @@ public class IChildDAOImpl implements IChildDAO {
 	}
 
 	@Override
-	public boolean updateChildAddress(int child_id, String child_address) {
-		// TODO Auto-generated method stub
-		return false;
+	public boolean updateChildAddress(int user_id, String child_address) {
+		connection = C3P0Utils.getConnection();
+		sql = "UPDATE child SET child_address=? where user_id = ?";
+		try {
+			statement = connection.prepareStatement(sql);
+			statement.setString(1, child_address);
+			statement.setInt(2, user_id);
+			statement.executeUpdate();
+			System.out.println("修改宝宝地址成功");
+			return true;
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			System.out.println("修改宝宝地址失败");
+			return false;
+		} finally {
+			C3P0Utils.close(resultSet, statement, connection);
+		}
 	}
 
 	@Override
-	public boolean updateChildProvinceCity(int child_id,
+	public boolean updateChildProvinceCity(int user_id,
 			String child_home_province, String child_home_city,
 			String child_home_county) {
 		connection = C3P0Utils.getConnection();
-		sql = "UPDATE child SET child_home_province=?,child_home_city=?,child_home_county=? where child_id = ?";
+		sql = "UPDATE child SET child_home_province=?,child_home_city=?,child_home_county=? where user_id = ?";
 		try {
 			statement = connection.prepareStatement(sql);
 			statement.setString(1, child_home_province);
 			statement.setString(2, child_home_city);
 			statement.setString(3, child_home_county);
-			statement.setInt(4, child_id);
+			statement.setInt(4, user_id);
 			statement.executeUpdate();
 			System.out.println("修改宝宝省市区成功");
 			return true;
@@ -336,6 +351,27 @@ public class IChildDAOImpl implements IChildDAO {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 			System.out.println("修改宝宝省市区失败");
+			return false;
+		} finally {
+			C3P0Utils.close(resultSet, statement, connection);
+		}
+	}
+
+	@Override
+	public boolean updateChildPhoto(int user_id, String child_photo) {
+		connection = C3P0Utils.getConnection();
+		sql = "UPDATE child SET child_photo=? where user_id = ?";
+		try {
+			statement = connection.prepareStatement(sql);
+			statement.setString(1, child_photo);
+			statement.setInt(2, user_id);
+			statement.executeUpdate();
+			System.out.println("修改宝宝头像成功");
+			return true;
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			System.out.println("修改宝宝头像失败");
 			return false;
 		} finally {
 			C3P0Utils.close(resultSet, statement, connection);

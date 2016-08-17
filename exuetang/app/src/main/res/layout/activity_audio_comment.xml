@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ptr="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".view.activity.audio.AudioCommentActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="51dp"
+        android:background="@color/titlecolor">
+
+        <ImageView
+            android:id="@+id/comment_back_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="14dp"
+            android:layout_marginTop="18dp"
+            android:src="@mipmap/return_image"/>
+
+        <TextView
+            android:id="@+id/comment_title_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="评论(52)"
+            android:textColor="@color/me_text_black"
+            android:textSize="@dimen/title_textsize"/>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="101dp">
+        <include layout="@layout/audio_twostyle_list_item"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/new_comment"
+        android:layout_width="match_parent"
+        android:layout_height="24dp"
+        android:background="@color/me_middle"
+        android:gravity="center_vertical"
+        android:paddingLeft="14dp"
+        android:text="最新评论"
+        android:textSize="@dimen/my_info_left_textsize"/>
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="385dp">
+    <com.handmark.pulltorefresh.library.PullToRefreshListView
+        android:id="@+id/comment_listview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fadingEdge="none"
+        android:fastScrollEnabled="false"
+        android:footerDividersEnabled="false"
+        android:headerDividersEnabled="false"
+        android:smoothScrollbar="true"
+        ptr:ptrAnimationStyle="flip"
+        ptr:ptrDrawable="@drawable/default_ptr_flip">
+    </com.handmark.pulltorefresh.library.PullToRefreshListView>
+    <!--!Here is the view to show if the list is emtpy &ndash;&gt;-->
+    <ScrollView
+        android:id="@+id/empty"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/emptyText"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:gravity="center"
+                android:lineSpacingMultiplier="0.92"
+                android:paddingLeft="10dip"
+                android:paddingRight="10dip"
+                android:paddingTop="10dip"
+                android:text="没有更多评论了"
+                android:textColor="?android:attr/textColorSecondary"
+                android:textSize="20sp"/>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
+    <!--解决第一次进入的时候，输入面板隐藏的作用，必须写在edittext的前面-->
+    <LinearLayout
+        android:layout_width="0px"
+        android:layout_height="0px"
+        android:focusable="true"
+        android:focusableInTouchMode="true"/>
+    <LinearLayout
+        android:background="@color/me_middle"
+        android:layout_width="match_parent"
+        android:layout_height="54dp"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/send_comment_edittext"
+            android:textColorHint="@color/me_middle_text"
+            android:paddingLeft="5dp"
+            android:background="@drawable/edit_frame_color"
+            android:hint="发表评论"
+            android:inputType="text"
+            android:textSize="@dimen/my_info_right_textsize"
+            android:layout_marginLeft="14dp"
+            android:layout_width="290dp"
+            android:layout_height="34dp"/>
+        <TextView
+            android:id="@+id/send_comment_textview"
+            android:gravity="center"
+            android:textColor="@color/my_info_right1_text"
+            android:textSize="@dimen/tab_textsize"
+            android:text="发送"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </LinearLayout>
+
+</LinearLayout>
