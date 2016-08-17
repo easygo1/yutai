@@ -24,7 +24,7 @@ public class LoginPresenterImpl implements LoginPresenter {
     @Override
     public void login() {
         mILoginView.showLoading();
-        mILoginDAO.login(mILoginView.getUserphone(), mILoginView.getPassword(), new OnLoginListener() {
+        mILoginDAO.login(mILoginView.getUserphone(), mILoginView.getPassword(),mILoginView.getActivity(), new OnLoginListener() {
             @Override
             public void loginSuccess(final User user) {
                 //需要在UI线程中执行

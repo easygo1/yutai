@@ -42,8 +42,10 @@ public class MusciTableOperate {
         cv.put("music_download_month_number",music.getMusic_download_month_number() );
         cv.put("music_download_week_number",music.getMusic_download_week_number() );
         cv.put("music_download_day_number",music.getMusic_download_day_number() );
-        cv.put("music_type_photo",music.getMusic_type_photo() );
         cv.put("music_photo",music.getMusic_photo() );
+        cv.put("music_bg_photo",music.getMusic_bg_photo());
+        cv.put("music_main_photo",music.getMusic_main_photo() );
+        cv.put("music_introduct",music.getMusic_introduct());
         cv.put("music_coins",music.getMusic_coins() );
         cv.put("music_upload_time",music.getMusic_upload_time() );
         cv.put("music_remarks",music.getMusic_remarks() );
@@ -112,16 +114,18 @@ public class MusciTableOperate {
             int music_download_month_number = mCursor.getInt(12);
             int music_download_week_number = mCursor.getInt(13);
             int music_download_day_number = mCursor.getInt(14);
-            String music_type_photo = mCursor.getString(15);
-            String music_photo = mCursor.getString(16);
-            double music_coins = mCursor.getDouble(17);
-            String music_upload_time = mCursor.getString(18);
-            String music_remarks = mCursor.getString(19);
+            String music_photo = mCursor.getString(15);
+            String music_bg_photo = mCursor.getString(16);
+            String music_main_photo = mCursor.getString(17);
+            String music_introduct = mCursor.getString(18);
+            double music_coins = mCursor.getDouble(19);
+            String music_upload_time = mCursor.getString(20);
+            String music_remarks = mCursor.getString(21);
             music = new Music(music_id,music_name,music_path_mp3,music_path_lrc,music_type1,music_type2,
                     music_audition_sum_number,music_audition_month_number,music_audition_week_number,
                     music_audition_day_number,music_download_sum_number,music_download_month_number,
-                    music_download_week_number,music_download_day_number,music_type_photo,music_photo,
-                    music_coins,music_upload_time,music_remarks);
+                    music_download_week_number,music_download_day_number,music_photo,music_bg_photo,
+                    music_main_photo,music_introduct,music_coins,music_upload_time,music_remarks);
             mList.add(music);
         }
         mCursor.close();

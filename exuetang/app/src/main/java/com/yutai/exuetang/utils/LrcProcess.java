@@ -46,11 +46,10 @@ public class LrcProcess {
 	
 	/**
 	 * 读取歌词
-	 * @param path 网络地址
 	 *        localPath 本地地址
 	 * @return
 	 */
-	public String readLRC(String path,String localPath) {
+	public String readLRC(String localPath) {
 		/*try {
 			URL url = new URL(path);
 			java.net.URLEncoder.encode(String.valueOf(url), "iso8859-1");//编码以下，保证不能乱码、、
@@ -117,7 +116,7 @@ public class LrcProcess {
 		}*/
 		//定义一个StringBuilder对象，用来存放歌词内容
 		StringBuilder stringBuilder = new StringBuilder();
-		Log.e("lrcProcesspath",path);
+		//Log.e("lrcProcesspath",path);
 		//File f = new File(path.replace(".mp3", ".lrc"));
 		File f = new File(localPath);
 		if (!f.exists()) {

@@ -129,6 +129,12 @@ public class AudioPlayActivity extends AppCompatActivity implements View.OnClick
         mp3Infos = mMusciTableOperate.selectAllMusic();
         registerReceiver();
         initPlay();
+        Log.e("oncreate", "playactivity has onCreate");
+    }
+    private void showPhoto(final Music music){
+        //设置音乐图片
+        Glide.with(this).load(music.getMusic_photo()).into(mAudioMusicphotoImage);
+        //先把背景图变为bitmap,在模糊化
         new Thread(){
             @Override
             public void run() {
@@ -153,7 +159,6 @@ public class AudioPlayActivity extends AppCompatActivity implements View.OnClick
 
             }
         }.start();
-        Log.e("oncreate", "playactivity has onCreate");
     }
     //执行背景模糊化
     private class AnotherTask extends AsyncTask<String, Void, String> {
@@ -237,7 +242,8 @@ public class AudioPlayActivity extends AppCompatActivity implements View.OnClick
                 //mAudioPlayStyleImage.setBackgroundResource(R.mipmap.random_broadcast);
                 break;
         }
-        if (flag == AppConstant.PlayerMsg.PLAYING_MSG) { // 如果播放信息是正在播放
+        play();
+        /*if (flag == AppConstant.PlayerMsg.PLAYING_MSG) { // 如果播放信息是正在播放
             Intent intent = new Intent();
             intent.setAction(SHOW_LRC);
             intent.putExtra("listPosition", listPosition);
@@ -249,7 +255,7 @@ public class AudioPlayActivity extends AppCompatActivity implements View.OnClick
             intent.setAction("com.wwj.media.MUSIC_SERVICE");
             intent.putExtra("MSG", AppConstant.PlayerMsg.CONTINUE_MSG);	//继续播放音乐
             startService(intent);
-        }
+        }*/
     }
     /**
      * 用来接收从service传回来的广播的内部类
@@ -278,6 +284,7 @@ public class AudioPlayActivity extends AppCompatActivity implements View.OnClick
                     // musicTitle.setText(mp3Infos.get(listPosition).getTitle());
                     // musicArtist.setText(mp3Infos.get(listPosition).getArtist());
                     mAudioMusicName.setText(mp3Infos.get(listPosition).getMusic_name());
+                    showPhoto(mp3Infos.get(listPosition));
                 }
                 /*if (listPosition == 0) {
                     mAudioMusicName.setTypeface(MyApplication.sTypeface);
@@ -306,16 +313,16 @@ public class AudioPlayActivity extends AppCompatActivity implements View.OnClick
     private void getDataFromBundle() {
 
         Intent intent = getIntent();
-        Bundle bundle = intent.getExtras();
-        music = (Music) bundle.getSerializable("music");
-        flag = bundle.getInt("MSG");
+        /*Bundle bundle = intent.getExtras();
+        music = (Music) bundle.getSerializable("music");*/
+        music = (Music) intent.getSerializableExtra("music");
+        //flag = bundle.getInt("MSG");
         url = music.getMusic_path_mp3();
         title = music.getMusic_name();
         //Log.e("music",music.toString()+""+"flag"+flag);
         //Log.e("musicphoto",music.getMusic_photo()+""+"flag"+flag);
         mAudioMusicName.setText(title);
-        //设置音乐图片
-        Glide.with(this).load(music.getMusic_photo()).into(mAudioMusicphotoImage);
+        showPhoto(music);
         /*Bundle bundle = intent.getExtras();
         *//*title = bundle.getString("title");
         artist = bundle.getString("artist");*//*
@@ -388,7 +395,7 @@ public class AudioPlayActivity extends AppCompatActivity implements View.OnClick
         intent.setPackage("com.yutai.exuetang");
         intent.putExtra("url", url);
         intent.putExtra("listPosition", listPosition);
-        intent.putExtra("MSG", flag);
+        intent.putExtra("MSG", AppConstant.PlayerMsg.PLAY_MSG);
         startService(intent);
     }
     @Override
@@ -489,6 +496,7 @@ public class AudioPlayActivity extends AppCompatActivity implements View.OnClick
             Music music = mp3Infos.get(listPosition); // 上一首MP3
             title = music.getMusic_name();
             mAudioMusicName.setText(title);
+            showPhoto(music);
             url = music.getMusic_path_mp3();
             Intent intent = new Intent();
             intent.setAction("com.wwj.media.MUSIC_SERVICE");
@@ -515,6 +523,7 @@ public class AudioPlayActivity extends AppCompatActivity implements View.OnClick
            // Log.e("playactivitymusic",music.toString());
             title = music.getMusic_name();
             mAudioMusicName.setText(title);
+            showPhoto(music);
             url = music.getMusic_path_mp3();
             Intent intent = new Intent();
             intent.setAction("com.wwj.media.MUSIC_SERVICE");
@@ -716,6 +725,30 @@ public class AudioPlayActivity extends AppCompatActivity implements View.OnClick
         @Override
         public void onItemClick(int position) {
             ToastUtils.showToast(AudioPlayActivity.this,"这是第"+position+"tiao");
+            mMusciTableOperate.deleteMusicByMusicid(mp3Infos.get(position).getMusic_id());
+            mMusciTableOperate.insertData(mp3Infos.get(position));
+            /*Intent intent = new Intent();
+            intent.setClass(AudioPlayActivity.this, AudioPlayActivity.class);
+            //绑定数据
+            intent.putExtra("music", mp3Infos.get(position));//也可以绑定数组
+            startActivity(intent);*/
+            mp3Infos = mMusciTableOperate.selectAllMusic();
+            music = mp3Infos.get(0);
+            url = mp3Infos.get(0).getMusic_path_mp3();
+            listPosition = 0;
+            title = music.getMusic_name();
+            //Log.e("music",music.toString()+""+"flag"+flag);
+            //Log.e("musicphoto",music.getMusic_photo()+""+"flag"+flag);
+            mAudioMusicName.setText(title);
+            showPhoto(music);
+            Intent intent = new Intent();
+            intent.setAction("com.wwj.media.MUSIC_SERVICE");
+            intent.setPackage("com.yutai.exuetang");
+            intent.putExtra("url", url);
+            intent.putExtra("listPosition", listPosition);
+            intent.putExtra("MSG", AppConstant.PlayerMsg.PLAY_MSG);
+            startService(intent);
+            dialog.dismiss();
         }
     };
 }

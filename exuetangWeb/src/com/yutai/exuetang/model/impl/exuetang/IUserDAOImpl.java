@@ -279,4 +279,41 @@ public class IUserDAOImpl implements IUserDAO {
 			C3P0Utils.close(resultSet, statement, connection);
 		}
 	}
+
+	@Override
+	public User login(String user_newphone, String user_password) {
+		// TODO Auto-generated method stub
+		connection = C3P0Utils.getConnection();
+		sql = "select * from user where user_newphone=? and user_password=?";
+		try {
+			statement = connection.prepareStatement(sql);
+			statement.setString(1, user_newphone);
+			statement.setString(2, user_password);
+			resultSet = statement.executeQuery();
+			while (resultSet.next()) {
+				int user_id1 = resultSet.getInt(1);
+				String user_newphone1 = resultSet.getString(2);
+				String user_oldphone = resultSet.getString(3);
+				String user_password1 = resultSet.getString(4);
+				String user_nickname = resultSet.getString(5);
+				String user_mood = resultSet.getString(6);
+				String user_qq_token = resultSet.getString(7);
+				String user_wechat_token = resultSet.getString(8);
+				String user_realname = resultSet.getString(9);
+				String user_sex = resultSet.getString(10);
+				int user_type = resultSet.getInt(11);
+				String user_remarks = resultSet.getString(12);
+				user = new User(user_id1, user_newphone1, user_oldphone, user_password1, user_nickname, user_mood, user_qq_token, user_wechat_token, user_realname, user_sex, user_type, user_remarks);
+				System.out.println("查找成功");
+				return user;
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			System.out.println("查找失败");
+			e.printStackTrace();
+		} finally {
+			C3P0Utils.close(resultSet, statement, connection);
+		}
+		return user;
+	}
 }

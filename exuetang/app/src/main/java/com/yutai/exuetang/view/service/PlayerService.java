@@ -168,6 +168,7 @@ public class PlayerService extends Service {
 
 	@Override
 	public void onStart(Intent intent, int startId) {
+		mp3Infos = mMusciTableOperate.selectAllMusic();
 		Log.e("serviceonstartmp3",mp3Infos.toString());
 			if (path == intent.getStringExtra("url")){
 				path = intent.getStringExtra("url");		//歌曲路径
@@ -250,7 +251,8 @@ public class PlayerService extends Service {
 		//Log.e("initlrc",mp3Infos.get(current).getMusic_path_lrc());
 		//读取歌词文件
 		//mLrcProcess.readLRC(mp3Infos.get(current).getMusic_path_lrc(), FileVisitorUtils.LocalFilePath+mp3Infos.get(current).getMusic_name()+".lrc");
-		mLrcProcess.readLRC(mp3Infos.get(current).getMusic_path_lrc(), FileVisitorUtils.LocalFilePath+"两只老虎.lrc");
+		mLrcProcess.readLRC(FileVisitorUtils.LocalFilePath+mp3Infos.get(current).getMusic_type1()+"/"+mp3Infos.get(current).getMusic_name()+".lrc");
+		Log.e("lrcPath",FileVisitorUtils.LocalFilePath+mp3Infos.get(current).getMusic_type1()+"/"+mp3Infos.get(current).getMusic_name()+".lrc");
 		//传回处理后的歌词文件
 		lrcList = mLrcProcess.getLrcList();
 		//Log.e("lrcList",lrcList.toString());

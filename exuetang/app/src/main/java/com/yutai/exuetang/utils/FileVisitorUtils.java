@@ -16,7 +16,7 @@ public class FileVisitorUtils {
     public static FileVisitorUtils finder = new FileVisitorUtils();
     public static String LocalFilePath = Environment
             .getExternalStorageDirectory().toString()
-            + "/exuetangmusic/";//本地文件夹地址
+            + "/yutai/music/";//本地文件夹地址
 
     public static boolean findFile(final String file_path, final String filetype) {
         finder.findFiles(filetype, LocalFilePath, filenameList);

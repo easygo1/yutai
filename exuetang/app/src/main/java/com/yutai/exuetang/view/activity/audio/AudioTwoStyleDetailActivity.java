@@ -3,6 +3,7 @@ package com.yutai.exuetang.view.activity.audio;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Environment;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
@@ -17,10 +18,17 @@ import com.bumptech.glide.Glide;
 import com.handmark.pulltorefresh.library.ILoadingLayout;
 import com.handmark.pulltorefresh.library.PullToRefreshBase;
 import com.handmark.pulltorefresh.library.PullToRefreshListView;
+import com.yolanda.nohttp.Headers;
+import com.yolanda.nohttp.NoHttp;
+import com.yolanda.nohttp.RequestMethod;
+import com.yolanda.nohttp.download.DownloadListener;
+import com.yolanda.nohttp.download.DownloadRequest;
 import com.yutai.exuetang.R;
+import com.yutai.exuetang.db.MusciTableOperate;
 import com.yutai.exuetang.model.beans.audio.music.Music;
 import com.yutai.exuetang.presenter.dao.audio.AudioTwoStyleDetailPresenter;
 import com.yutai.exuetang.presenter.impl.audio.AudioTwoStyleDetailPresenterImpl;
+import com.yutai.exuetang.utils.FileUtils;
 import com.yutai.exuetang.utils.ToastUtils;
 import com.yutai.exuetang.view.adapter.audio.AudioListAdapter;
 import com.yutai.exuetang.view.application.MyApplication;
@@ -50,6 +58,13 @@ public class AudioTwoStyleDetailActivity extends AppCompatActivity implements Vi
     private String type2 = "";
     private String type_path;
     private boolean isFirst=true;
+    //sqlite有关声明
+    private MusciTableOperate mMusciTableOperate = null;
+    //保存歌词地址
+    String filepath = Environment
+            .getExternalStorageDirectory().toString() + "/yutai/music";//文件的本地保存地址
+    private int WHAT = 0;
+    DownloadRequest mDownloadRequest1;
     private Handler mHandler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
@@ -89,6 +104,7 @@ public class AudioTwoStyleDetailActivity extends AppCompatActivity implements Vi
         //初始化控件
         initViews();
         initData();//初始化数据
+        mMusciTableOperate = new MusciTableOperate(AudioTwoStyleDetailActivity.this);
         initWordStyleType();
         //设置上拉加载下拉刷新组件和事件监听
         //设置刷新模式为BOTH才可以上拉和下拉都能起作用,必须写在前面
@@ -167,27 +183,29 @@ public class AudioTwoStyleDetailActivity extends AppCompatActivity implements Vi
         mAudioListview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                intentNextActivity(mMusicList.get(position - 1).getMusic_id());
+                //向sqlite中加入这条music信息,删除之前这条music信息
+                mMusciTableOperate.deleteMusicByMusicid(mMusicList.get(position - 1).getMusic_id());
+                mMusciTableOperate.insertData(mMusicList.get(position - 1));
+                //判断手机里是否有这个歌词文件，来下载这个歌词
+                downLoadLrc(mMusicList.get(position - 1));
+                //跳转到play页面
+                intentNextActivity(mMusicList.get(position - 1));
                 music_id=mMusicList.get(position - 1).getMusic_id();
 //                Log.e("position", "" + position);
             }
         });
     }
     private void getData1() {
-        /*mAudioTwoStyleDetailPresenter = new AudioTwoStyleDetailPresenterImpl(this);
-        mAudioTwoStyleDetailPresenter.onSuccess();
-*/
         try {
-            Thread.sleep(100);
-            mAudioTwoStyleDetailPresenter = new AudioTwoStyleDetailPresenterImpl(this);
-            mAudioTwoStyleDetailPresenter.onSuccess();
+            Thread.sleep(200);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-
+        mAudioTwoStyleDetailPresenter = new AudioTwoStyleDetailPresenterImpl(this);
+        mAudioTwoStyleDetailPresenter.onSuccess();
     }
     private void getData() {
-        mAudioTwoStyleDetailPresenter = new AudioTwoStyleDetailPresenterImpl(this);
+        mAudioTwoStyleDetailPresenter = new AudioTwoStyleDetailPresenterImpl(AudioTwoStyleDetailActivity.this);
         mAudioTwoStyleDetailPresenter.onSuccess();
     }
 
@@ -196,13 +214,13 @@ public class AudioTwoStyleDetailActivity extends AppCompatActivity implements Vi
         mAudioTwoStyleDetailPresenter.onGetTypePhoto();
     }
 
-    public void intentNextActivity(int music_id) {
+    public void intentNextActivity(Music music) {
         showToast("跳转到播放页面");
         mAudioTwoStyleDetailPresenter.onUpdateAudition();
         Intent intent = new Intent();
         intent.setClass(this, AudioPlayActivity.class);
         //绑定数据
-        intent.putExtra("music_id", music_id);//也可以绑定数组
+        intent.putExtra("music", music);//也可以绑定数组
         startActivity(intent);
     }
 
@@ -334,5 +352,109 @@ public class AudioTwoStyleDetailActivity extends AppCompatActivity implements Vi
         mTabNice.setTextColor(getResources().getColor(R.color.gray));
         mTabNew.setTextColor(getResources().getColor(R.color.gray));
         mTabPopular.setTextColor(getResources().getColor(R.color.gray));
+    }
+    //根据music对象来下载歌词
+    private void downLoadLrc(Music music){
+        String itemfilepath=filepath+"/"+music.getMusic_type1()+"/";
+        boolean adjustload= FileUtils.isExitsFile(music.getMusic_name()+".lrc",itemfilepath,".lrc");
+        if(adjustload){
+            //说明已经下载了歌词
+        }else{
+            //下载音乐歌词
+            download(mDownloadRequest1, music.getMusic_path_lrc(),
+                    music.getMusic_type1(), music.getMusic_name() + ".lrc", music.getMusic_id());
+        }
+    }
+    //单个文件下载
+    private void download(DownloadRequest downloadRequest, String url, String type1, String filename, int music_id) {
+        downloadRequest = NoHttp.createDownloadRequest(url, filepath + "/" + type1
+                ,
+                filename,
+                true,
+                false);
+        if (!check(downloadRequest)) {
+            //此时说明还没有下载，去下载
+            reques(downloadRequest, music_id);
+        } else {
+//            下载过了
+        }
+
+    }
+    //检查之前的下载状态
+    private boolean check(DownloadRequest mDownloadRequest) {
+        // 检查之前的下载状态
+        int beforeStatus = mDownloadRequest.checkBeforeStatus();
+        boolean flog = false;
+        switch (beforeStatus) {
+            case DownloadRequest.STATUS_RESTART:
+//                viewHolder.itemProgressBar.setProgress(0);
+                //ToastUtils.showToast(mContext, "开始下载");
+                break;
+            case DownloadRequest.STATUS_RESUME:
+                flog = true;
+                //ToastUtils.showToast(mContext, "正在下载");
+                break;
+            case DownloadRequest.STATUS_FINISH:
+//                viewHolder.itemProgressBar.setProgress(100);
+                flog = true;
+                //ToastUtils.showToast(mContext, "已经下载");
+                break;
+        }
+        Log.e("下载ok", "" + flog);
+        return flog;
+    }
+    private void reques(final DownloadRequest mDownloadRequest, final int music_id) {
+        MyApplication.downloadQueue.add(WHAT, mDownloadRequest, new DownloadListener() {
+            @Override
+            public void onDownloadError(int what, Exception exception) {
+                //下载异常
+                Log.e("下载异常：", exception.toString());
+                //ToastUtils.showToast(mContext, "下载异常");
+            }
+
+            @Override
+            public void onStart(int what, boolean isResume, long rangeSize, Headers responseHeaders, long allCount) {
+                //开始下载
+                //what
+                //isResume 是否重新下载
+                //rangeSize 已下载文件大小
+                //responseHeaders
+                //allCount 文件总大小
+                int progress = (int) (rangeSize * 100 / allCount); //下载进度
+                Log.e("下载文件：", "文件大小" + rangeSize + "下载进度" + progress);
+//                ToastUtils.showToast(mContext,"开始下载，文件大小"+rangeSize);
+            }
+
+            @Override
+            public void onProgress(int what, int progress, long fileCount) {
+                //下载进度
+                //progress 进度
+                //fileCount 文件大小
+                Log.e("下载文件：", "文件大小" + fileCount + "下载进度" + progress);
+            }
+
+            @Override
+            public void onFinish(int what, String filePath) {
+//下载完成
+                Log.e("下载文件：", "下载完成");
+//                ToastUtils.showToast(mContext,"下载完成");
+                Log.e("更新数据库", "zzzz");
+                // 创建请求队列, 默认并发3个请求,传入你想要的数字可以改变默认并发数, 例如NoHttp.newRequestQueue(1);
+                /*requestQueue = NoHttp.newRequestQueue();
+                // 创建请求对象
+                request = NoHttp.createStringRequest(mPath, RequestMethod.POST);
+                // 添加请求参数
+                request.add("methods", "updateMusicAndCoins");
+                request.add("music_id", music_id);
+                request.add("user_id", user_id);
+                requestQueue.add(UPDATE_DOWNLOAD_NUM_COINS, request, onResponseListener);*/
+            }
+
+            @Override
+            public void onCancel(int what) {
+//取消下载
+                Log.e("下载文件：", "取消下载");
+            }
+        });
     }
 }

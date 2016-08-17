@@ -37,8 +37,10 @@ public class MusicDatabaseHelper extends SQLiteOpenHelper {
                 +"music_download_month_number  integer,"
                 +"music_download_week_number   integer,"
                 +"music_download_day_number    integer,"
-                +"music_type_photo varchar(300),"
                 +"music_photo varchar(300),"
+                +"music_bg_photo varchar(300),"
+                +"music_main_photo varchar(300),"
+                +"music_introduct varchar(200),"
                 +"music_coins double,"
                 +"music_upload_time datetime,"
                 +"music_remarks  varchar(100))";
