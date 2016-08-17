@@ -1,5 +1,8 @@
 package com.yutai.exuetang.view.activity.audio;
 
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -10,6 +13,7 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.handmark.pulltorefresh.library.ILoadingLayout;
@@ -22,6 +26,7 @@ import com.yolanda.nohttp.rest.Request;
 import com.yolanda.nohttp.rest.Response;
 import com.yutai.exuetang.R;
 import com.yutai.exuetang.model.beans.audio.music.GsonMusicCommentBean;
+import com.yutai.exuetang.model.beans.audio.music.Music;
 import com.yutai.exuetang.utils.RequestManager;
 import com.yutai.exuetang.utils.ToastUtils;
 import com.yutai.exuetang.view.adapter.audio.AudioCommentListAdapter;
@@ -56,8 +61,12 @@ public class AudioCommentActivity extends AppCompatActivity implements View.OnCl
     private AudioCommentListAdapter mCommentListAdapter;
 
     private int cur = 1;//显示分页，得到第几页
-    private int music_id = 1;
-    private int user_id = 1;
+    Music music;
+    private int music_id;
+    private int user_id;//偏好设置中取
+    SharedPreferences mSharedPreferences;
+    public static final String USER = "user";
+
     //服务端的URL
     public String mPath = MyApplication.url + "/audioservlet";
     private boolean isSucess = false;
@@ -66,6 +75,7 @@ public class AudioCommentActivity extends AppCompatActivity implements View.OnCl
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_audio_comment);
+        getintentdata();
         initViews();
         initWordStyle();
         //设置上拉加载下拉刷新组件和事件监听
@@ -75,6 +85,14 @@ public class AudioCommentActivity extends AppCompatActivity implements View.OnCl
         initData();//初始化数据
         initListener();
         getData();
+    }
+
+    private void getintentdata() {
+        mSharedPreferences = this.getSharedPreferences(USER, Context.MODE_PRIVATE);
+        user_id = mSharedPreferences.getInt("user_id", 0);//整个页面要用
+        Intent intent=getIntent();
+        music= (Music) intent.getSerializableExtra("music");
+        music_id=music.getMusic_id();
     }
 
     private void initViews() {
@@ -149,6 +167,12 @@ public class AudioCommentActivity extends AppCompatActivity implements View.OnCl
     }
 
     private void initData() {
+       Glide.with(this).load(music.getMusic_photo()).into(mItemMusicPhoto);
+        mItemMusicName.setText(music.getMusic_name());
+        mItemMusicDescribe.setText(music.getMusic_introduct());
+//      mItemMusicNum.setText(music.get);
+        mItemMusicAuditionSum.setText(""+music.getMusic_audition_sum_number());
+        mItemMusicDownloadSum.setText(""+music.getMusic_download_sum_number());
         //初始化数据
         mMusicCommentBeanList = new ArrayList<>();
         mCommentListAdapter = new AudioCommentListAdapter(this, mMusicCommentBeanList);
