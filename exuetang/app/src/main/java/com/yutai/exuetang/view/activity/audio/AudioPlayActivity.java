@@ -4,7 +4,6 @@ import android.annotation.TargetApi;
 import android.app.Dialog;
 import android.content.BroadcastReceiver;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.graphics.Bitmap;
@@ -18,7 +17,6 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.ListPopupWindow;
 import android.telephony.PhoneStateListener;
 import android.telephony.TelephonyManager;
 import android.util.Log;
@@ -30,10 +28,8 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.SeekBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
-import com.mob.tools.SSDKHandlerThread;
 import com.yanzhenjie.recyclerview.swipe.Closeable;
 import com.yanzhenjie.recyclerview.swipe.OnSwipeMenuItemClickListener;
 import com.yanzhenjie.recyclerview.swipe.SwipeMenu;
@@ -52,10 +48,8 @@ import com.yutai.exuetang.utils.PhotoBlurUtils;
 import com.yutai.exuetang.utils.ToastUtils;
 import com.yutai.exuetang.view.adapter.audio.OnItemClickListener;
 import com.yutai.exuetang.view.adapter.audio.PlayDialogAdapter;
-import com.yutai.exuetang.view.application.MyApplication;
 import com.yutai.exuetang.view.service.PlayerService;
 
-import java.text.CollationElementIterator;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -460,6 +454,14 @@ public class AudioPlayActivity extends AppCompatActivity implements View.OnClick
             case R.id.audio_play_comment_image:
                 //评论
                 ToastUtils.showToast(this,"评论");
+//                传递music对象
+                intent.setClass(AudioPlayActivity.this, AudioCommentActivity.class);
+                /*Bundle mBundle = new Bundle();
+                mBundle.putSerializable("music",music);// 或者 mBundle.putParcelable("设置标记的key",对象Bean);
+                intent.putExtras(mBundle);*/
+                //绑定数据
+                intent.putExtra("music", music);//也可以绑定数组
+                startActivity(intent);
                 break;
             case R.id.audio_play_share_image:
                 //分享

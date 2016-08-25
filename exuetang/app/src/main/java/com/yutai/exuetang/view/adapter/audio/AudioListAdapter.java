@@ -2,6 +2,7 @@ package com.yutai.exuetang.view.adapter.audio;
 
 import android.app.Dialog;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Environment;
 import android.support.v7.app.AlertDialog;
 import android.util.Log;
@@ -41,7 +42,9 @@ public class AudioListAdapter extends BaseAdapter {
     private static final String CancelSign = "CancelSign";
     private static boolean isload = false;
     public static double user_coins=0.0;
-    private static int user_id=1;//用户的id 要从偏好设置中获取
+    int user_id;//用户的id 要从偏好设置中获取
+    SharedPreferences mSharedPreferences;
+    public static final String USER = "user";
     public String mPath = MyApplication.url + "/audioservlet";
     //    网络请求
     public OnResponseListener<String> onResponseListener = new OnResponseListener<String>() {
@@ -127,6 +130,8 @@ public class AudioListAdapter extends BaseAdapter {
         mContext = context;
         mInflater = LayoutInflater.from(mContext);
         mDownloadRequests = new ArrayList<>();
+        mSharedPreferences = mContext.getSharedPreferences(USER, Context.MODE_PRIVATE);
+        user_id = mSharedPreferences.getInt("user_id", 0);//整个页面要用
     }
 
     @Override
@@ -253,13 +258,18 @@ public class AudioListAdapter extends BaseAdapter {
         downloadimageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //FileVisitorUtils.finder.findFiles(".mp3",);
-                boolean adjustload= FileUtils.isExitsFile(mMusicList.get(position).getMusic_name()+".mp3",itemfilepath,".mp3");
-                if(adjustload){
-                    ToastUtils.showToast(mContext,"已经下载！");
+                if(user_id!=0){
+                    //FileVisitorUtils.finder.findFiles(".mp3",);
+                    boolean adjustload= FileUtils.isExitsFile(mMusicList.get(position).getMusic_name()+".mp3",itemfilepath,".mp3");
+                    if(adjustload){
+                        ToastUtils.showToast(mContext,"已经下载！");
+                    }else{
+                        showDialog();
+                    }
                 }else{
-                    showDialog();
+                    ToastUtils.showToast(mContext,"去登录！！");
                 }
+
              }
             private void showDialog() {
                 LayoutInflater inflater = LayoutInflater.from(mContext);
@@ -267,7 +277,7 @@ public class AudioListAdapter extends BaseAdapter {
                 final AlertDialog.Builder builder = new AlertDialog.Builder(mContext);
                 builder.setView(view);
                 final Dialog dialog = builder.show();
-                isUserHavecoins();
+                //isUserHavecoins();
                 Button canclebutton = (Button) view.findViewById(R.id.download_cancle);
                 Button okbutton = (Button) view.findViewById(R.id.download_ok);
                 final TextView downloadtextView= (TextView) view.findViewById(R.id.download_textview);

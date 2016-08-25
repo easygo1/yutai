@@ -8,4 +8,6 @@
     <dimen name="audio_item_textview">10sp</dimen>
     <dimen name="my_info_left_textsize">15sp</dimen>
     <dimen name="my_info_right_textsize">14sp</dimen>
+    <dimen name="title_height">48dp</dimen>
+    <dimen name="navigation_height">54dp</dimen>
 </resources>

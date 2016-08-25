@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     tools:context="com.yutai.exuetang.view.activity.exuetang.LoginActivity">
     <TextView
+        android:id="@+id/login_top"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="@dimen/title_height"
         android:layout_weight="1"
         android:background="@color/me_top"
         android:gravity="center"
@@ -16,9 +16,9 @@
         android:textColor="@color/index_textcolor"
         android:text="登录"/>
     <LinearLayout
+        android:layout_below="@+id/login_top"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="11"
+        android:layout_height="match_parent"
         android:background="@color/me_white"
         android:orientation="vertical">
         <ImageView
@@ -113,4 +113,4 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"/>
     </LinearLayout>
-</LinearLayout>
+</RelativeLayout>

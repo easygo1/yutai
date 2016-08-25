@@ -1,17 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.yutai.exuetang.view.activity.audio.AudioHomeActivity">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
     <!--音频宝的首页-->
     <!--头部-->
     <include
-        android:id="@+id/audio_home_top"
-        layout="@layout/audio_home_top"
+        layout="@layout/stageshow_home_top"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/title_height"
+        android:layout_height="0dp"
         android:layout_weight="1"/>
     <!--这个linearLayout解决打开页面时输入面板弹出影响效果
     ，让这个不占用空间的的linearLayout率先获取焦点
@@ -23,8 +20,8 @@
         android:focusableInTouchMode="true"/>
     <!--内容部分-->
     <include
-        android:layout_below="@+id/audio_home_top"
-        layout="@layout/audio_home_content"
+        layout="@layout/stageshow_home_content"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
-</RelativeLayout>
+        android:layout_height="0dp"
+        android:layout_weight="11"/>
+</LinearLayout>

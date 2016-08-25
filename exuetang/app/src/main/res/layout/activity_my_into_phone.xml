@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     tools:context=".view.activity.exuetang.MyIntoPhoneActivity">
 
     <RelativeLayout
+        android:id="@+id/myphone_top"
         android:layout_width="match_parent"
-        android:layout_height="51dp"
+        android:layout_height="@dimen/title_height"
         android:background="@color/titlecolor">
 
         <ImageView
@@ -29,7 +29,11 @@
             android:textColor="@color/me_text_black"
             android:textSize="@dimen/title_textsize"/>
     </RelativeLayout>
-
+<LinearLayout
+    android:layout_below="@+id/myphone_top"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
     <TextView
         style="@style/text_liner_x"
         android:layout_marginTop="16dp"/>
@@ -163,5 +167,5 @@
             android:text="本人已阅读并同意注册协议"
             android:textSize="11sp"/>
     </RelativeLayout>
-
 </LinearLayout>
+</RelativeLayout>

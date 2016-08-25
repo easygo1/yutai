@@ -5,6 +5,7 @@ import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -170,20 +171,28 @@ public class MyInfoActivity extends AppCompatActivity {
     /*private String mloadpath;//图片上传到服务器的地址*/
     User user;
     Child child;
-    private int user_id = 1;//偏好设置中获取
+    private int user_id;//偏好设置中获取
    // private int child_id = 1;//要从偏好设置中取到
     private final static int CROP_PIC = 0x125;
     public static final int TAKE_PHOTO = 1;//相册
     public static final int TAKE_CAMERA = 0;//相机
 
+    SharedPreferences mSharedPreferences;//偏好设置
+    public static final String USER = "user";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_info_scroll);
         ButterKnife.bind(this);
+        getintentdata();
         initWordsStyle();
 //        初始化数据
         initData();
+    }
+
+    private void getintentdata() {
+        mSharedPreferences = this.getSharedPreferences(USER, Context.MODE_PRIVATE);
+        user_id = mSharedPreferences.getInt("user_id", 0);//整个页面要用
     }
 
     private void initWordsStyle() {

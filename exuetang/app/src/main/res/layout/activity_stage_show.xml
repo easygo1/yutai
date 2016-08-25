@@ -4,27 +4,25 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context="com.yutai.exuetang.MainActivity">
-
+    tools:context="com.yutai.exuetang.view.activity.stageshow.StageShowActivity">
     <LinearLayout
-        android:layout_above="@+id/main_bottom"
-        android:id="@+id/main_top"
+        android:layout_above="@+id/stageshow_bottom"
+        android:id="@+id/stageshow_top"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <android.support.v4.view.ViewPager
-            android:id="@+id/middle_viewpager"
+            android:id="@+id/stageshow_viewpager"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
         </android.support.v4.view.ViewPager>
     </LinearLayout>
     <LinearLayout
         android:layout_alignParentBottom="true"
-        android:id="@+id/main_bottom"
+        android:id="@+id/stageshow_bottom"
         android:layout_width="match_parent"
         android:layout_height="@dimen/navigation_height">
         <include
-            layout="@layout/merge"
+            layout="@layout/stageshow_merge"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
     </LinearLayout>

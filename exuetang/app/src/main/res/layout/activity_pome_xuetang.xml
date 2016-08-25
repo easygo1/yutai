@@ -1,21 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     tools:context=".view.activity.audio.twostyle.PomeXuetangActivity">
 
     <include
+        android:id="@+id/audio_story_xuetang_top"
         layout="@layout/audio_story_xuetang_top"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"/>
+        android:layout_height="@dimen/title_height"/>
 
     <include
+        android:layout_below="@id/audio_story_xuetang_top"
         layout="@layout/audio_pome_xuetang_content"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="11"/>
-</LinearLayout>
+        android:layout_height="match_parent"/>
+</RelativeLayout>

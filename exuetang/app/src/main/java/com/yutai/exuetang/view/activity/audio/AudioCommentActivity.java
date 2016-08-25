@@ -1,5 +1,8 @@
 package com.yutai.exuetang.view.activity.audio;
 
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -10,6 +13,7 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.handmark.pulltorefresh.library.ILoadingLayout;
@@ -22,8 +26,10 @@ import com.yolanda.nohttp.rest.Request;
 import com.yolanda.nohttp.rest.Response;
 import com.yutai.exuetang.R;
 import com.yutai.exuetang.model.beans.audio.music.GsonMusicCommentBean;
+import com.yutai.exuetang.model.beans.audio.music.Music;
 import com.yutai.exuetang.utils.RequestManager;
 import com.yutai.exuetang.utils.ToastUtils;
+import com.yutai.exuetang.view.activity.exuetang.LoginActivity;
 import com.yutai.exuetang.view.adapter.audio.AudioCommentListAdapter;
 import com.yutai.exuetang.view.application.MyApplication;
 
@@ -54,10 +60,14 @@ public class AudioCommentActivity extends AppCompatActivity implements View.OnCl
 
     private List<GsonMusicCommentBean> mMusicCommentBeanList;
     private AudioCommentListAdapter mCommentListAdapter;
-
+    List<GsonMusicCommentBean> commentBeanlist;
     private int cur = 1;//显示分页，得到第几页
-    private int music_id = 1;
-    private int user_id = 1;
+    Music music;
+    private int music_id;
+    private int user_id;//偏好设置中取
+    SharedPreferences mSharedPreferences;
+    public static final String USER = "user";
+
     //服务端的URL
     public String mPath = MyApplication.url + "/audioservlet";
     private boolean isSucess = false;
@@ -66,6 +76,7 @@ public class AudioCommentActivity extends AppCompatActivity implements View.OnCl
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_audio_comment);
+        getintentdata();
         initViews();
         initWordStyle();
         //设置上拉加载下拉刷新组件和事件监听
@@ -75,6 +86,14 @@ public class AudioCommentActivity extends AppCompatActivity implements View.OnCl
         initData();//初始化数据
         initListener();
         getData();
+    }
+
+    private void getintentdata() {
+        mSharedPreferences = this.getSharedPreferences(USER, Context.MODE_PRIVATE);
+        user_id = mSharedPreferences.getInt("user_id", 0);//整个页面要用
+        Intent intent=getIntent();
+        music= (Music) intent.getSerializableExtra("music");
+        music_id=music.getMusic_id();
     }
 
     private void initViews() {
@@ -149,6 +168,12 @@ public class AudioCommentActivity extends AppCompatActivity implements View.OnCl
     }
 
     private void initData() {
+       Glide.with(this).load(music.getMusic_photo()).into(mItemMusicPhoto);
+        mItemMusicName.setText(music.getMusic_name());
+        mItemMusicDescribe.setText(music.getMusic_introduct());
+//      mItemMusicNum.setText(music.get);
+        mItemMusicAuditionSum.setText(""+music.getMusic_audition_sum_number());
+        mItemMusicDownloadSum.setText(""+music.getMusic_download_sum_number());
         //初始化数据
         mMusicCommentBeanList = new ArrayList<>();
         mCommentListAdapter = new AudioCommentListAdapter(this, mMusicCommentBeanList);
@@ -179,17 +204,24 @@ public class AudioCommentActivity extends AppCompatActivity implements View.OnCl
         if (mSendCommentEdittext.getText().length() > 0) {
             if (mSendCommentEdittext.getText().length() < 100) {
                 String comment_content = mSendCommentEdittext.getText().toString();
-                SimpleDateFormat formatter = new SimpleDateFormat("yyyy年MM月dd日    HH:mm:ss     ");
+                SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd    HH:mm:ss     ");
                 Date curDate = new Date(System.currentTimeMillis());//获取当前时间
                 String comment_time =formatter.format(curDate);
-                Request < String > request = NoHttp.createStringRequest(mPath, RequestMethod.GET);
-                // 添加请求参数
-                request.add("methods", "addMusiccomment");
-                request.add("music_id", music_id);
-                request.add("user_id", user_id);
-                request.add("comment_content", comment_content);
-                request.add("comment_time", comment_time);
-                RequestManager.getInstance().add(ADD_MUSICCOMMENTS_WHAT, request, onResponseListener);
+                if(user_id!=0){
+                    Request < String > request = NoHttp.createStringRequest(mPath, RequestMethod.GET);
+                    // 添加请求参数
+                    request.add("methods", "addMusiccomment");
+                    request.add("music_id", music_id);
+                    request.add("user_id", user_id);
+                    request.add("comment_content", comment_content);
+                    request.add("comment_time", comment_time);
+                    RequestManager.getInstance().add(ADD_MUSICCOMMENTS_WHAT, request, onResponseListener);
+               }else{
+                   ToastUtils.showToast(AudioCommentActivity.this,"去登录！！");
+                    Intent intent=new Intent();
+                    intent.setClass(this, LoginActivity.class);
+                    startActivity(intent);
+              }
 
             } else {
                 ToastUtils.showToast(this, "评论内容在100字以内");
@@ -212,7 +244,7 @@ public class AudioCommentActivity extends AppCompatActivity implements View.OnCl
             String result = response.get();// 响应结果
             switch (what) {
                 case GET_MUSICCOMMENTS_LIST_WHAT:
-                    List<GsonMusicCommentBean> commentBeanlist = new ArrayList<>();
+                    commentBeanlist = new ArrayList<>();
 //获取音乐
                     // Log.e("music::", result2);//list
                     if (result.equals("400")) {
@@ -233,7 +265,6 @@ public class AudioCommentActivity extends AppCompatActivity implements View.OnCl
                         mCommentTitleTextview.setText("评论("+commentssize+")");
                     }
                     if (isSucess) {
-
 //                       得到数据
                         mMusicCommentBeanList.addAll(commentBeanlist);
                         //通知刷新

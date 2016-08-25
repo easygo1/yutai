@@ -6,7 +6,7 @@
     <color name="textDown">#E731CF</color>
     <color name="textUp">#5A5A5A</color>
     <color name="index_textcolor">#2C2C2C</color>
-    <color name="me_top">#C3ED09</color>
+    <color name="me_top">#FA6814</color>
     <color name="me_middle">#F2F2F2</color>
     <color name="me_white">#FFFFFF</color>
     <color name="me_text_black">#2C2C2C</color>
@@ -16,7 +16,7 @@
     <color name="register_verification_code">#007AFF</color>
     <color name="delete_red">#ff0000</color>
     <!--标题栏的颜色,选项卡tab字体颜色-->
-    <color name="titlecolor">#C3ED09</color>
+    <color name="titlecolor">#FA6814</color>
     <!--白色-->
     <color name="white">#ffffff</color>
     <!--白色-->

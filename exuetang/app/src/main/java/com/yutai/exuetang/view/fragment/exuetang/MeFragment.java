@@ -1,6 +1,8 @@
 package com.yutai.exuetang.view.fragment.exuetang;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -59,15 +61,23 @@ public class MeFragment extends Fragment implements View.OnClickListener {
     View mView;
     //服务端的URL
     public String mPath = MyApplication.url + "/exuetangservlet";
-    private int user_id=1;//偏好设置中获取
+    private int user_id;//偏好设置中获取
+    SharedPreferences mSharedPreferences;
+    public static final String USER = "user";
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         mView = inflater.inflate(R.layout.fragment_me, null);
+        getintentdata();
         initViews();
         initData();
         addListeners();
         return mView;
+    }
+
+    private void getintentdata() {
+        mSharedPreferences = getActivity().getSharedPreferences(USER, Context.MODE_PRIVATE);
+        user_id = mSharedPreferences.getInt("user_id", 0);//整个页面要用
     }
 
     private void initViews() {
@@ -127,8 +137,13 @@ public class MeFragment extends Fragment implements View.OnClickListener {
                 break;
             case R.id.me_user_photo:
                 ToastUtils.showToast(getActivity(), "点击了用户头像");
-                intent.setClass(getActivity(), MyInfoActivity.class);
-                startActivity(intent);
+                if(user_id!=0){
+                    intent.setClass(getActivity(), MyInfoActivity.class);
+                    startActivity(intent);
+                }else{
+                    intent.setClass(getActivity(), LoginActivity.class);
+                    startActivity(intent);
+                }
                 break;
             case R.id.me_album:
                 ToastUtils.showToast(getActivity(), "点击了相册");
@@ -222,4 +237,6 @@ public class MeFragment extends Fragment implements View.OnClickListener {
 
         }
     };
+
+
 }
