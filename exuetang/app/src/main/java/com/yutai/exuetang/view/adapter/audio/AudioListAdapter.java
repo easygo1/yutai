@@ -355,7 +355,6 @@ public class AudioListAdapter extends BaseAdapter {
         } else {
 //            下载过了
         }
-
     }
 
     class ViewHolder {
