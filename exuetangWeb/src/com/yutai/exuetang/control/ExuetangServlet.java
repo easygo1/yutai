@@ -18,6 +18,7 @@ import com.yutai.exuetang.model.dao.exuetang.IChildDAO;
 import com.yutai.exuetang.model.dao.exuetang.IUserDAO;
 import com.yutai.exuetang.model.impl.exuetang.IChildDAOImpl;
 import com.yutai.exuetang.model.impl.exuetang.IUserDAOImpl;
+import com.yutai.exuetang.utils.MD5Utils;
 
 @WebServlet("/exuetangservlet")
 public class ExuetangServlet extends HttpServlet {
@@ -38,7 +39,10 @@ public class ExuetangServlet extends HttpServlet {
 	
 	private Child child;
 	private IChildDAO childDAO;
-	
+	//登陆有关的
+	private String user_newphone;
+	private String user_password;
+	private String user_passwordmd5;
 	public ExuetangServlet() {
 		super();
 	}
@@ -230,6 +234,79 @@ public class ExuetangServlet extends HttpServlet {
 				mPrintWriter.close();
 			}
 			break;
+		case "login":
+			user_newphone = request.getParameter("user_newphone");
+			user_password = request.getParameter("user_password");
+			System.out.println("手机号为：" + user_newphone);
+			System.out.println("密码为：" + user_password);
+			user_passwordmd5 = MD5Utils.md5(user_password);
+			// 进行登录操作
+			user = new User();
+			userDAO = new IUserDAOImpl();
+			user = userDAO.login(user_newphone, user_passwordmd5);
+			if (user != null) {
+				gson = new Gson();
+				result = gson.toJson(user);
+				mPrintWriter.write(result);// 将数据写回android端
+				System.out.println("登录成功");
+				mPrintWriter.close();
+			}else if(user == null){
+//				代表没有数据
+				System.out.println("201");
+				mPrintWriter.write("201");
+				mPrintWriter.close();
+			}else{
+//				查找出现错误
+				System.out.println("400");
+				mPrintWriter.write("400");
+				mPrintWriter.close();
+			}
+		case "register":
+			// 接收到android端传过来的手机号和密码（手机号相当于用户名）
+			user_newphone = request.getParameter("user_newphone");
+			user_password = request.getParameter("user_password");
+			System.out.println("手机号为：" + user_newphone);
+			System.out.println("密码为：" + user_password);
+			user_passwordmd5 = MD5Utils.md5(user_password);
+			System.out.println("MD5密码为：" + user_passwordmd5);
+			// 进行查找操作
+			user = new User();
+			userDAO = new IUserDAOImpl();
+			user = userDAO.selectUserByPhone(user_newphone);
+			if(user != null){
+//				说明该用户已经注册过了
+				System.out.println("201");
+				mPrintWriter.write("201");
+				mPrintWriter.close();
+			}else if (user == null) {
+				//说明没有这个用户
+				// 对用户进行注册
+				user = new User();
+				user.setUser_newphone(user_newphone);;
+				user.setUser_password(user_passwordmd5);
+				userDAO = new IUserDAOImpl();
+				if(userDAO.addUser(user)){
+					//添加成功该用户，查出该用户，并添加孩子表信息
+					user = new User();
+					userDAO = new IUserDAOImpl();
+					user = userDAO.selectUserByPhone(user_newphone);
+					child = new Child();
+					child.setUser_id(user.getUser_id());
+					childDAO = new IChildDAOImpl();
+					childDAO.addChild(child);
+					gson = new Gson();
+					result = gson.toJson(user);
+					mPrintWriter.write(result);// 将数据写回android端
+					System.out.println("登录成功");
+					mPrintWriter.close();
+				}
+				
+			}else{
+//				查找出现错误
+				System.out.println("400");
+				mPrintWriter.write("400");
+				mPrintWriter.close();
+			}
 		}
 	}
 

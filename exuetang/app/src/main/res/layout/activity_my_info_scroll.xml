@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:orientation="vertical"
               android:layout_width="match_parent"
               android:layout_height="match_parent">
     <RelativeLayout
+        android:id="@+id/myinfo_top"
         android:layout_width="match_parent"
-        android:layout_height="51dp"
+        android:layout_height="@dimen/title_height"
         android:background="@color/titlecolor">
 
         <ImageView
@@ -26,8 +27,9 @@
             android:textSize="@dimen/title_textsize"/>
     </RelativeLayout>
     <ScrollView
+        android:layout_below="@+id/myinfo_top"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <include layout="@layout/activity_my_info"/>
 </ScrollView>
-</LinearLayout>
+</RelativeLayout>

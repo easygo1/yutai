@@ -3,9 +3,9 @@
               android:layout_width="match_parent"
               android:layout_height="match_parent">
     <RadioGroup
-        android:id="@+id/radiogroup"
+        android:id="@+id/stageshow_radiogroup"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="54dp"
         android:orientation="horizontal">
         <RadioButton
             android:id="@+id/exuetang_radio"

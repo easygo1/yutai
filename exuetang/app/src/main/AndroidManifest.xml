@@ -2,13 +2,38 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="com.yutai.exuetang">
 
+    <!-- 网络权限 -->
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
     <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.RECEIVE_SMS"/>
+    <uses-permission android:name="android.permission.GET_TASKS"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <!-- 播放音乐需要的权限 -->
+    <uses-permission android:name="android.permission.MEDIA_CONTENT_CONTROL"/>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <!-- //打开相册，相机需要的权限（注：基础权限也需要） -->
     <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+    <!-- 震动权限 -->
+    <uses-permission android:name="android.permission.VIBRATE"/>
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
     <!-- the following two permissions are required if you want to take photo in selector -->
     <uses-permission android:name="android.permission.CAMERA"/>
+    <!-- 读取电话状态权限 -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS"/>
+    <!-- 允许访问SD卡 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <!-- 允许程序读取或写入系统设置 -->
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
 
     <uses-feature android:name="android.hardware.camera"/>
     <uses-feature android:name="android.hardware.camera.autofocus"/>
@@ -61,6 +86,13 @@
         </activity>
         <activity android:name=".view.activity.audio.twostyle.GoodWordsActivity">
         </activity>
+        <!-- 注册服务 -->
+        <service android:name=".view.service.PlayerService">
+            <intent-filter>
+                <action android:name="com.wwj.media.MUSIC_SERVICE"/>
+            </intent-filter>
+        </service>
+
         <activity android:name=".view.activity.audio.twostyle.EnglishXuetangActivity">
         </activity>
         <activity android:name=".view.activity.audio.twostyle.VirtueStoryActivity">
@@ -89,10 +121,15 @@
         </activity>
         <activity android:name=".view.activity.exuetang.MyIntoPhoneActivity">
         </activity>
+        <activity android:name=".view.activity.audio.MeAudioActivity">
+        </activity>
         <activity android:name=".view.activity.audio.twostyle.TestActivity">
         </activity>
-        <activity android:name=".view.activity.audio.AudioCommentActivity"
-                  android:windowSoftInputMode="adjustPan">
+        <activity
+            android:name=".view.activity.audio.AudioCommentActivity"
+            android:windowSoftInputMode="adjustPan">
+        </activity>
+        <activity android:name=".view.activity.stageshow.StageShowActivity">
         </activity>
     </application>
 

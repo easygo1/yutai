@@ -1,6 +1,8 @@
 package com.yutai.exuetang.view.activity.exuetang;
 
+import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -26,6 +28,10 @@ public class LoginActivity extends AppCompatActivity implements ILoginView,View.
     private Button loginBtn;
     private ProgressBar mProgressBar;
     private LoginPresenter mLoginPresenter = new LoginPresenterImpl(this);
+    //偏好设置
+    public static final String USER = "user";
+    SharedPreferences mSharedPreferences;
+    SharedPreferences.Editor mEditor;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -96,14 +102,27 @@ public class LoginActivity extends AppCompatActivity implements ILoginView,View.
 
     @Override
     public void toMainActivity(User user) {
-        //ToastUtils.showToast(this,"跳转到主页面"+user.getUser_phone()+"密码："+user.getUser_password());
+        ToastUtils.showToast(this,"跳转到主页面"+user.getUser_newphone()+"密码："+user.getUser_password());
         Log.e("cuikai","333");
+        //将用户id写入偏好设置中
+        //第一个参数：偏好设置文件的名称；第二个参数：文件访问模式
+        mSharedPreferences = getSharedPreferences(USER,MODE_PRIVATE);
+        //向偏好设置文件中保存数据
+        mEditor = mSharedPreferences.edit();
+        mEditor.putInt("user_id",user.getUser_id());
+        //提交保存结果
+        mEditor.commit();
     }
 
     @Override
     public void showFailedError() {
         ToastUtils.showToast(this,"登陆失败");
         Log.e("cuikai","444");
+    }
+
+    @Override
+    public Activity getActivity() {
+        return this;
     }
 
 }

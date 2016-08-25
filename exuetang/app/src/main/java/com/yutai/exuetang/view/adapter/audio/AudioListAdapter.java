@@ -258,13 +258,18 @@ public class AudioListAdapter extends BaseAdapter {
         downloadimageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //FileVisitorUtils.finder.findFiles(".mp3",);
-                boolean adjustload= FileUtils.isExitsFile(mMusicList.get(position).getMusic_name()+".mp3",itemfilepath,".mp3");
-                if(adjustload){
-                    ToastUtils.showToast(mContext,"已经下载！");
+                if(user_id!=0){
+                    //FileVisitorUtils.finder.findFiles(".mp3",);
+                    boolean adjustload= FileUtils.isExitsFile(mMusicList.get(position).getMusic_name()+".mp3",itemfilepath,".mp3");
+                    if(adjustload){
+                        ToastUtils.showToast(mContext,"已经下载！");
+                    }else{
+                        showDialog();
+                    }
                 }else{
-                    showDialog();
+                    ToastUtils.showToast(mContext,"去登录！！");
                 }
+
              }
             private void showDialog() {
                 LayoutInflater inflater = LayoutInflater.from(mContext);
@@ -272,7 +277,7 @@ public class AudioListAdapter extends BaseAdapter {
                 final AlertDialog.Builder builder = new AlertDialog.Builder(mContext);
                 builder.setView(view);
                 final Dialog dialog = builder.show();
-                isUserHavecoins();
+                //isUserHavecoins();
                 Button canclebutton = (Button) view.findViewById(R.id.download_cancle);
                 Button okbutton = (Button) view.findViewById(R.id.download_ok);
                 final TextView downloadtextView= (TextView) view.findViewById(R.id.download_textview);

@@ -1,6 +1,8 @@
 package com.yutai.exuetang.view.iview.exuetang;
 
 
+import android.app.Activity;
+
 import com.yutai.exuetang.model.beans.exuetang.User;
 
 public interface ILoginView {
@@ -10,4 +12,5 @@ public interface ILoginView {
     void hideLoading();
     void toMainActivity(User user);
     void showFailedError();
+    Activity getActivity();
 }

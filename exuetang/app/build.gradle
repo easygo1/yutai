@@ -24,7 +24,7 @@ android {
 }
 repositories {
     flatDir {
-        dirs 'libs'//���aar��·��
+        dirs 'libs'//???aar??·??
     }
 }
 dependencies {
@@ -38,7 +38,9 @@ dependencies {
     compile 'jp.wasabeef:glide-transformations:2.0.1'
     compile 'com.loopeer.android.thirdparty.pulltorefresh:Android-PullToRefresh:2.1.1'
     compile 'com.jakewharton:butterknife:7.0.1'
-    compile 'com.yolanda.nohttp:nohttp:1.0.1'
+    compile 'com.yanzhenjie:recyclerview-swipe:1.0.0'
+    compile 'com.android.support:recyclerview-v7:23.4.0'
+    compile 'com.yolanda.nohttp:nohttp:1.0.4'
     compile 'com.google.code.gson:gson:2.6.2'
     compile 'io.reactivex:rxjava:1.0.9'
     compile files('libs/org.apache.http.legacy.jar')

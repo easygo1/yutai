@@ -14,6 +14,7 @@
     <color name="me_line">#C7C7C7</color>
     <color name="me_middle_text">#A0A0A0</color>
     <color name="register_verification_code">#007AFF</color>
+    <color name="delete_red">#ff0000</color>
     <!--标题栏的颜色,选项卡tab字体颜色-->
     <color name="titlecolor">#C3ED09</color>
     <!--白色-->

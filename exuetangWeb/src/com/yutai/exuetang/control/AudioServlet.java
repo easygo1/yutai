@@ -86,7 +86,7 @@ public class AudioServlet extends HttpServlet {
 	
 	private IMusicCommentDAO musicCommentDAO;
 	private List<MusicComment> musicCommentList;
-	private GsonMusicCommentBean musicCommentBean;
+//	private GsonMusicCommentBean musicCommentBean;
 	private IUserDAO userDAO;
 	private IChildDAO childDAO;
 //	查询结果
@@ -97,7 +97,7 @@ public class AudioServlet extends HttpServlet {
 	public AudioServlet() {
 		super();
 	}
-
+	
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		doPost(request, response);
@@ -228,7 +228,7 @@ public class AudioServlet extends HttpServlet {
 					int comment_user_id=musicCommentList.get(i).getUser_id();
 					User user=userDAO.selectUserByID(comment_user_id);
 					Child child=childDAO.selectChildByUserID(comment_user_id);
-					musicCommentBean=new GsonMusicCommentBean(musicCommentList.get(i).getComment_id(), music_id, comment_user_id, child.getChild_photo(), user.getUser_nickname(), musicCommentList.get(i).getComment_content(), musicCommentList.get(i).getComment_time(),musiccommentsize);
+					GsonMusicCommentBean musicCommentBean=new GsonMusicCommentBean(musicCommentList.get(i).getComment_id(), music_id, comment_user_id, child.getChild_photo(), user.getUser_nickname(), musicCommentList.get(i).getComment_content(), musicCommentList.get(i).getComment_time(),musiccommentsize);
 					musicCommentBeans.add(musicCommentBean);
 				}
 //				返回 结果

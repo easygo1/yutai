@@ -136,8 +136,13 @@ public class MeFragment extends Fragment implements View.OnClickListener {
                 break;
             case R.id.me_user_photo:
                 ToastUtils.showToast(getActivity(), "点击了用户头像");
-                intent.setClass(getActivity(), MyInfoActivity.class);
-                startActivity(intent);
+                if(user_id!=0){
+                    intent.setClass(getActivity(), MyInfoActivity.class);
+                    startActivity(intent);
+                }else{
+                    intent.setClass(getActivity(), LoginActivity.class);
+                    startActivity(intent);
+                }
                 break;
             case R.id.me_album:
                 ToastUtils.showToast(getActivity(), "点击了相册");

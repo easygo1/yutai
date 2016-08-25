@@ -9,7 +9,6 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
 import com.yutai.exuetang.view.adapter.exuetang.FragmentAdapter;
-import com.yutai.exuetang.view.application.MyApplication;
 import com.yutai.exuetang.view.fragment.exuetang.CommunityFragment;
 import com.yutai.exuetang.view.fragment.exuetang.ExuetangFragment;
 import com.yutai.exuetang.view.fragment.exuetang.MeFragment;
@@ -41,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
     //初始化布局控件
     private void initViews() {
         mViewPager = (ViewPager) findViewById(R.id.middle_viewpager);
-        mRadioGroup = (RadioGroup) findViewById(R.id.radiogroup);
+        mRadioGroup = (RadioGroup) findViewById(R.id.stageshow_radiogroup);
         mExuetangRadio = (RadioButton) findViewById(R.id.exuetang_radio);
         mScienceRadio = (RadioButton) findViewById(R.id.science_radio);
         mCommunityRadio = (RadioButton) findViewById(R.id.community_radio);

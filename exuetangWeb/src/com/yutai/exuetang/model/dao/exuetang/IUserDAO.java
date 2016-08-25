@@ -32,6 +32,8 @@ public interface IUserDAO {
 	public abstract boolean updateUserNickname(int user_id,String new_nickname);
     //修改用户性别
 	public abstract boolean updatUserSex(int user_id,String user_sex);
+	//用户登陆
+	public abstract User login(String user_newphone,String user_password);
 	
 //	连接查询MeFragment中的个人信息
 	public abstract GsonMeInfo getUserSomeInfo(int user_id);

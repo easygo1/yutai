@@ -336,7 +336,7 @@ public class SearchMusicActivity extends AppCompatActivity implements SearchView
     }
 
     @Override
-    public void intentNextActivity(int music_id) {
+    public void intentNextActivity(Music music) {
 
     }
 

@@ -12,7 +12,7 @@ import java.util.List;
  */
 public interface IAudioTwoStyleDetailView {
     //item跳转的页面
-    void intentNextActivity(int music_id);
+    void intentNextActivity(Music music);
     //
     void showToast(String msg);
 

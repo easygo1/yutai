@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     tools:context="com.yutai.exuetang.view.activity.exuetang.LoginActivity">
     <RelativeLayout
+        android:id="@+id/register2_top"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
+        android:layout_height="@dimen/title_height"
         android:background="@color/me_top">
         <ImageView
             android:layout_width="wrap_content"
@@ -26,9 +25,9 @@
             android:text="设置密码"/>
     </RelativeLayout>
     <LinearLayout
+        android:layout_below="@+id/register2_top"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="11"
+        android:layout_height="match_parent"
         android:layout_marginTop="15dp"
         android:background="@color/me_white"
         android:orientation="vertical">
@@ -53,14 +52,15 @@
             android:layout_marginLeft="15dp"
             android:textSize="15dp"
             android:textColor="@color/me_text_gray"
-            android:text="手机号："/>
+            android:text="密码："/>
 
         <EditText
-            android:id="@+id/register_phone"
+            android:id="@+id/register_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:hint="请输入6-16位数字或字母"
+            android:maxLength="16"
             android:textColor="@color/me_middle_text"
             android:inputType="textPassword"
             android:background="@null"
@@ -72,6 +72,7 @@
 
     <!--完成按钮-->
     <Button
+        android:id="@+id/register_success"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="15dp"
@@ -83,4 +84,4 @@
         android:text="完成"/>
     </LinearLayout>
 
-</LinearLayout>
+</RelativeLayout>
