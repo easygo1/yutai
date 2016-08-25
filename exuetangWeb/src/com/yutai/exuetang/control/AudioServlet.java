@@ -3,6 +3,7 @@ package com.yutai.exuetang.control;
 import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -34,22 +35,31 @@ import javax.servlet.http.HttpServletResponse;
 
 
 
+
+
+
+
+
 import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import com.jspsmart.upload.SmartUpload;
 import com.jspsmart.upload.SmartUploadException;
 import com.yutai.exuetang.model.beans.audio.GsonMusicCommentBean;
 import com.yutai.exuetang.model.beans.audio.Music;
+import com.yutai.exuetang.model.beans.audio.MusicCollect;
 import com.yutai.exuetang.model.beans.audio.MusicComment;
 import com.yutai.exuetang.model.beans.audio.Typephoto;
 import com.yutai.exuetang.model.beans.exuetang.Child;
 import com.yutai.exuetang.model.beans.exuetang.Coins;
 import com.yutai.exuetang.model.beans.exuetang.User;
+import com.yutai.exuetang.model.dao.audio.IMusicCollectDAO;
 import com.yutai.exuetang.model.dao.audio.IMusicCommentDAO;
 import com.yutai.exuetang.model.dao.audio.IMusicDAO;
 import com.yutai.exuetang.model.dao.audio.ITypephotoDAO;
 import com.yutai.exuetang.model.dao.exuetang.IChildDAO;
 import com.yutai.exuetang.model.dao.exuetang.ICoinsDAO;
 import com.yutai.exuetang.model.dao.exuetang.IUserDAO;
+import com.yutai.exuetang.model.impl.audio.IMusicCollectDAOImpl;
 import com.yutai.exuetang.model.impl.audio.IMusicCommentDAOImpl;
 import com.yutai.exuetang.model.impl.audio.IMusicDAOImpl;
 import com.yutai.exuetang.model.impl.audio.ITypephotoDAOImpl;
@@ -92,7 +102,10 @@ public class AudioServlet extends HttpServlet {
 //	查询结果
 	private String result ;
 	private boolean flog;
-	
+	//收藏表有关
+	private MusicCollect musicCollect;
+	private List<MusicCollect> musicCollectList;
+	private IMusicCollectDAO musicCollectDAO;
 
 	public AudioServlet() {
 		super();
@@ -263,6 +276,69 @@ public class AudioServlet extends HttpServlet {
 				mPrintWriter.close();
 			}else{
 				mPrintWriter.write("222");
+				mPrintWriter.close();
+			}
+			break;
+		case "selectMusciByName":
+			musiclist = new ArrayList<>();
+			String musicNameListStr = request.getParameter("musicNameList");
+			gson = new Gson();
+            Type mytype = new TypeToken<List<String>>() {
+            }.getType();
+            List<String> musicNameList = new ArrayList<>();
+            musicNameList = gson.fromJson(musicNameListStr,mytype);
+            for (int i = 0; i < musicNameList.size(); i++) {
+				musicDAO = new IMusicDAOImpl();
+				music = musicDAO.getMusicByName(musicNameList.get(i));
+				musiclist.add(music);
+			}
+            if (musiclist.size()>0) {
+//				返回 结果
+				gson = new Gson();
+				result = gson.toJson(musiclist);
+				System.out.println(result);
+				mPrintWriter.write(result);
+				mPrintWriter.close();
+			}else if(musiclist.size()==0){
+//				代表没有数据
+				System.out.println("201");
+				mPrintWriter.write("201");
+				mPrintWriter.close();
+			}else{
+//				查找出现错误
+				System.out.println("400");
+				mPrintWriter.write("400");
+				mPrintWriter.close();
+			}
+			break;
+		//查询用户的喜欢歌曲
+		case "selectMusciByLove":
+			musiclist = new ArrayList<>();
+			user_id = Integer.parseInt(request.getParameter("user_id"));
+			musicCollectDAO = new IMusicCollectDAOImpl();
+			musicCollectList = new ArrayList<>();
+			musicCollectList = musicCollectDAO.selectMusicCollectByUserId(user_id);
+            for (int i = 0; i < musicCollectList.size(); i++) {
+				musicDAO = new IMusicDAOImpl();
+				music = musicDAO.selectMusicByID(musicCollectList.get(i).getMusic_id());
+				musiclist.add(music);
+			}
+            if (musiclist.size()>0) {
+//				返回 结果
+				gson = new Gson();
+				result = gson.toJson(musiclist);
+				System.out.println(result);
+				mPrintWriter.write(result);
+				mPrintWriter.close();
+			}else if(musiclist.size()==0){
+//				代表没有数据
+				System.out.println("201");
+				mPrintWriter.write("201");
+				mPrintWriter.close();
+			}else{
+//				查找出现错误
+				System.out.println("400");
+				mPrintWriter.write("400");
 				mPrintWriter.close();
 			}
 			break;

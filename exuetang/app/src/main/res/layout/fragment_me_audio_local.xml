@@ -3,8 +3,8 @@
               android:orientation="vertical"
               android:layout_width="match_parent"
               android:layout_height="match_parent">
-    <TextView
+    <com.yanzhenjie.recyclerview.swipe.SwipeMenuRecyclerView
+        android:id="@+id/local_recycler_view"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="这是本地音频"/>
+        android:layout_height="wrap_content"/>
 </LinearLayout>

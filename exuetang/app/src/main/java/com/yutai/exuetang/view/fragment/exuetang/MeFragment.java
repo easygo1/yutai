@@ -26,6 +26,7 @@ import com.yutai.exuetang.R;
 import com.yutai.exuetang.model.beans.exuetang.GsonMeInfo;
 import com.yutai.exuetang.utils.RequestManager;
 import com.yutai.exuetang.utils.ToastUtils;
+import com.yutai.exuetang.view.activity.audio.MeAudioActivity;
 import com.yutai.exuetang.view.activity.exuetang.LoginActivity;
 import com.yutai.exuetang.view.activity.exuetang.MyInfoActivity;
 import com.yutai.exuetang.view.application.MyApplication;
@@ -143,6 +144,9 @@ public class MeFragment extends Fragment implements View.OnClickListener {
                 break;
             case R.id.me_audio:
                 ToastUtils.showToast(getActivity(), "点击了音频宝");
+                intent = new Intent();
+                intent.setClass(getActivity(), MeAudioActivity.class);
+                startActivity(intent);
                 break;
             case R.id.me_habit:
                 ToastUtils.showToast(getActivity(), "点击了培养宝");

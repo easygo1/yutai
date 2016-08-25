@@ -58,33 +58,47 @@
 
             <!-- 设置软键盘的格式，防止因为软键盘的原因使布局改变 -->
         </activity>
-        <activity android:name=".view.activity.exuetang.LoginActivity">
+        <activity android:name=".view.activity.exuetang.LoginActivity"
+                  android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".view.activity.exuetang.RegisterActivity">
+        <activity android:name=".view.activity.exuetang.RegisterActivity"
+                  android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".view.activity.exuetang.RegisterActivity2">
+        <activity android:name=".view.activity.exuetang.RegisterActivity2"
+                  android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".view.activity.audio.twostyle.StoryXuetangActivity">
+        <activity android:name=".view.activity.audio.twostyle.StoryXuetangActivity"
+                  android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".view.activity.audio.AudioTwoStyleDetailActivity">
+        <activity android:name=".view.activity.audio.AudioTwoStyleDetailActivity"
+                  android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".view.activity.audio.AudioPlayActivity">
+        <activity android:name=".view.activity.audio.AudioPlayActivity"
+                  android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".view.activity.audio.twostyle.GuoXueXuetangActivity">
+        <activity android:name=".view.activity.audio.twostyle.GuoXueXuetangActivity"
+                  android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".view.activity.audio.twostyle.ChildSongXuetangActivity">
+        <activity android:name=".view.activity.audio.twostyle.ChildSongXuetangActivity"
+                  android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".view.activity.audio.twostyle.PomeXuetangActivity">
+        <activity android:name=".view.activity.audio.twostyle.PomeXuetangActivity"
+                  android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".view.activity.audio.twostyle.SafetyEducationActivity">
+        <activity android:name=".view.activity.audio.twostyle.SafetyEducationActivity"
+                  android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".view.activity.audio.twostyle.JokeRiddleActivity">
+        <activity android:name=".view.activity.audio.twostyle.JokeRiddleActivity"
+                  android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".view.activity.audio.twostyle.WhysActivity">
+        <activity android:name=".view.activity.audio.twostyle.WhysActivity"
+                  android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".view.activity.audio.twostyle.ReciteXuetangActivity">
+        <activity android:name=".view.activity.audio.twostyle.ReciteXuetangActivity"
+                  android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".view.activity.audio.twostyle.GoodWordsActivity">
+        <activity android:name=".view.activity.audio.twostyle.GoodWordsActivity"
+                  android:screenOrientation="portrait">
         </activity>
         <!-- 注册服务 -->
         <service android:name=".view.service.PlayerService">
@@ -93,39 +107,56 @@
             </intent-filter>
         </service>
 
-        <activity android:name=".view.activity.audio.twostyle.EnglishXuetangActivity">
+        <activity android:name=".view.activity.audio.twostyle.EnglishXuetangActivity"
+                  android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".view.activity.audio.twostyle.VirtueStoryActivity">
+        <activity android:name=".view.activity.audio.twostyle.VirtueStoryActivity"
+                  android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".view.activity.audio.twostyle.ChinaLiteratureActivity">
+        <activity android:name=".view.activity.audio.twostyle.ChinaLiteratureActivity"
+                  android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".view.activity.audio.twostyle.IdiomStoryActivity">
+        <activity android:name=".view.activity.audio.twostyle.IdiomStoryActivity"
+                  android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".view.activity.audio.twostyle.FamousAphorismActivity">
+        <activity android:name=".view.activity.audio.twostyle.FamousAphorismActivity"
+                  android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".view.activity.audio.twostyle.FamousQuotesActivity">
+        <activity android:name=".view.activity.audio.twostyle.FamousQuotesActivity"
+                  android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".view.activity.audio.twostyle.WorldClassicActivity">
+        <activity android:name=".view.activity.audio.twostyle.WorldClassicActivity"
+                  android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".view.activity.audio.twostyle.WordKnowActivity">
+        <activity android:name=".view.activity.audio.twostyle.WordKnowActivity"
+                  android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".view.activity.audio.twostyle.FamousPersonActivity">
+        <activity android:name=".view.activity.audio.twostyle.FamousPersonActivity"
+                  android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".view.activity.audio.twostyle.AnimalWorldActivity">
+        <activity android:name=".view.activity.audio.twostyle.AnimalWorldActivity"
+                  android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".view.activity.audio.twostyle.PlantWorldActivity">
+        <activity android:name=".view.activity.audio.twostyle.PlantWorldActivity"
+                  android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".view.activity.audio.SearchMusicActivity">
+        <activity android:name=".view.activity.audio.SearchMusicActivity"
+                  android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".view.activity.exuetang.MyInfoActivity">
+        <activity android:name=".view.activity.exuetang.MyInfoActivity"
+                  android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".view.activity.exuetang.MyIntoPhoneActivity">
+        <activity android:name=".view.activity.exuetang.MyIntoPhoneActivity"
+                  android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".view.activity.audio.MeAudioActivity">
+        <activity android:name=".view.activity.audio.MeAudioActivity"
+                  android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".view.activity.audio.twostyle.TestActivity">
+        <activity android:name=".view.activity.audio.twostyle.TestActivity"
+                  android:screenOrientation="portrait">
         </activity>
         <activity android:name=".view.activity.audio.AudioCommentActivity"
+                  android:screenOrientation="portrait"
                   android:windowSoftInputMode="adjustPan">
         </activity>
     </application>

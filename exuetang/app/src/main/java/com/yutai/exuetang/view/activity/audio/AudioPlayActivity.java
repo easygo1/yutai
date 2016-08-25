@@ -13,11 +13,14 @@ import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.v4.app.NotificationCompatSideChannelService;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.ListPopupWindow;
+import android.telephony.PhoneStateListener;
+import android.telephony.TelephonyManager;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -129,17 +132,21 @@ public class AudioPlayActivity extends AppCompatActivity implements View.OnClick
         mp3Infos = mMusciTableOperate.selectAllMusic();
         registerReceiver();
         initPlay();
-        Log.e("oncreate", "playactivity has onCreate");
+        // 添加来电监听事件
+        TelephonyManager telManager = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE); // 获取系统服务
+        telManager.listen(new MobliePhoneStateListener(),
+                PhoneStateListener.LISTEN_CALL_STATE);
+        Log.e("onCreate", "playActivity has onCreate");
     }
     private void showPhoto(final Music music){
         //设置音乐图片
-        Glide.with(this).load(music.getMusic_photo()).into(mAudioMusicphotoImage);
+        Glide.with(this).load(music.getMusic_main_photo()).into(mAudioMusicphotoImage);
         //先把背景图变为bitmap,在模糊化
         new Thread(){
             @Override
             public void run() {
                 super.run();
-                bitmap = PathToBitmapUtils.returnBitMap(music.getMusic_photo());
+                bitmap = PathToBitmapUtils.returnBitMap(music.getMusic_bg_photo());
             }
         }.start();
         new Thread() {
@@ -226,6 +233,40 @@ public class AudioPlayActivity extends AppCompatActivity implements View.OnClick
         filter.addAction(SHOW_LRC2);
         registerReceiver(playerReceiver, filter);
     }
+    /**
+     *
+     * @author ck
+     * 电话监听器类
+     */
+    private class MobliePhoneStateListener extends PhoneStateListener {
+        @Override
+        public void onCallStateChanged(int state, String incomingNumber) {
+            switch (state) {
+                case TelephonyManager.CALL_STATE_IDLE: // 挂机状态
+                    Intent intent = new Intent(AudioPlayActivity.this, PlayerService.class);
+                    //playBtn.setBackgroundResource(R.drawable.play_selector);
+                    mAudioPlayNowImage.setImageDrawable(getResources().getDrawable(R.mipmap.play));
+                    intent.setAction("com.wwj.media.MUSIC_SERVICE");
+                    intent.putExtra("MSG", AppConstant.PlayerMsg.CONTINUE_MSG); //继续播放音乐
+                    startService(intent);
+                    isPlaying = false;
+                    isPause = true;
+                    break;
+                case TelephonyManager.CALL_STATE_OFFHOOK:   //通话状态
+                case TelephonyManager.CALL_STATE_RINGING:   //响铃状态
+                    Intent intent2 = new Intent(AudioPlayActivity.this, PlayerService.class);
+                    mAudioPlayNowImage.setImageDrawable(getResources().getDrawable(R.mipmap.stop));
+                    intent2.setAction("com.wwj.media.MUSIC_SERVICE");
+                    intent2.putExtra("MSG", AppConstant.PlayerMsg.PAUSE_MSG);
+                    startService(intent2);
+                    isPlaying = true;
+                    isPause = false;
+                    break;
+                default:
+                    break;
+            }
+        }
+    }
     private void initPlay(){
         //mAudioMusicphotoImage.setImageDrawable(getResources().getDrawable(music.getMusic_photo()));
         switch (repeatState) {
@@ -311,7 +352,6 @@ public class AudioPlayActivity extends AppCompatActivity implements View.OnClick
      * 从Bundle中获取来自HomeActivity中传过来的数据
      */
     private void getDataFromBundle() {
-
         Intent intent = getIntent();
         /*Bundle bundle = intent.getExtras();
         music = (Music) bundle.getSerializable("music");*/
@@ -410,7 +450,6 @@ public class AudioPlayActivity extends AppCompatActivity implements View.OnClick
                 ToastUtils.showToast(this,"计时功能");
                 break;
             case R.id.audio_play_love_image:
-
                 //喜欢
                 ToastUtils.showToast(this,"喜欢");
                 break;

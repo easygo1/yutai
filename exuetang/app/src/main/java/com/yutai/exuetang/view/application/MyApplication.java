@@ -14,10 +14,9 @@ import com.yolanda.nohttp.rest.RequestQueue;
 public class MyApplication extends Application{
     public static MyApplication mInstance;
     public static Typeface sTypeface;
-    public static String url = "http://192.168.0.104:8080/exuetangWeb";
+    public static String url = "http://192.168.0.102:8080/exuetangWeb";
     public static DownloadQueue downloadQueue;//下载队列
     public static RequestQueue queue = null;
-
     @Override
     public void onCreate() {
         super.onCreate();
