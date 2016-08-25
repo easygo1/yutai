@@ -13,7 +13,7 @@ public class Paging {
 	int pageNow = 1;// 希望显示第几页
 	int rowCount = 0;// 共有几条纪录（查表）
 	int pageCount = 0;// 共有几页（计算出得到）
-
+	
 	// 将数据处理，计算出需要分成几页
 	//改动的话只需改动查询语句即可
 	public int getTotalPage(String table) {

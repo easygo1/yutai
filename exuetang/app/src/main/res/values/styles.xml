@@ -1,11 +1,13 @@
-﻿<resources>
+﻿<resources xmlns:tools="http://schemas.android.com/tools">
 
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
-        <!-- Customize your theme here. -->
+
         <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorPrimaryDark">@color/me_top</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <!--<item name="android:statusBarColor" tools:targetApi="lollipop">@color/smssdk_transparent</item>
+        <item name="android:windowDrawsSystemBarBackgrounds" tools:targetApi="lollipop">true</item>-->
     </style>
     <!--底部导航按钮-->
     <style name="radio">

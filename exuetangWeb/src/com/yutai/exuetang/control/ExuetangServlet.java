@@ -269,20 +269,20 @@ public class ExuetangServlet extends HttpServlet {
 			System.out.println("密码为：" + user_password);
 			user_passwordmd5 = MD5Utils.md5(user_password);
 			System.out.println("MD5密码为：" + user_passwordmd5);
-			// 进行查找操作
+			// 进行查找操作，看是否有这个用户
 			user = new User();
 			userDAO = new IUserDAOImpl();
 			user = userDAO.selectUserByPhone(user_newphone);
 			if(user != null){
-//				说明该用户已经注册过了
+//				说明该用户已经注册过了,返回错误代码201
 				System.out.println("201");
 				mPrintWriter.write("201");
 				mPrintWriter.close();
 			}else if (user == null) {
-				//说明没有这个用户
+				//说明没有在用户表中查到这个用户
 				// 对用户进行注册
 				user = new User();
-				user.setUser_newphone(user_newphone);;
+				user.setUser_newphone(user_newphone);
 				user.setUser_password(user_passwordmd5);
 				userDAO = new IUserDAOImpl();
 				if(userDAO.addUser(user)){
@@ -302,7 +302,8 @@ public class ExuetangServlet extends HttpServlet {
 				}
 				
 			}else{
-//				查找出现错误
+			
+//				查找出现错误,输出错误代码400
 				System.out.println("400");
 				mPrintWriter.write("400");
 				mPrintWriter.close();

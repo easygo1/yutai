@@ -100,6 +100,12 @@ create TABLE contestinfo(
 	contestinfo_smallphoto    VARCHAR(300),    ##比赛小图
 	contestinfo_largephoto    VARCHAR(300)     ##比赛详情大图
 );
+##音乐收藏表：music_collect
+create TABLE music_collect(
+	music_collect_id      int PRIMARY KEY AUTO_INCREMENT,   ##无意义
+	user_id               int ,            					##用户id
+	music_id              int								##音乐id
+);
 ##插入数据
 insert into user(user_phone,user_password,user_nickname,user_token,user_openid,user_realname,user_sex,user_type,user_remarks)
  values(13613656,'123456','little girl','token','','大妹子','女',1,'');

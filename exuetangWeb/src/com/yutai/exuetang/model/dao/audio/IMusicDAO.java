@@ -31,5 +31,6 @@ public interface IMusicDAO {
 	public abstract boolean updateAuditionNum(int music_id);
    //根据音乐的id得到该音乐所用的金币数
 	public abstract double getMusicCoins(int music_id);
-	
+	//根据音乐的名字得到这个音乐对象
+	public abstract Music getMusicByName(String music_name);
 }

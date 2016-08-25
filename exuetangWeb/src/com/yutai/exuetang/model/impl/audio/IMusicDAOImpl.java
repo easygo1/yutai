@@ -161,10 +161,10 @@ public class IMusicDAOImpl implements IMusicDAO {
 		} finally {
 			C3P0Utils.close(resultSet, statement, connection);
 		}
-
+	
 		return musicList;
 	}
-
+	
 	// 推荐排序 根据一级类型 二级类型 按照试听量排序 分页显示
 	@Override
 	public List<Music> selectMusicBytypesOrder1(String type1, String type2,
@@ -182,13 +182,13 @@ public class IMusicDAOImpl implements IMusicDAO {
 			statement = connection.prepareStatement(sql);
 			statement.setString(1, type1);
 			statement.setString(2, type2);
-
+			
 			System.out.println("type1" + type1 + " type2" + type2 + " tab类型"
 					+ ordertype + " 当前页" + cur);
 			// 分页处理
 			statement.setInt(3, (cur - 1) * paging.getPageSize());
 			statement.setInt(4, paging.getPageSize());
-
+		
 			resultSet = statement.executeQuery();
 			while (resultSet.next()) {
 				int music_id = resultSet.getInt(1);
@@ -290,5 +290,36 @@ public class IMusicDAOImpl implements IMusicDAO {
 			C3P0Utils.close(resultSet, statement, connection);
 		}
 		return coins_num;
+	}
+
+	@Override
+	public Music getMusicByName(String music_name) {
+		// TODO Auto-generated method stub
+		connection = C3P0Utils.getConnection();
+		sql = "select * from music where music_name=?";
+		try {
+			statement = connection.prepareStatement(sql);
+			statement.setString(1, music_name);
+			resultSet = statement.executeQuery();
+			while (resultSet.next()) {
+				music = new Music(resultSet.getInt(1), resultSet.getString(2),
+						resultSet.getString(3), resultSet.getString(4),
+						resultSet.getString(5), resultSet.getString(6),
+						resultSet.getInt(7), resultSet.getInt(8),
+						resultSet.getInt(9), resultSet.getInt(10),
+						resultSet.getInt(11), resultSet.getInt(12),
+						resultSet.getInt(13), resultSet.getInt(14),
+						resultSet.getString(15), resultSet.getString(16),
+						resultSet.getString(17), resultSet.getString(18),
+						resultSet.getDouble(19), resultSet.getString(20),
+						resultSet.getString(21));
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			C3P0Utils.close(resultSet, statement, connection);
+		}
+		return music;
 	}
 }
