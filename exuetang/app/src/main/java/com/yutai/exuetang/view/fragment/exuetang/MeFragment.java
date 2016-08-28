@@ -102,12 +102,14 @@ public class MeFragment extends Fragment implements View.OnClickListener {
     }
 
     private void initData() {
-        Request<String> request = NoHttp.createStringRequest(mPath, RequestMethod.POST);
-        // 添加请求参数
-        request.add("methods", "getMeInfo");
-        request.add("user_id", user_id);
-        RequestManager.getInstance().add(GET_USERMEINFO_WHAT, request, onResponseListener);
-    }
+        if(user_id!=0){
+            Request<String> request = NoHttp.createStringRequest(mPath, RequestMethod.POST);
+            // 添加请求参数
+            request.add("methods", "getMeInfo");
+            request.add("user_id", user_id);
+            RequestManager.getInstance().add(GET_USERMEINFO_WHAT, request, onResponseListener);
+        }
+       }
 
     private void addListeners() {
         mMeSet.setOnClickListener(this);

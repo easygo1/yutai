@@ -1,97 +1,108 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:orientation="vertical"
               android:layout_width="match_parent"
-              android:layout_height="match_parent">
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="156"
-        android:background="@drawable/index_top">
+        android:layout_height="151dp"
+        android:background="@drawable/index_banner">
+
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="20dp"
-            android:layout_marginTop="20dp">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="15dp"
-                android:textSize="11dp"
-                android:text="exuetang"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_centerHorizontal="true"
-                android:textSize="18dp"
-                android:textColor="@color/index_textcolor"
-                android:text="e学堂"/>
+            android:layout_marginTop="28dp">
+            <!-- <TextView
+                 android:layout_width="wrap_content"
+                 android:layout_height="match_parent"
+                 android:layout_marginLeft="15dp"
+                 android:textSize="11dp"
+                 android:text="exuetang"/>-->
+            <!-- <TextView
+                 android:layout_width="wrap_content"
+                 android:layout_height="match_parent"
+                 android:layout_centerHorizontal="true"
+                 android:textSize="18dp"
+                 android:textColor="@color/index_textcolor"
+                 android:text="e学堂"/>-->
             <ImageView
                 android:id="@+id/index_competition"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_marginRight="51dp"
-                android:src="@mipmap/competition"/>
-            <ImageView
-                android:id="@+id/index_share"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_marginRight="15dp"
-                android:src="@mipmap/share"/>
+                android:layout_centerInParent="true"
+                android:src="@drawable/exuetang"/>
+            <!--  <ImageView
+                  android:id="@+id/index_share"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_alignParentRight="true"
+                  android:layout_marginRight="15dp"
+                  android:src="@mipmap/share"/>-->
         </RelativeLayout>
     </RelativeLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="324"
+        android:layout_height="wrap_content"
         android:orientation="vertical">
+
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1"
-            android:layout_marginTop="2dp">
+            android:layout_marginTop="2dp"
+            android:layout_weight="1">
             <!--舞台秀-->
             <RelativeLayout
                 style="@style/index_middle"
                 android:layout_marginLeft="45dp">
+
                 <ImageView
-                    android:id="@+id/index_stageshow"
+                     android:id="@+id/index_stageshow"
                     style="@style/index_middle_image"
-                    android:src="@mipmap/ingdex_why"/>
+                    android:src="@mipmap/index_talent_show"/>
+
                 <TextView
+                    android:layout_below="@+id/index_stageshow"
                     android:id="@+id/index_stageshow_text"
                     style="@style/index_middle_text"
-                    android:text="舞台秀"/>
+                    android:text="才艺秀"/>
             </RelativeLayout>
             <!--名人讲堂-->
             <RelativeLayout
                 style="@style/index_middle"
                 android:layout_centerHorizontal="true">
+
                 <ImageView
                     android:id="@+id/index_celebrityforum"
                     style="@style/index_middle_image"
-                    android:src="@mipmap/ingdex_why"/>
+                    android:src="@mipmap/index_audio"/>
+
                 <TextView
+                    android:layout_below="@+id/index_celebrityforum"
                     android:id="@+id/index_celebrityforum_text"
                     style="@style/index_middle_text"
-                    android:text="名人讲堂"/>
+                    android:text="音频宝"/>
             </RelativeLayout>
             <!--测评宝-->
             <RelativeLayout
                 style="@style/index_middle"
                 android:layout_alignParentRight="true"
                 android:layout_marginRight="45dp">
+
                 <ImageView
                     android:id="@+id/index_evaluation"
                     style="@style/index_middle_image"
-                    android:src="@mipmap/ingdex_why"/>
+                    android:src="@mipmap/index_education"/>
+
                 <TextView
+                    android:layout_below="@+id/index_evaluation"
                     android:id="@+id/index_evaluation_text"
                     style="@style/index_middle_text"
-                    android:text="测评宝"/>
+                    android:text="幼教宝"/>
             </RelativeLayout>
         </RelativeLayout>
+
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
@@ -100,94 +111,109 @@
             <RelativeLayout
                 style="@style/index_middle"
                 android:layout_marginLeft="45dp">
+
                 <ImageView
                     android:id="@+id/index_habit"
                     style="@style/index_middle_image"
-                    android:src="@mipmap/ingdex_why"/>
+                    android:src="@mipmap/index_youpei"/>
+
                 <TextView
+                    android:layout_below="@+id/index_habit"
                     android:id="@+id/index_habit_text"
                     style="@style/index_middle_text"
-                    android:text="培养宝"/>
+                    android:text="优培宝"/>
             </RelativeLayout>
             <!--音频宝-->
             <RelativeLayout
                 style="@style/index_middle"
                 android:layout_centerHorizontal="true">
+
                 <ImageView
                     android:id="@+id/index_audio"
                     style="@style/index_middle_image"
-                    android:src="@mipmap/ingdex_why"/>
+                    android:src="@mipmap/index_soupei"/>
+
                 <TextView
+                    android:layout_below="@+id/index_audio"
                     android:id="@+id/index_audio_text"
                     style="@style/index_middle_text"
-                    android:text="音频宝"/>
+                    android:text="搜培宝"/>
             </RelativeLayout>
             <!--e学宝-->
             <RelativeLayout
                 style="@style/index_middle"
                 android:layout_alignParentRight="true"
                 android:layout_marginRight="45dp">
+
                 <ImageView
                     android:id="@+id/index_study"
                     style="@style/index_middle_image"
-                    android:src="@mipmap/ingdex_why"/>
+                    android:src="@mipmap/index_taobaoge"/>
+
                 <TextView
+                    android:layout_below="@+id/index_study"
                     android:id="@+id/index_study_text"
                     style="@style/index_middle_text"
-                    android:text="e学宝"/>
+                    android:text="淘宝阁"/>
             </RelativeLayout>
         </RelativeLayout>
-        <RelativeLayout
+
+       <!-- <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1">
-            <!--e培宝-->
+            &lt;!&ndash;e培宝&ndash;&gt;
             <RelativeLayout
                 style="@style/index_middle"
                 android:layout_marginLeft="45dp">
+
                 <ImageView
                     android:id="@+id/index_train"
                     style="@style/index_middle_image"
                     android:src="@mipmap/ingdex_why"/>
+
                 <TextView
                     android:id="@+id/index_train_text"
                     style="@style/index_middle_text"
                     android:text="e培宝"/>
             </RelativeLayout>
-            <!--家园宝-->
+            &lt;!&ndash;家园宝&ndash;&gt;
             <RelativeLayout
                 style="@style/index_middle"
                 android:layout_centerHorizontal="true">
+
                 <ImageView
                     android:id="@+id/index_home"
                     style="@style/index_middle_image"
                     android:src="@mipmap/ingdex_why"/>
+
                 <TextView
                     android:id="@+id/index_home_text"
                     style="@style/index_middle_text"
                     android:text="家园宝"/>
             </RelativeLayout>
-            <!--e商城-->
+            &lt;!&ndash;e商城&ndash;&gt;
             <RelativeLayout
                 style="@style/index_middle"
                 android:layout_alignParentRight="true"
                 android:layout_marginRight="45dp">
+
                 <ImageView
                     android:id="@+id/index_shop"
                     style="@style/index_middle_image"
                     android:src="@mipmap/ingdex_why"/>
+
                 <TextView
                     android:id="@+id/index_shop_text"
                     style="@style/index_middle_text"
                     android:text="e商城"/>
             </RelativeLayout>
-        </RelativeLayout>
+        </RelativeLayout>-->
     </LinearLayout>
+
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="85"
-        android:layout_marginTop="36dp"
-        android:layout_marginBottom="0dp"
+        android:layout_height="85dp"
+        android:layout_marginTop="110dp"
         android:background="@drawable/index_bottom"></RelativeLayout>
 </LinearLayout>

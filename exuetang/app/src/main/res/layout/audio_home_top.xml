@@ -10,13 +10,14 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="center"
-        android:layout_marginLeft="15dp"
+        android:layout_marginLeft="14dp"
         android:src="@mipmap/return_image"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_toRightOf="@+id/audio_home_back_image"
+        android:textSize="16dp"
         android:gravity="center"
         android:text="e学堂"/>
 
@@ -29,16 +30,18 @@
 
     <ImageView
         android:id="@+id/audio_home_like_image"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
+        android:layout_width="21dp"
+        android:layout_height="19dp"
         android:layout_marginRight="15dp"
+        android:layout_centerVertical="true"
         android:layout_toLeftOf="@+id/audio_home_resent_image"
         android:src="@mipmap/index_like"/>
 
     <ImageView
         android:id="@+id/audio_home_resent_image"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
+        android:layout_width="21dp"
+        android:layout_height="21dp"
+        android:layout_centerVertical="true"
         android:layout_alignParentRight="true"
         android:layout_marginRight="15dp"
         android:src="@mipmap/index_recent"/>

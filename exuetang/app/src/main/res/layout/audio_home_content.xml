@@ -6,16 +6,16 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="146dp"
+        android:layout_height="145dp"
         android:background="@drawable/mp3_banner1">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="33dp"
+            android:layout_height="32dp"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="8dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
+            android:layout_marginLeft="37dp"
+            android:layout_marginRight="38dp"
             android:layout_marginTop="8dp">
 <!--<com.yutai.exuetang.utils.SearchView
     android:layout_width="match_parent"

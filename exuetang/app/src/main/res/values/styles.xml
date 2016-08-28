@@ -1,4 +1,4 @@
-﻿<resources xmlns:tools="http://schemas.android.com/tools">
+﻿<resources>
 
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
@@ -19,7 +19,7 @@
         <item name="android:drawablePadding">2dp</item>
         <item name="android:textColor">@drawable/textcolor</item>
         <item name="android:textSize">10dp</item>
-        <item name="android:paddingTop">4dp</item>
+        <item name="android:paddingTop">8.5dp</item>
         <item name="android:paddingBottom">4dp</item>
     </style>
     <!--首页中间的imageview-->
@@ -29,14 +29,16 @@
     </style>
 
     <style name="index_middle_image">
-        <item name="android:layout_width">62dp</item>
-        <item name="android:layout_height">62dp</item>
+        <item name="android:layout_marginTop">38.5dp</item>
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:layout_width">37dp</item>
+        <item name="android:layout_height">37dp</item>
     </style>
 
     <style name="index_middle_text">
+        <item name="android:layout_marginTop">5dp</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_marginTop">70dp</item>
         <item name="android:gravity">center</item>
         <item name="android:textSize">13dp</item>
         <item name="android:textColor">@color/index_textcolor</item>
@@ -87,7 +89,7 @@
     </style>
     <!--音频宝（首页）大分类中的textview-->
     <style name="text_style">
-        <item name="android:paddingTop">5dp</item>
+        <item name="android:paddingTop">9.5dp</item>
         <item name="android:gravity">center</item>
         <item name="android:textColor">@color/me_text_black</item>
         <item name="android:layout_width">match_parent</item>
@@ -96,7 +98,7 @@
     <!--音频宝（首页）大分类中的imageview-->
     <style name="image_onestyle">
         <item name="android:layout_gravity">center</item>
-        <item name="android:layout_marginTop">20dp</item>
+        <item name="android:layout_marginTop">22dp</item>
         <item name="android:layout_width">25dp</item>
         <item name="android:layout_height">25dp</item>
         <item name="android:scaleType">fitXY</item>
@@ -113,12 +115,12 @@
     <!--横线的样式-->
     <style name="text_liner_x">
         <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">1dp</item>
+        <item name="android:layout_height">0.5dp</item>
         <item name="android:background">@color/line_color</item>
     </style>
     <!--竖线的样式-->
     <style name="text_liner_y">
-        <item name="android:layout_width">1dp</item>
+        <item name="android:layout_width">0.5dp</item>
         <item name="android:layout_height">match_parent</item>
         <item name="android:background">@color/line_color</item>
     </style>
@@ -160,17 +162,17 @@
         <item name="android:textSize">13sp</item>
     </style>
     <!--我的信息里面左边的textview-->
-<style name="my_info_text_left">
-    <item name="android:layout_gravity">center</item>
-    <item name="android:layout_width">wrap_content</item>
-    <item name="android:layout_height">wrap_content</item>
-    <item name="android:layout_alignParentLeft">true</item>
-    <item name="android:layout_centerVertical">true</item>
-    <item name="android:layout_marginLeft">14dp</item>
-    <item name="android:textColor">@color/me_text_black</item>
-    <item name="android:textSize">@dimen/my_info_left_textsize</item>
-</style>
-<!--我的信息里面右面的textView-->
+    <style name="my_info_text_left">
+        <item name="android:layout_gravity">center</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_alignParentLeft">true</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:layout_marginLeft">14dp</item>
+        <item name="android:textColor">@color/me_text_black</item>
+        <item name="android:textSize">@dimen/my_info_left_textsize</item>
+    </style>
+    <!--我的信息里面右面的textView-->
     <style name="my_info_text_right">
         <item name="android:layout_marginLeft">110dp</item>
         <item name="android:layout_centerVertical">true</item>

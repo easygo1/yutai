@@ -17,13 +17,13 @@
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_marginLeft="15dp"
-            android:src="@mipmap/return_black"/>
+            android:src="@mipmap/return_image"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:textSize="18dp"
-            android:textColor="@color/index_textcolor"
+            android:textColor="@color/white"
             android:text="我的音频"/>
     </RelativeLayout>
     <LinearLayout
@@ -71,6 +71,8 @@
             android:textColor="@color/me_text_black"
             android:text="最近播放"/>
     </LinearLayout>
+    <TextView
+       style="@style/text_liner_x"/>
     <FrameLayout
         android:id="@+id/me_audio_fragment"
         android:layout_width="match_parent"

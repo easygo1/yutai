@@ -141,7 +141,7 @@
 
             <ImageView
                 style="@style/image_onestyle"
-                android:src="@mipmap/why_son1"/>
+                android:src="@mipmap/ingdex_why"/>
 
             <TextView
                 android:id="@+id/why_textview"
@@ -161,7 +161,7 @@
 
             <ImageView
                 style="@style/image_onestyle"
-                android:src="@mipmap/reading"/>
+                android:src="@mipmap/index_read"/>
 
             <TextView
                 android:id="@+id/readxuetang_textview"
@@ -246,7 +246,7 @@
 
             <ImageView
                 style="@style/image_onestyle"
-                android:src="@mipmap/classics_son1"/>
+                android:src="@mipmap/index_classics"/>
 
             <TextView
                 android:id="@+id/chinamingzhu_textview"
@@ -263,14 +263,14 @@
 
     <TextView
         style="@style/text_liner_x"
-        android:layout_height="10dp"
+        android:layout_height="15dp"
         android:background="@color/background_color"/>
 
     <com.youth.banner.Banner
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:id="@+id/audio_home_banner"
         android:layout_width="match_parent"
-        android:layout_height="72dp"
+        android:layout_height="71dp"
         app:indicator_drawable_selected="@drawable/gray_radius"
         app:indicator_drawable_unselected="@drawable/white_radius"
         app:indicator_height="10dp"
@@ -279,7 +279,7 @@
 
     <TextView
         style="@style/text_liner_x"
-        android:layout_height="10dp"
+        android:layout_height="15dp"
         android:background="@color/background_color"/>
 
 
@@ -356,7 +356,7 @@
 
             <ImageView
                 style="@style/image_onestyle"
-                android:src="@mipmap/world_son1"/>
+                android:src="@mipmap/index_world"/>
 
             <TextView
                 android:id="@+id/worldmingzhu_textview"
@@ -401,7 +401,7 @@
 
             <ImageView
                 style="@style/image_onestyle"
-                android:src="@mipmap/biography_son"/>
+                android:src="@mipmap/index_tdc"/>
 
             <TextView
                 android:id="@+id/mingrenzhuan_textview"

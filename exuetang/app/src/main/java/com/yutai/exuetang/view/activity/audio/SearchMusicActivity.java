@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -111,7 +110,7 @@ public class SearchMusicActivity extends AppCompatActivity implements SearchView
                     Type type = new TypeToken<List<Music>>() {
                     }.getType();
                     dbData = gson.fromJson(result, type);
-                    Log.e("网络请求mMusicList", dbData.toString());
+//                    Log.e("网络请求mMusicList", dbData.toString());
                     if (dbData.size() == 0) {
                         ToastUtils.showToast(SearchMusicActivity.this, "没有数据了");
                     }

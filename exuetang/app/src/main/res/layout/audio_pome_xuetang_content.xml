@@ -1,13 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
               android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
     <!--诗词学堂-->
-    <ImageView
+    <!--<ImageView
         android:layout_width="match_parent"
         android:layout_height="86dp"
-        android:src="@drawable/mp3_son_banner"/>
+        android:src="@drawable/mp3_son_banner"/>-->
+        <com.youth.banner.Banner
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/audio_pome_banner0"
+            android:layout_width="match_parent"
+            android:layout_height="71dp"
+            android:layout_alignParentBottom="true"
+            app:indicator_drawable_selected="@drawable/gray_radius"
+            app:indicator_drawable_unselected="@drawable/white_radius"
+            app:indicator_height="10dp"
+            app:indicator_margin="5dp"
+            app:indicator_width="10dp"/>
 
     <TextView
         style="@style/text_liner_x"
@@ -151,4 +166,16 @@
     </LinearLayout>
     <TextView
         style="@style/text_liner_x"/>
-</LinearLayout>
+    </LinearLayout>
+    <com.youth.banner.Banner
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/audio_pome_banner1"
+        android:layout_width="match_parent"
+        android:layout_height="71dp"
+        android:layout_alignParentBottom="true"
+        app:indicator_drawable_selected="@drawable/gray_radius"
+        app:indicator_drawable_unselected="@drawable/white_radius"
+        app:indicator_height="10dp"
+        app:indicator_margin="5dp"
+        app:indicator_width="10dp"/>
+</RelativeLayout>

@@ -12,6 +12,7 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import com.yutai.exuetang.MainActivity;
 import com.yutai.exuetang.R;
 import com.yutai.exuetang.model.beans.exuetang.User;
 import com.yutai.exuetang.presenter.dao.exuetang.LoginPresenter;
@@ -54,6 +55,7 @@ public class LoginActivity extends AppCompatActivity implements ILoginView,View.
         mProgressBar = (ProgressBar) findViewById(R.id.id_pb_loading);
         loginUserphone.setTypeface(MyApplication.sTypeface);
         loginForgetpassword.setTypeface(MyApplication.sTypeface);
+        loginUserpassword.setTypeface(MyApplication.sTypeface);
     }
     @Override
     public void onClick(View v) {
@@ -112,6 +114,9 @@ public class LoginActivity extends AppCompatActivity implements ILoginView,View.
         mEditor.putInt("user_id",user.getUser_id());
         //提交保存结果
         mEditor.commit();
+        Intent intent=new Intent();
+        intent.setClass(LoginActivity.this, MainActivity.class);
+        startActivity(intent);
     }
 
     @Override

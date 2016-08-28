@@ -11,8 +11,8 @@
 
         <ImageView
             android:id="@+id/musiccomment_photo_image"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
             android:layout_marginLeft="15dp"
             android:layout_marginTop="10dp"
             android:background="@mipmap/portrait_2"/>
@@ -30,7 +30,7 @@
                 android:layout_marginTop="17dp"
                 android:text="昵称在这"
                 android:textColor="@color/me_text_gray"
-                android:textSize="@dimen/my_info_right_textsize"/>
+                android:textSize="@dimen/comment_tv"/>
 
             <TextView
                 android:textColor="@color/me_middle_text"
@@ -51,7 +51,7 @@
         android:layout_marginRight="15dp"
         android:layout_marginTop="17dp"
         android:lineSpacingExtra="8dp"
-        android:layout_marginBottom="5dp"
+        android:layout_marginBottom="3.5dp"
         android:text="@string/comment_strs"
         android:textColor="@color/index_textcolor"
         android:textSize="@dimen/my_info_right_textsize"/>

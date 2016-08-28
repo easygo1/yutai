@@ -1,6 +1,8 @@
 package com.yutai.exuetang.view.activity.audio;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -33,6 +35,7 @@ import com.yutai.exuetang.view.activity.audio.twostyle.VirtueStoryActivity;
 import com.yutai.exuetang.view.activity.audio.twostyle.WhysActivity;
 import com.yutai.exuetang.view.activity.audio.twostyle.WordKnowActivity;
 import com.yutai.exuetang.view.activity.audio.twostyle.WorldClassicActivity;
+import com.yutai.exuetang.view.activity.exuetang.LoginActivity;
 import com.yutai.exuetang.view.application.MyApplication;
 
 public class AudioHomeActivity extends AppCompatActivity implements View.OnClickListener {
@@ -82,14 +85,19 @@ public class AudioHomeActivity extends AppCompatActivity implements View.OnClick
     private ImageView mAudioHomeLikeImage;
     private ImageView mAudioHomeResentImage;
     private EditText mSearchEditText;
+    SharedPreferences mSharedPreferences;//偏好设置
+    public static final String USER = "user";
+    private int user_id;//偏好设置中获取
     //轮播图的图片地址
     String[] images1 = new String[]{"http://pic15.nipic.com/20110803/7929674_090036056357_2.jpg", "http://pic21.nipic.com/20120525/9894811_180438440328_2.jpg", "http://pic.58pic.com/58pic/11/30/16/73d58PICPIZ.jpg", "http://i0.letvimg.com/cms/201406/04/0b35ddfe94174f03a7bf984e63309a0e.jpg"};
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_audio_home);
         initViews();
         initwordstype();
+        getintentdata();
         initListeners();
     }
 
@@ -139,7 +147,7 @@ public class AudioHomeActivity extends AppCompatActivity implements View.OnClick
         mAudioHomeBackImage = (ImageView) findViewById(R.id.audio_home_back_image);
         mAudioHomeLikeImage = (ImageView) findViewById(R.id.audio_home_like_image);
         mAudioHomeResentImage = (ImageView) findViewById(R.id.audio_home_resent_image);
-        mSearchEditText= (EditText) findViewById(R.id.search_edit1);
+        mSearchEditText = (EditText) findViewById(R.id.search_edit1);
 
         mAudioHomeBanner = (Banner) findViewById(R.id.audio_home_banner);
         //设置轮播图圆点样式
@@ -220,8 +228,8 @@ public class AudioHomeActivity extends AppCompatActivity implements View.OnClick
             public void onFocusChange(View v, boolean hasFocus) {
 //                if(hasFocus){
 //                    获取焦点的时候就跳转到SearchMusicActivity页面
-                    Intent intent=new Intent();
-                    intent.setClass(AudioHomeActivity.this,SearchMusicActivity.class);
+                Intent intent = new Intent();
+                intent.setClass(AudioHomeActivity.this, SearchMusicActivity.class);
                 startActivity(intent);
 //                }
             }
@@ -362,12 +370,22 @@ public class AudioHomeActivity extends AppCompatActivity implements View.OnClick
                 show("最近播放");
                 break;
             case R.id.search_edit1:
-                intent.setClass(AudioHomeActivity.this,SearchMusicActivity.class);
-                startActivity(intent);
+//
+                if (user_id != 0) {
+                    intent.setClass(AudioHomeActivity.this, SearchMusicActivity.class);
+                    startActivity(intent);
+                }else{
+                    intent.setClass(AudioHomeActivity.this, LoginActivity.class);
+                    startActivity(intent);
+                }
                 break;
         }
     }
 
+    private void getintentdata() {
+        mSharedPreferences = this.getSharedPreferences(USER, Context.MODE_PRIVATE);
+        user_id = mSharedPreferences.getInt("user_id", 0);//整个页面要用
+    }
     private void show(String s) {
         ToastUtils.showToast(this, s);
     }

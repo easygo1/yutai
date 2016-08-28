@@ -1,13 +1,10 @@
 package com.yutai.exuetang;
 
-import android.graphics.Color;
-import android.os.Build;
+import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.ContextMenu;
 import android.view.View;
 import android.widget.RadioButton;
@@ -18,6 +15,7 @@ import com.yutai.exuetang.view.fragment.exuetang.CommunityFragment;
 import com.yutai.exuetang.view.fragment.exuetang.ExuetangFragment;
 import com.yutai.exuetang.view.fragment.exuetang.MeFragment;
 import com.yutai.exuetang.view.fragment.exuetang.ScienceFragment;
+import com.yutai.exuetang.view.fragment.exuetang.VipFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,12 +24,13 @@ public class MainActivity extends AppCompatActivity {
     private ViewPager mViewPager;
     private RadioGroup mRadioGroup;
     private List<Fragment> mFragmentList;
-    Fragment mExuetangFragment, mScienceFragment, mCommunityFragment, mMeFragment;
+    Fragment mExuetangFragment, mScienceFragment, mCommunityFragment,mVipFragment, mMeFragment;
     FragmentManager mFragmentManager;
     FragmentAdapter mFragmentAdapter;
     private RadioButton mExuetangRadio;
     private RadioButton mScienceRadio;
     private RadioButton mCommunityRadio;
+    private RadioButton mVipRadio;
     private RadioButton mMyRadio;
 
     @Override
@@ -55,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
         mExuetangRadio = (RadioButton) findViewById(R.id.exuetang_radio);
         mScienceRadio = (RadioButton) findViewById(R.id.science_radio);
         mCommunityRadio = (RadioButton) findViewById(R.id.community_radio);
+        mVipRadio = (RadioButton) findViewById(R.id.vip_radio);
         mMyRadio = (RadioButton) findViewById(R.id.my_radio);
     }
 
@@ -96,8 +96,11 @@ public class MainActivity extends AppCompatActivity {
             case R.id.community_radio:
                 mViewPager.setCurrentItem(2);
                 break;
-            case R.id.my_radio:
+            case R.id.vip_radio:
                 mViewPager.setCurrentItem(3);
+                break;
+            case R.id.my_radio:
+                mViewPager.setCurrentItem(4);
                 break;
         }
     }
@@ -114,10 +117,13 @@ public class MainActivity extends AppCompatActivity {
         mExuetangFragment = new ExuetangFragment();
         mScienceFragment = new ScienceFragment();
         mCommunityFragment = new CommunityFragment();
+        mVipFragment=new VipFragment();
         mMeFragment = new MeFragment();
         mFragmentList.add(mExuetangFragment);
         mFragmentList.add(mScienceFragment);
         mFragmentList.add(mCommunityFragment);
+        /*mFragmentList.add(mCommunityFragment);*/
+        mFragmentList.add(mVipFragment);
         mFragmentList.add(mMeFragment);
 
         //初始化适配器
